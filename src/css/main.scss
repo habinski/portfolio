@@ -1,0 +1,126 @@
+@import url(//db.onlinewebfonts.com/c/a4745f4b1d04fa025c6a05d891ed0126?family=Monument+Extended+Ultrabold);
+@import url(//db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended);
+$text-color: #FFFFFF;
+$text-size: 1.4rem;
+$primary-first: #7700BB;
+$primary-second: #0090FF;
+$primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100%);
+@mixin primary-text-gradient {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin primary-stroke-gradient($px) {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: $px transparent;
+}
+
+@mixin text-hover($color) {
+    text-shadow: 0px 0px 0px $color;
+    transition: 0.2s;
+    &:hover {
+        text-shadow: -8px -8px 0px $color;
+        transform: translate(4px, 4px);
+    }
+}
+
+@mixin box-hover {
+    box-shadow: 0px 0px 0px $primary-first;
+    transition: 0.2s;
+    &:hover {
+        box-shadow: -8px -8px 0px white;
+        transform: translate(4px, 4px);
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.97);
+    }
+    15% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0.97);
+    }
+    45% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(0.97);
+    }
+    100% {
+        transform: scale(0.97);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // margin: 0 20px;
+    overflow-x: hidden;
+    font-family: Monument Extended Ultrabold;
+    display: grid;
+    grid-auto-columns: 100%;
+    // gap: 520px;
+}
+
+main {
+    display: grid;
+    // grid-auto-columns: 100%;
+    gap: 7rem;
+}
+
+html {
+    background-color: #070707;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 60vh;
+    position: relative;
+}
+
+// .parent-title {
+//     position: relative;
+// }
+// .title {
+//     width: 100px;
+//     z-index: 5;
+//     // display: none;
+//     // width: min-content;
+//     position: absolute;
+//     font-size: 4rem;
+//     text-transform: uppercase;
+//     -webkit-text-stroke: 0.5px $text-color;
+//     transform: rotate(-90deg) translateX(-100%);
+//     color: transparent;
+//     // right: 50%;
+//     left: -0px;
+//     top: 50%;
+//     // bottom: 0;
+// }
+.title {
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-align: center;
+    z-index: 5;
+    position: absolute;
+    font-size: 4rem;
+    -webkit-text-stroke: 0.5px $text-color;
+    color: transparent;
+    text-transform: uppercase;
+    left: 0;
+    transform: rotateZ(180deg);
+}
+
+@import '/error-page',
+'/header',
+"/footer";
+//home page
+@import 'home/home';

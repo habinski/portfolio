@@ -1,0 +1,32 @@
+nav {
+    // font-family: 'MER';
+    font-size: 1.2rem;
+    font-family: "Monument Extended Ultrabold";
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    img {
+        transition: .3s;
+        &:hover {
+            transition: .3s;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-name: heartbeat;
+        }
+    }
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    a {
+        align-self: center;
+        justify-self: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $text-color;
+        @include text-hover( $primary-first)
+    }
+}
+
+p {
+    color: $text-color;
+}

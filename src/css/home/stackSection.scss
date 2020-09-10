@@ -1,0 +1,55 @@
+.stack {
+    width: 100vw;
+    min-height: 60vh;
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    .bg {
+        position: relative;
+        background: $primary-gradient;
+        height: 100%;
+        min-width: 30vw;
+    }
+    .glass {
+        height: 100%;
+        transform: translate(15px, 15px);
+        background-color: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+    }
+    .stack-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7rem;
+    }
+    .items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-self: center;
+        padding: 10% 1rem;
+        gap: 2rem;
+        justify-self: start;
+    }
+    .item {
+        justify-self: center;
+        p {
+            font-family: Montserrat;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+    }
+    h4 {
+        padding-top: 15%;
+        font-size: 2rem;
+        color: $text-color;
+        text-align: center;
+    }
+}
+
+.stack :nth-child(even) .glass {
+    background-color: rgba(255, 255, 255, 0.25);
+    h4,
+    p {
+        color: black;
+    }
+}

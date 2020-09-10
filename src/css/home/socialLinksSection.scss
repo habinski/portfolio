@@ -1,0 +1,28 @@
+.socialLinks {
+    display: grid;
+    .links {
+        align-self: center;
+        display: grid;
+        gap: 2rem;
+        justify-items: center;
+        a {
+            font-family: Monument Extended Ultrabold;
+            // text-transform: uppercase;
+            font-weight: 400;
+            font-size: 5rem;
+            // text-shadow: -7px -7px 0px #7700BB;
+            filter: drop-shadow(-7px -7px 0px #7700BB);
+            text-decoration: none;
+            -webkit-text-stroke: 1px $text-color;
+            transition: .3s;
+            color: transparent;
+            &:hover {
+                color: $text-color;
+                // text-shadow: -21px -21px 0px #7700BB;
+                filter: drop-shadow(-21px -21px 0px #7700BB);
+                transform: translate(7px, 7px);
+                // transform: translate(-7px -7px);
+            }
+        }
+    }
+}
