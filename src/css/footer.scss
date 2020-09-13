@@ -2,14 +2,39 @@ footer {
     font-family: Montserrat;
     background: $primary-gradient;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     padding: 2rem 0;
     box-shadow: inset 0px 21px 21px rgba(0, 0, 0, 0.25);
-    gap: .5rem;
+    gap: 1rem;
     font-weight: 400;
     text-transform: uppercase;
     span {
         font-family: Monument Extended;
+    }
+    grid-template-areas: 'logo navigation' 'copyright copyright';
+    .footer-logo {
+        grid-area: logo;
+        width: 10rem;
+    }
+    .navigation {
+        grid-area: navigation;
+        display: grid;
+        grid-auto-rows: auto;
+        a {
+            font-family: Monument;
+            color: $text-color;
+            text-decoration: none;
+            transition: .3s;
+            &:hover {
+                transform: skewX(-20deg) translate(20px);
+            }
+        }
+    }
+    .copyright {
+        // justify-self: center;
+        grid-area: copyright;
+        text-align: center;
     }
 }
 

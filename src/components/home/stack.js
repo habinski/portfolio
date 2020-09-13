@@ -22,15 +22,13 @@ const Stack = () => {
 	const data = useStaticQuery(query)
 	const stacks = data.allStrapiStack.nodes.map((stack) => {
 
-		return (<div className='parent' key={stack.id}>
-			<div className='bg'>
+		return (
+			<div className='bg' key={stack.id}>
 				<div className='glass'>
 					<h4>{stack.type}</h4>
 					<div className='items'>
 						{stack.technology.map((technologyItem) => {
-
 							return (
-
 								<div className='item' key={technologyItem.id}>
 									<img src={''} alt="" />
 									<p>{technologyItem.name}</p>
@@ -40,8 +38,7 @@ const Stack = () => {
 
 					</div>
 				</div>
-			</div>
-		</div>)
+			</div>)
 	})
 
 	return (

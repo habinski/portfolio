@@ -35,6 +35,21 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100
     }
 }
 
+@mixin page-links {
+    filter: drop-shadow(-7px -7px 0px #7700BB);
+    text-decoration: none;
+    -webkit-text-stroke: 1px $text-color;
+    transition: .3s;
+    color: transparent;
+    &:hover {
+        color: $text-color;
+        // text-shadow: -21px -21px 0px #7700BB;
+        filter: drop-shadow(-21px -21px 0px #7700BB);
+        transform: translate(7px, 7px);
+        // transform: translate(-7px -7px);
+    }
+}
+
 @keyframes heartbeat {
     0% {
         transform: scale(0.97);
@@ -55,6 +70,17 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100
         transform: scale(0.97);
     }
 }
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@media (max-width: 767px) {}
 
 * {
     margin: 0;
@@ -84,6 +110,16 @@ html {
 section {
     min-height: 60vh;
     position: relative;
+}
+
+.graffiti {
+    position: absolute;
+    z-index: -1;
+    animation: rotating 20s linear infinite;
+    top: 75vh;
+    width: 400px;
+    height: 400px;
+    right: -200px;
 }
 
 // .parent-title {
@@ -119,8 +155,39 @@ section {
     transform: rotateZ(180deg);
 }
 
+.btn-more {
+    -webkit-text-stroke: 0.5px $text-color;
+    color: transparent;
+    font-size: 2rem;
+    text-decoration: none;
+    //border 
+    border-left-width: .5px;
+    border-left-style: solid;
+    border-color: $text-color;
+    text-transform: uppercase;
+    padding-left: 3px;
+    // transition: .3s;
+    @include page-links;
+    &:hover {
+        color: #000;
+        padding-left: 2rem;
+        // @include text-hover($primary-first)
+    }
+}
+
+@media (max-width: 767px) {
+     :root {
+        font-size: 12px;
+    }
+    .title {
+        font-size: 3rem;
+        -webkit-text-stroke: 0.2px $text-color;
+    }
+}
+
 @import '/error-page',
 '/header',
 "/footer";
 //home page
-@import 'home/home';
+@import 'home/home',
+'/privacy';

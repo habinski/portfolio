@@ -1,0 +1,31 @@
+.privacy {
+    margin: 3rem 0;
+    color: $text-color;
+    display: grid;
+    gap: 20px;
+    margin: 0 5rem;
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        font-family: Monument Ultrabold;
+        @include primary-text-gradient;
+        width: max-content;
+        justify-self: center;
+    }
+    h1 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+    a {
+        text-decoration: none;
+        color: $primary-second;
+        font-weight: 800;
+        transition: .3s;
+        &:hover {
+            color: $primary-first;
+        }
+    }
+}

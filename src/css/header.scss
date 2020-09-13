@@ -3,7 +3,8 @@ nav {
     font-size: 1.2rem;
     font-family: "Monument Extended Ultrabold";
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
+    padding: .5rem;
     img {
         transition: .3s;
         &:hover {
@@ -13,7 +14,7 @@ nav {
             animation-name: heartbeat;
         }
     }
-    .nav-links {
+    .line-nav {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
@@ -29,4 +30,10 @@ nav {
 
 p {
     color: $text-color;
+}
+
+@media (max-width: 767px) {
+    nav>.line-nav {
+        display: none;
+    }
 }

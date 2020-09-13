@@ -19,7 +19,10 @@ module.exports = {
                     "social-link"
 
                 ],
-                singleTypes: ["about", "privacy"],
+                singleTypes: [
+                    "about",
+                    "privacy"
+                ],
                 queryLimit: 1000,
             },
         },

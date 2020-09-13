@@ -17,3 +17,12 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .projects-items {
+        h3 {
+            font-size: 2.5rem;
+            -webkit-text-stroke: 1px $text-color;
+        }
+    }
+}

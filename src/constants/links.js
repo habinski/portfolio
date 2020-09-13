@@ -26,16 +26,15 @@ const data = [
 
 const tempLinks = data.map(link => {
   return (
-
     <Link key={link.id} to={link.url}>{link.text}</Link>
   )
 })
 // I KNOW WE CAN COMBINE IT !!!!!
 
-export default ({ styleClass }) => {
+export default () => {
   return (
-    <div className={`page-links ${styleClass ? styleClass : ""}`}>
+    <>
       {tempLinks}
-    </div>
+    </>
   )
 }

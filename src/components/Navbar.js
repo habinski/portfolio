@@ -10,9 +10,9 @@ const Navbar = ({ toggleSidebar }) => {
 			{/* <button type="button" className="toggle-btn" onClick={toggleSidebar}>
 					<FaAlignRight></FaAlignRight>
 				</button> */}
-
-			<PageLinks styleClass="nav-links"></PageLinks>
-
+			<div className="line-nav">
+				<PageLinks />
+			</div>
 		</nav>
 	)
 }

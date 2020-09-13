@@ -2,7 +2,7 @@
     font-family: 'Monument Extended Ultrabold';
     text-transform: uppercase;
     display: grid;
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .hero-content {
@@ -36,21 +36,16 @@
     }
 }
 
-@keyframes rotating {
-    from {
-        transform: rotate(0deg);
+@media (max-width: 767px) {
+    .hero-content {
+        writing-mode: vertical-rl;
+        h1 {
+            font-size: 5rem;
+        }
+        h2 {
+            justify-self: start;
+            grid-column-start: 1;
+            font-size: 5rem;
+        }
     }
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
-.graffiti {
-    position: absolute;
-    z-index: -1;
-    animation: rotating 20s linear infinite;
-    top: 75vh;
-    width: 400px;
-    height: 400px;
-    right: -200px;
 }

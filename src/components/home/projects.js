@@ -26,7 +26,7 @@ const Projects = () => {
 
 			<div className="projects-items">
 				{projects}
-				<Link to='/projects'>more</Link>
+				<Link to='/projects' className='btn-more'>more</Link>
 			</div>
 		</section>
 	)

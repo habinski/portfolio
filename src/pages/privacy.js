@@ -10,20 +10,6 @@ const query = graphql`
     }
   }`
 
-
-// const About = () => {
-//  
-
-//   return (<section className='about  parent-title' >
-//     <h2 className="title" > about </h2> <div className="text" >
-
-//   )
-// }
-
-
-
-
-
 export default function Privacy() {
 	const data = useStaticQuery(query);
 	const gdpr = data.strapiPrivacy.gdpr
