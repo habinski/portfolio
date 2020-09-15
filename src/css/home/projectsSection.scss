@@ -5,6 +5,7 @@
     align-items: center;
     justify-items: center;
     h3 {
+        text-align: center;
         font-family: Montserrat;
         font-weight: 900;
         font-size: 5rem;
@@ -21,7 +22,7 @@
 @media (max-width: 767px) {
     .projects-items {
         h3 {
-            font-size: 2.5rem;
+            font-size: 4rem;
             -webkit-text-stroke: 1px $text-color;
         }
     }

@@ -1,65 +1,69 @@
-nav {
-    // font-family: 'MER';
-    font-size: 1.2rem;
-    font-family: "Monument Extended Ultrabold";
+/*
+=============== 
+Sidebar
+===============
+*/
+
+.sidebar {
+    background: $primary-gradient;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: .5rem;
-    img {
-        transition: .3s;
-        &:hover {
-            transition: .3s;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-name: heartbeat;
-        }
-    }
-    .line-nav>.page-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-    a {
-        align-self: center;
-        justify-self: center;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $text-color;
-        @include text-hover( $primary-first)
-    }
-    .burger-btn {
-        display: none;
+    place-items: center;
+    opacity: 0;
+    transition: .3s;
+    transform: translateX(-100%);
+    overflow: hidden;
+}
+
+.show-sidebar {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidebar-links {
+    display: grid;
+    gap: 2rem;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    font-size: 3rem;
+    @include page-links;
+    // display: block;
+    // text-align: center;
+    // text-transform: capitalize;
+    // color: var(--clr-grey-5);
+    // letter-spacing: var(--spacing);
+    // margin-bottom: 0.5rem;
+    // font-size: 2rem;
+    // transition: var(--transition);
+    // border-radius: var(--radius);
+}
+
+.sidebar-links a:hover {}
+
+.close-btn {
+    position: absolute;
+    right: 6px;
+    top: 20px;
+    @include nav-btns;
+}
+
+@media screen and (min-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
     }
 }
 
-p {
-    color: $text-color;
-}
 
-@mixin nav-btns {
-    background: none;
-    border: none;
-    color: $text-color;
-    font-family: Monument Extended Ultrabold;
-    font-size: 2rem;
-    text-transform: uppercase;
-    @include text-hover( $primary-first);
-}
+/*===============Sidebar Animation===============*/
 
-@media (max-width: 767px) {
-    nav>.line-nav {
-        display: none;
-    }
-    nav>.burger-btn {
-        display: grid;
-        width: min-content;
-        align-self: center;
-        justify-self: end;
-        @include nav-btns
-    }
-}
-
-@import '/sidebar';
-Sidebar Animation===============*/ .sidebar-links a {
+.sidebar-links a {
     animation: slideRight 0.5s ease-in-out 0.3s forwards;
 }
 
@@ -94,28 +98,28 @@ Sidebar Animation===============*/ .sidebar-links a {
     }
 }
 
-.sidebar-icons a {
+.sidebar-links a {
     opacity: 0;
     animation: slideUp 0.5s ease-in-out 0.3s forwards;
 }
 
-.sidebar-icons a:nth-of-type(1) {
+.sidebar-links a:nth-of-type(1) {
     animation-delay: 0.25s;
 }
 
-.sidebar-icons a:nth-of-type(2) {
+.sidebar-links a:nth-of-type(2) {
     animation-delay: 0.5s;
 }
 
-.sidebar-icons a:nth-of-type(3) {
+.sidebar-links a:nth-of-type(3) {
     animation-delay: 0.75s;
 }
 
-.sidebar-icons a:nth-of-type(4) {
+.sidebar-links a:nth-of-type(4) {
     animation-delay: 1s;
 }
 
-.sidebar-icons a:nth-of-type(5) {
+.sidebar-links a:nth-of-type(5) {
     animation-delay: 1.25s;
 }
 

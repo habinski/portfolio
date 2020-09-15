@@ -8,9 +8,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <button className="close-btn" onClick={toggleSidebar}>
         ba<br></br>ck
       </button>
-      <div className="side-container">
-        <Links styleClass={`${isOpen ? "sidebar-links" : ""}`} />
-        {/* <SocialLinks styleClass={`${isOpen ? "sidebar-icons" : ""}`} /> */}
+
+      <div className={`${isOpen ? "sidebar-links" : ""}`} >
+        <Links onClick={toggleSidebar} />
+        {/* <SocialLinks styleClass={`${isOpen ? "sidebar-links" : ""}`} /> */}
+
       </div>
     </aside>
   )

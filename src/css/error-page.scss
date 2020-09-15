@@ -1,9 +1,12 @@
 .err-page {
     display: grid;
     justify-content: center;
+    align-content: center;
     margin: 5rem;
+    height: 55vh;
     .err-content {
         display: grid;
+        height: min-content;
     }
     h1 {
         margin: 0;

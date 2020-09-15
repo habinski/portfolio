@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 // import React from "react"
 // import logo from "../assets/logo.svg"
 // // import { FaAlignRight } from "react-icons/fa"
@@ -26,7 +27,7 @@ import PageLinks from "../constants/links"
 const Navbar = ({ toggleSidebar }) => {
 	return (
 		<nav className="navbar">
-			<img src={logo} alt="logo" />
+			<Link to='/' className='header-logo'><img src={logo} alt="logo" /></Link>
 			<div className="line-nav">
 
 				<PageLinks styleClass="nav-links"></PageLinks>
