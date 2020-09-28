@@ -91,14 +91,17 @@ body {
     // margin: 0 20px;
     overflow-x: hidden;
     font-family: Monument Extended Ultrabold;
-    // display: grid;
-    // grid-auto-columns: 100%;
+    display: grid;
+    // grid-auto-columns: 90%;
+    // justify-items: center;
+    // align-items: center;
     // gap: 520px;
 }
 
 main {
     display: grid;
     // grid-auto-columns: 100%;
+    // background-color: #fff;
     gap: 7rem;
 }
 
