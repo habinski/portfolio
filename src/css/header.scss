@@ -2,8 +2,9 @@ nav {
     font-size: 1.2rem;
     font-family: "Monument Extended Ultrabold";
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    // grid-template-columns: 1fr 2fr;
     padding: .5rem;
+    justify-items: center;
     img {
         transition: .3s;
         &:hover {
@@ -16,6 +17,7 @@ nav {
     .line-nav {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        width: 80vw;
     }
     a {
         align-self: center;
@@ -25,7 +27,7 @@ nav {
         color: $text-color;
         @include text-hover($primary-first)
     }
-    .burger-btn {
+    .burger-menu {
         display: none;
     }
 }
@@ -51,12 +53,19 @@ p {
     nav>.line-nav {
         display: none;
     }
-    nav>.burger-btn {
+    nav>.burger-menu {
         display: grid;
-        width: min-content;
-        align-self: center;
-        justify-self: end;
-        @include nav-btns;
+        grid-template-columns: repeat(2, 40vw);
+        .header-logo {
+            align-self: center;
+            justify-self: start;
+        }
+        .burger-btn {
+            width: min-content;
+            align-self: center;
+            justify-self: end;
+            @include nav-btns;
+        }
     }
 }
 

@@ -6,15 +6,19 @@ import PageLinks from "../constants/links"
 const Navbar = ({ toggleSidebar }) => {
 	return (
 		<nav className="navbar">
-			<Link to='/' className='header-logo'><img src={logo} alt="logo" /></Link>
+
 			<div className="line-nav">
+				<Link to='/' className='header-logo'><img src={logo} alt="logo" /></Link>
 
 				<PageLinks styleClass="nav-links"></PageLinks>
 
 			</div>
-			<button type="button" className="burger-btn" onClick={toggleSidebar}>
-				ME<br></br>NU
+			<div className="burger-menu" >
+				<Link to='/' className='header-logo'><img src={logo} alt="logo" /></Link>
+				<button type="button" className="burger-btn" onClick={toggleSidebar}>
+					ME<br></br>NU
 				</button>
+			</div>
 		</nav >
 	)
 }

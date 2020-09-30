@@ -27,19 +27,19 @@ export const query = graphql`
 `
 
 const Category = ({ data }) => {
-	const articles = data.articles.edges
-	const category = data.category.name
+  const articles = data.articles.edges
+  const category = data.category.name
 
-	return (
-		<Layout>
-			<div className="uk-section">
-				<div className="uk-container uk-container-large">
-					<h1>{category}</h1>
-					<ArticlesComponent articles={articles} />
-				</div>
-			</div>
-		</Layout>
-	)
+  return (
+    <Layout>
+      <div className="uk-section">
+        <div className="uk-container uk-container-large">
+          <h1>{category}</h1>
+          <ArticlesComponent articles={articles} />
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export default Category
