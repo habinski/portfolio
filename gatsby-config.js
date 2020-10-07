@@ -5,7 +5,13 @@ module.exports = {
         author: "Strapi team",
     },
     plugins: [
-        `gatsby-plugin-sass`,
+        `gatsby-plugin-sass`, {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `assets`,
+                path: `${__dirname}/src/assets`,
+            },
+        },
         {
             resolve: "gatsby-source-strapi",
             options: {
@@ -26,5 +32,7 @@ module.exports = {
                 queryLimit: 1000,
             },
         },
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-sharp",
     ],
 }

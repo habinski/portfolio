@@ -7,8 +7,9 @@ const Card = ({ article }) => {
 			<div className="uk-card uk-card-muted">
 				<div className="uk-card-media-top">
 					<img
-						src={article.node.image.absolutePath}
-						alt={article.node.image.absolutePath}
+						width='100px'
+						src={article.node.image.publicURL}
+						alt={article.node.image.publicURL}
 
 					/>
 				</div>

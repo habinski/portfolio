@@ -7,9 +7,9 @@ import ArticlesComponent from "../components/blog/articles"
 // import "../assets/css/main.css"
 
 const Blog = () => (
-	<Layout>
-		<StaticQuery
-			query={graphql`
+  <Layout>
+    <StaticQuery
+      query={graphql`
         query {
           allStrapiArticle {
             edges {
@@ -20,23 +20,23 @@ const Blog = () => (
                   name
                 }
                 image {
-				absolutePath
+			          	publicURL
                 }
               }
             }
           }
         }
       `}
-			render={data => (
-				<div className="uk-section">
-					<div className="uk-container uk-container-large">
-						<h1>Strapi blog</h1>
-						<ArticlesComponent articles={data.allStrapiArticle.edges} />
-					</div>
-				</div>
-			)}
-		/>
-	</Layout>
+      render={data => (
+        <div className="uk-section">
+          <div className="uk-container uk-container-large">
+            <h1>BLOG</h1>
+            <ArticlesComponent articles={data.allStrapiArticle.edges} />
+          </div>
+        </div>
+      )}
+    />
+  </Layout>
 )
 
 export default Blog

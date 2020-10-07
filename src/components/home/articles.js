@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import ReactMarkdown from "react-markdown"
-import img from "../../assets/img.jpg"
+
 const query = graphql`
 {
     allStrapiArticle(limit: 3, sort: {fields: updated_at, order: DESC}) {
@@ -15,7 +15,7 @@ const query = graphql`
         content
         id
         image {
-          absolutePath
+          publicURL
         }
       }
     }
@@ -27,21 +27,22 @@ const ArticlesBlock = () => {
 		console.log(article)
 		return (
 			<div className="article">
-				<img src={img} alt="" />
+				<img src={article.image.publicURL} alt="" />
 
 				<div className="text">
 					<h3>{article.title}</h3>
 					<p>	<ReactMarkdown source={article.content.slice(0, 250) + '...'} /></p>
 				</div>
-				{/* <div className='categories'> 	{
-					() => article.category.map(c => {
+				{/* <div className='categories'>
+					{article.category.map((c) => {
 						return (
-							<p className='category' key={c.id}>{c.name}</p>
+							<p key={c.id}>{c.name}</p>
 						)
-					})
-				}</div> */}
+					})}
+				</div> */}
 			</div>
 		)
+
 	})
 	return (
 		<section className='articles parent-title'>

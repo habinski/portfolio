@@ -1,37 +1,44 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
-const query = graphql`
-  {
-    allStrapiStack {
-      nodes {
-		id
-		type
-        technology {
-          id
-		  name
-		  icon {
-			absolutePath
-		  }
-        }
-      }
-    }
-  }
-`
 
+export const query = graphql`
+query{
+	allStrapiStack {
+	  edges {
+		node {
+		  id
+		  type
+		  technology {
+			id
+			name
+			icon {
+			  publicURL
+			}
+		  }
+		}
+	  }
+	}
+  }
+  
+`
 const Stack = () => {
 	const data = useStaticQuery(query)
-	const stacks = data.allStrapiStack.nodes.map((stack) => {
-
+	console.log(data)
+	const stacks = data.allStrapiStack.edges.map((stack) => {
+		console.log(stack)
 		return (
-			<div className='bg' key={stack.id}>
+			<div className='bg' key={stack.node.id}>
 				<div className='glass'>
-					<h4>{stack.type}</h4>
+					<h4>{stack.node.type}</h4>
 					<div className='items'>
-						{stack.technology.map((technologyItem) => {
+						{stack.node.technology.map((technologyItem) => {
+							// alert(technologyItem.icon.publicURL)
 							return (
 								<div className='item' key={technologyItem.id}>
-									<img src={''} alt="" />
+									<img src={technologyItem.icon.publicURL} />
 									<p>{technologyItem.name}</p>
+
+
 								</div>
 							)
 						})}
