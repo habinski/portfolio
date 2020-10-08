@@ -15,7 +15,9 @@ export default function Privacy() {
 	const gdpr = data.strapiPrivacy.gdpr
 	return <Layout >
 		<section className='privacy'>
-			<ReactMarkdown source={gdpr} />
+			<div className='privacy-content'>
+				<ReactMarkdown source={gdpr} />
+			</div>
 		</section>
 	</Layout >
 }

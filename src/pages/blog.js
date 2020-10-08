@@ -16,6 +16,7 @@ const Blog = () => (
               node {
                 strapiId
                 title
+                content
                 category {
                   name
                 }
@@ -28,12 +29,12 @@ const Blog = () => (
         }
       `}
       render={data => (
-        <div className="uk-section">
-          <div className="uk-container uk-container-large">
-            <h1>BLOG</h1>
+        <section className='blog'>
+          <h1>BLOG</h1>
+          <div className="blog-content">
             <ArticlesComponent articles={data.allStrapiArticle.edges} />
           </div>
-        </div>
+        </section>
       )}
     />
   </Layout>

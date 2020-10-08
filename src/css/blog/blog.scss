@@ -1,0 +1,23 @@
+.blog {
+    display: grid;
+    justify-content: center;
+    .blog-content {
+        display: grid;
+        width: 80vw;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h1 {
+        height: 100%;
+        // writing-mode: vertical-rl;
+        text-align: center;
+        z-index: 5;
+        // position: absolute;
+        font-size: 4rem;
+        -webkit-text-stroke: 0.5px $text-color;
+        color: transparent;
+        text-transform: uppercase;
+        left: 0;
+        // transform: rotateZ(180deg);
+        margin-bottom: 3rem;
+    }
+}
