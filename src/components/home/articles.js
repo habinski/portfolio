@@ -13,7 +13,6 @@ const query = graphql`
         }
         title
         updated_at
-        content
         id
         image {
           publicURL

@@ -31,9 +31,9 @@ const Blog = () => (
       render={data => (
         <section className='blog'>
           <h1>BLOG</h1>
-          <div className="blog-content">
-            <ArticlesComponent articles={data.allStrapiArticle.edges} />
-          </div>
+          {/* <div className="blog-content"> */}
+          <ArticlesComponent articles={data.allStrapiArticle.edges} />
+          {/* </div> */}
         </section>
       )}
     />

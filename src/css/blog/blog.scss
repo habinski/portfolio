@@ -1,9 +1,10 @@
 .blog {
     display: grid;
     justify-content: center;
-    .blog-content {
+    .articles_grid {
         display: grid;
-        width: 80vw;
+        width: 90vw;
+        gap: 5rem;
         grid-template-columns: repeat(2, 1fr);
     }
     h1 {
