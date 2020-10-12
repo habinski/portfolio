@@ -1,0 +1,26 @@
+.CategoriesNav {
+    position: sticky;
+    top: 0;
+    font-size: 1.2rem;
+    font-family: Montserrat;
+    font-weight: 800;
+    background-image: $primary-gradient;
+    width: 100vw;
+    display: grid;
+    justify-items: center;
+    height: 150%;
+    z-index: 10;
+    .blog-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        width: 80vw;
+        justify-items: center;
+        align-items: center;
+        a {
+            text-transform: lowercase;
+            text-decoration: none;
+            @include text-hover($primary-first);
+            color: $text-color;
+        }
+    }
+}

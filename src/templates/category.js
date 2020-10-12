@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import ArticlesComponent from "../components/blog/articles"
+import CategoriesNav from "../components/blog/CategoriesNav"
 import Layout from "../components/layout"
 
 export const query = graphql`
@@ -15,7 +16,7 @@ export const query = graphql`
             name
           }
           image {
-			absolutePath
+            		publicURL
           }
         }
       }
@@ -26,18 +27,19 @@ export const query = graphql`
   }
 `
 
-const Category = () => {
-  const data = useStaticQuery(query);
-  const articles = data.articles.edges;
-  const category = data.category.name;
+const Category = ({ data }) => {
+  console.log(data)
+  const articles = data.articles.edges
+  const category = data.category.name
 
   return (
     <Layout>
-      <div>
-        <div>
-          <h1>{category}</h1>
-          <ArticlesComponent articles={articles} />
-        </div>
+      <CategoriesNav />
+      <div className='blog'>
+
+        <h1>{category}</h1>
+        <ArticlesComponent articles={articles} />
+
       </div>
     </Layout>
   )

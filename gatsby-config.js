@@ -34,5 +34,17 @@ module.exports = {
         },
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
-    ],
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [{
+                    resolve: `gatsby-remark-prismjs`,
+                    options: {
+                        aliases: { sh: "bash", js: "javascript" },
+                        showLineNumbers: true,
+                    }
+                }],
+            },
+        }
+    ]
 }

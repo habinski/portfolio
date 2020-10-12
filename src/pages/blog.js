@@ -3,11 +3,12 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import ArticlesComponent from "../components/blog/articles"
-
+import CategoriesNav from '../components/blog/CategoriesNav'
 // import "../assets/css/main.css"
 
 const Blog = () => (
   <Layout>
+    <CategoriesNav />
     <StaticQuery
       query={graphql`
         query {

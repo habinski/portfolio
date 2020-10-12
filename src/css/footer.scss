@@ -16,6 +16,10 @@ footer {
     .footer-logo {
         grid-area: logo;
         width: 10rem;
+        transition: .3s;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-name: heartbeat;
     }
     .navigation {
         grid-area: navigation;

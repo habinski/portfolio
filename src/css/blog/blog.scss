@@ -22,3 +22,12 @@
         margin-bottom: 3rem;
     }
 }
+
+@media (max-width: 767px) {
+    .blog>.articles_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@import 'blog/categoriesNav',
+'/article';
