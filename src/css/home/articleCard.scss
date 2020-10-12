@@ -1,19 +1,21 @@
 .article {
+    position: relative;
     text-decoration: none;
-    display: grid;
-    grid-auto-rows: min-content;
     transition: 0.3s;
-    justify-content: center;
-    align-content: center;
-    background-repeat: no-repeat;
-    // background-attachment: fixed;
-    background-position: center;
-    background-size: 100%;
-    height: 35vh;
-    box-shadow: -16px -16px 0px $primary-first;
     &:hover {
         transform: translate(8px, 8px);
-        box-shadow: -32px -32px 0px $primary-first;
+        .shadow {
+            transform: translate(-32px, -32px);
+        }
+    }
+    .cover {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        height: 35vh;
     }
     h3 {
         margin: 0 1rem;
@@ -21,5 +23,16 @@
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         color: $text-color;
         text-align: center;
+    }
+    .shadow {
+        position: absolute;
+        background-image: $primary-gradient;
+        transform: translate(-16px, -16px);
+        z-index: -1000;
+        transition: 0.3s;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }

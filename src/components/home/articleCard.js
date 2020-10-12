@@ -7,11 +7,12 @@ const articleCard = (article) => {
 	};
 
 	return (
-		<Link to={`/blog/${article.article.node.title.replace(/\s/g, '-')}`} className="article" style={backgroundImage}>
-			{/* <img src={} alt="" /> */}
-			{/* <div className="text"> */}
-			<h3>{article.article.node.title}</h3>
-			{/* </div> */}
+		<Link to={`/blog/${article.article.node.title.replace(/\s/g, '-')}`} className="article">
+			<div className="shadow"></div>
+			<div className='cover' style={backgroundImage}>
+
+				<h3>{article.article.node.title}</h3>
+			</div>
 		</Link>
 	)
 }
