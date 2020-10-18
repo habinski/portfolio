@@ -7,7 +7,7 @@ import CategoriesNav from '../components/blog/CategoriesNav'
 // import "../assets/css/main.css"
 
 const Blog = () => (
-  <Layout>
+  <Layout title='blog'>
     <CategoriesNav />
     <StaticQuery
       query={graphql`

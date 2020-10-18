@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
 
 import Layout from "../components/layout"
-
+import Img from "gatsby-image"
 
 export const query = graphql`
 query ArticleQuery($id: Int!) {
@@ -15,7 +15,11 @@ query ArticleQuery($id: Int!) {
       content
       published_at
       image {
-		publicURL
+		childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
       }
     }
   }
@@ -25,12 +29,12 @@ query ArticleQuery($id: Int!) {
 const Article = ({ data }) => {
 	const article = data.strapiArticle
 	const backgroundImage = {
-		backgroundImage: 'url(' + article.image.publicURL + ')',
+		backgroundImage: 'url(' + article.image.childImageSharp.fluid.src + ')',
 	};
-
-	console.log()
+	console.log(article.image.childImageSharp);
+	console.log(article.content)
 	return (
-		<Layout>
+		<Layout title='blog'>
 			<div className='post'>
 				<div className='head' style={backgroundImage}>
 					{/* <img src={article.image.publicURL} alt="" /> */}

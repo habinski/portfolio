@@ -1,185 +1,234 @@
-    @import url(//db.onlinewebfonts.com/c/a4745f4b1d04fa025c6a05d891ed0126?family=Monument+Extended+Ultrabold);
-    @import url(//db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended);
-    $text-color: #FFFFFF;
-    $text-size: 1.4rem;
-    $primary-first: #7700BB;
-    $primary-second: #0090FF;
-    $bg-color: #070707;
-    $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100%);
-    // $primary-gradient:linear-gradient(90deg, #7700BB 0%, #2082e9 50%, #0090FF 100%);
-    ;
-    @mixin primary-text-gradient {
-        background: $primary-gradient;
-        -webkit-background-clip: text;
-        color: transparent;
+@import url(//db.onlinewebfonts.com/c/a4745f4b1d04fa025c6a05d891ed0126?family=Monument+Extended+Ultrabold);
+@import url(//db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended);
+$text-color: #FFFFFF;
+$text-size: 1.4rem;
+$primary-first: #7700BB;
+$primary-second: #0090FF;
+$bg-color: #070707;
+$primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100%);
+// $primary-gradient:linear-gradient(90deg, #7700BB 0%, #2082e9 50%, #0090FF 100%);
+;
+@mixin primary-text-gradient {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin primary-stroke-gradient($px) {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: $px transparent;
+}
+
+@mixin text-hover($color) {
+    position: relative;
+    transition: 0.3s;
+    &::after:not(.header-logo) {
+        content: attr(data-text);
+        color: red;
+        position: absolute;
+        // top: 0;
+        // right: 0;
+        // left: 0;
+        // bottom: 0;
+        // @include primary-text-gradient;
+        z-index: 1;
     }
-    
-    @mixin primary-stroke-gradient($px) {
-        background: $primary-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-stroke: $px transparent;
+    &:hover:not(.header-logo) {
+        // text-shadow: -8px -8px 0px $color;
+        transform: translate(4px, 4px);
     }
-    
-    @mixin text-hover($color) {
-        text-shadow: 0px 0px 0px $color;
-        transition: 0.2s;
-        &:hover:not(.header-logo) {
-            text-shadow: -8px -8px 0px $color;
-            transform: translate(4px, 4px);
+}
+
+// @mixin text-hover($color) {
+//     text-shadow: 0px 0px 0px $color;
+//     transition: 0.2s;
+//     &:hover:not(.header-logo) {
+//         text-shadow: -8px -8px 0px $color;
+//         transform: translate(4px, 4px);
+//     }
+// }
+@mixin box-hover {
+    box-shadow: 0px 0px 0px $primary-first;
+    transition: 0.2s;
+    &:hover {
+        box-shadow: -8px -8px 0px white;
+        transform: translate(4px, 4px);
+    }
+}
+
+@mixin page-links {
+    filter: drop-shadow(-7px -7px 0px #7700BB);
+    text-decoration: none;
+    -webkit-text-stroke: 1px $text-color;
+    transition: .3s;
+    color: transparent;
+    &:hover {
+        // color: $text-color;
+        // text-shadow: -21px -21px 0px #7700BB;
+        filter: drop-shadow(-21px -21px 0px #7700BB);
+        transform: translate(3px, 3px);
+        // transform: translate(-7px -7px);
+    }
+}
+
+@mixin gradient-block-shadow {
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+    &:hover {
+        transform: translate(8px, 8px);
+        &::after {
+            transform: translate(-32px, -32px);
+            z-index: -1;
         }
     }
-    
-    @mixin box-hover {
-        box-shadow: 0px 0px 0px $primary-first;
-        transition: 0.2s;
-        &:hover {
-            box-shadow: -8px -8px 0px white;
-            transform: translate(4px, 4px);
-        }
+    &::after {
+        // content: attr(text-attr);
+        content: '';
+        position: absolute;
+        background-image: $primary-gradient;
+        transform: translate(-16px, -16px);
+        z-index: -1;
+        transition: 0.3s;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
-    
-    @mixin page-links {
-        filter: drop-shadow(-7px -7px 0px #7700BB);
-        text-decoration: none;
-        -webkit-text-stroke: 1px $text-color;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(0.97);
+    }
+    30% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(0.97);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+// @keyframes rotating {
+//     from {
+//         transform: rotate(0deg);
+//     }
+//     to {
+//         transform: rotate(-360deg);
+//     }
+// }
+@media (max-width: 767px) {}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // margin: 0 20px;
+    overflow-x: hidden;
+    font-family: Monument Extended Ultrabold;
+    display: grid;
+    // grid-auto-columns: 90%;
+    // justify-items: center;
+    // align-items: center;
+    // gap: 520px;
+}
+
+$bg-stripes-width: 0.10%;
+html {
+    // background-color: $bg-color;
+    scroll-behavior: smooth;
+    background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
+    background-size: 32.00px 32.00px;
+}
+
+main {
+    display: grid;
+    justify-items: center;
+    gap: 7rem;
+}
+
+section {
+    min-height: 60vh;
+    width: 90vw;
+    position: relative;
+    align-content: center;
+}
+
+.graffiti {
+    position: absolute;
+    z-index: -1;
+    animation: rotating 20s linear infinite;
+    top: 75vh;
+    width: 400px;
+    height: 400px;
+    right: -200px;
+}
+
+.title {
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-align: center;
+    z-index: 5;
+    position: absolute;
+    font-size: 4rem;
+    -webkit-text-stroke: 0.5px $text-color;
+    color: transparent;
+    text-transform: uppercase;
+    left: 0;
+    transform: rotateZ(180deg);
+}
+
+.btn-more {
+    -webkit-text-stroke: 0.5px $text-color;
+    color: transparent;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s;
+    // @include page-links;
+    position: relative;
+    &::before {
+        content: attr(data-text);
         transition: .3s;
-        color: transparent;
-        &:hover {
-            color: $text-color;
-            // text-shadow: -21px -21px 0px #7700BB;
-            filter: drop-shadow(-21px -21px 0px #7700BB);
-            transform: translate(7px, 7px);
-            // transform: translate(-7px -7px);
-        }
-    }
-    
-    @keyframes heartbeat {
-        0% {
-            transform: scale(1);
-        }
-        15% {
-            transform: scale(0.97);
-        }
-        30% {
-            transform: scale(1);
-        }
-        45% {
-            transform: scale(0.97);
-        }
-        60% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
-    
-    @keyframes rotating {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(-360deg);
-        }
-    }
-    
-    @media (max-width: 767px) {}
-    
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    body {
-        // margin: 0 20px;
-        overflow-x: hidden;
-        font-family: Monument Extended Ultrabold;
-        display: grid;
-        // grid-auto-columns: 90%;
-        // justify-items: center;
-        // align-items: center;
-        // gap: 520px;
-    }
-    
-    $bg-stripes-width: 0.10%;
-    html {
-        // background-color: $bg-color;
-        scroll-behavior: smooth;
-        background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
-        background-size: 32.00px 32.00px;
-    }
-    
-    main {
-        display: grid;
-        justify-items: center;
-        gap: 7rem;
-    }
-    
-    section {
-        min-height: 60vh;
-        width: 90vw;
-        position: relative;
-        align-content: center;
-    }
-    
-    .graffiti {
         position: absolute;
         z-index: -1;
-        animation: rotating 20s linear infinite;
-        top: 75vh;
-        width: 400px;
-        height: 400px;
-        right: -200px;
+        @include primary-stroke-gradient(.5px);
+        color: transparent;
     }
-    
+    &:hover {
+        transform: translate(8px, 8px);
+        &::before {
+            transform: translate(-16px, -16px);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+     :root {
+        font-size: 12px;
+    }
     .title {
-        height: 100%;
-        writing-mode: vertical-rl;
-        text-align: center;
-        z-index: 5;
-        position: absolute;
-        font-size: 4rem;
-        -webkit-text-stroke: 0.5px $text-color;
-        color: transparent;
-        text-transform: uppercase;
-        left: 0;
-        transform: rotateZ(180deg);
+        font-size: 3rem;
+        -webkit-text-stroke: 0.2px $text-color;
     }
-    
-    .btn-more {
-        -webkit-text-stroke: 0.5px $text-color;
-        color: transparent;
-        font-size: 2rem;
-        text-decoration: none;
-        //border 
-        border-left-width: .5px;
-        border-left-style: solid;
-        border-color: $text-color;
-        text-transform: uppercase;
-        padding-left: 3px;
-        // transition: .3s;
-        @include page-links;
-        &:hover {
-            color: #000;
-            padding-left: 2rem;
-            // @include text-hover($primary-first)
-        }
-    }
-    
-    @media (max-width: 767px) {
-         :root {
-            font-size: 12px;
-        }
-        .title {
-            font-size: 3rem;
-            -webkit-text-stroke: 0.2px $text-color;
-        }
-    }
-    
-    @import '/error-page',
-    '/header',
-    "/footer";
-    //home page
-    @import 'home/home',
-    '/privacy';
-    @import 'blog/blog';
+}
+
+@import '/error-page',
+'/header',
+"/footer";
+//home page
+@import 'home/home',
+'/privacy';
+@import 'blog/blog';

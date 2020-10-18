@@ -1,23 +1,34 @@
 nav {
-    font-size: 1.2rem;
-    font-family: "Monument Extended Ultrabold";
     display: grid;
+    font-size: 1rem;
+    font-family: "Monument Extended Ultrabold";
     // grid-template-columns: 1fr 2fr;
     padding: .5rem;
     justify-items: center;
-    img {
+    .header-logo {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        text-transform: capitalize;
+        align-items: center;
+        img {
+            width: 70px;
+        }
         transition: .3s;
         &:hover {
-            transition: .3s;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-name: heartbeat;
+            transform: scale(90%);
         }
     }
     .line-nav {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        backdrop-filter: saturate(180%) blur(20px);
         width: 80vw;
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        .nav-links {
+            justify-self: end;
+            gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, min-content);
+        }
     }
     a {
         align-self: center;
@@ -43,7 +54,7 @@ p {
     font-family: Monument Extended Ultrabold;
     font-size: 2rem;
     text-transform: uppercase;
-    @include text-hover($primary-first);
+    // @include text-hover($primary-first);
 }
 
 @media (max-width: 767px) {

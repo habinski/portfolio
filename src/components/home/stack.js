@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 
@@ -19,7 +20,7 @@ query{
 	  }
 	}
   }
-  
+
 `
 const Stack = () => {
 	const data = useStaticQuery(query)

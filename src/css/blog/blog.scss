@@ -3,7 +3,7 @@
     justify-content: center;
     .articles_grid {
         display: grid;
-        width: 90vw;
+        width: 80vw;
         gap: 5rem;
         grid-template-columns: repeat(2, 1fr);
     }

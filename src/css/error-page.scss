@@ -36,8 +36,6 @@
         padding: 1rem;
         font-family: Monument Extended;
         background: $primary-gradient;
-        @include box-hover
+        @include box-hover;
     }
 }
-
-// end err page

@@ -2,12 +2,7 @@
     position: relative;
     text-decoration: none;
     transition: 0.3s;
-    &:hover {
-        transform: translate(8px, 8px);
-        .shadow {
-            transform: translate(-32px, -32px);
-        }
-    }
+    @include gradient-block-shadow;
     .cover {
         display: grid;
         align-items: center;
@@ -23,16 +18,5 @@
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         color: $text-color;
         text-align: center;
-    }
-    .shadow {
-        position: absolute;
-        background-image: $primary-gradient;
-        transform: translate(-16px, -16px);
-        z-index: -1000;
-        transition: 0.3s;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
     }
 }

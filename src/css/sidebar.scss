@@ -27,13 +27,19 @@
 .sidebar-links a {
     text-decoration: none;
     font-size: 3.5rem;
-    @include page-links;
+    // @include page-links;
+    color: transparent;
+    -webkit-text-stroke: 1px $text-color;
+    transition: .3s;
+    &:hover {
+        color: $text-color;
+    }
 }
 
 .close-btn {
     position: absolute;
-    right: 10vw;
-    top: 20px;
+    right: 8vw;
+    top: 10px;
     @include nav-btns;
 }
 
