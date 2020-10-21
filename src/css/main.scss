@@ -77,7 +77,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100
 }
 
 @mixin page-links {
-    filter: drop-shadow(-7px -7px 0px #7700BB);
+    filter: drop-shadow(-7px -7px 0px $primary-first);
     text-decoration: none;
     -webkit-text-stroke: 1px $text-color;
     transition: .3s;
@@ -85,7 +85,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100
     &:hover {
         // color: $text-color;
         // text-shadow: -21px -21px 0px #7700BB;
-        filter: drop-shadow(-21px -21px 0px #7700BB);
+        filter: drop-shadow(-21px -21px 0px $primary-second);
         transform: translate(3px, 3px);
         // transform: translate(-7px -7px);
     }
