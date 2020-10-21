@@ -23,21 +23,40 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100
 @mixin text-hover($color) {
     position: relative;
     transition: 0.3s;
-    &::after:not(.header-logo) {
-        content: attr(data-text);
-        color: red;
+    &::before {
+        content: "show";
+        font-size: .7rem;
+        transition: .3s;
+        // display: none;
+        opacity: 0;
+        color: $color;
         position: absolute;
-        // top: 0;
-        // right: 0;
-        // left: 0;
-        // bottom: 0;
-        // @include primary-text-gradient;
-        z-index: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
     }
-    &:hover:not(.header-logo) {
-        // text-shadow: -8px -8px 0px $color;
+    &:hover {
         transform: translate(4px, 4px);
+        &::before {
+            transform: translate(-8px, -8px);
+            opacity: 1;
+        }
     }
+    // &::after {
+    //     content: attr(data-text);
+    //     color: red;
+    //     position: absolute;
+    //     // top: 0;
+    //     // right: 0;
+    //     // left: 0;
+    //     // bottom: 0;
+    //     // @include primary-text-gradient;
+    //     z-index: 1;
+    // }
+    // &:hover:not(.header-logo) {
+    //     // text-shadow: -8px -8px 0px $color;
+    //     transform: translate(4px, 4px);
+    // }
 }
 
 // @mixin text-hover($color) {

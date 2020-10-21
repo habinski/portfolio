@@ -31,7 +31,7 @@ const Article = ({ data }) => {
 	const backgroundImage = {
 		backgroundImage: 'url(' + article.image.childImageSharp.fluid.src + ')',
 	};
-	console.log(article.image.childImageSharp);
+	console.log(article.image.childImageSharp.fluid.srcSet);
 	console.log(article.content)
 	return (
 		<Layout title='blog'>

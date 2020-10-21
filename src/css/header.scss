@@ -36,7 +36,9 @@ nav {
         text-transform: uppercase;
         text-decoration: none;
         color: $text-color;
-        @include text-hover($primary-first)
+        &:not(.header-logo) {
+            @include text-hover($primary-second);
+        }
     }
     .burger-menu {
         display: none;
