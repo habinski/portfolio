@@ -10,7 +10,8 @@ footer {
     font-weight: 400;
     text-transform: uppercase;
     span {
-        font-family: Monument Extended;
+        // font-family: Monument Extended;
+        font-weight: bold;
     }
     grid-template-areas: 'logo navigation' 'copyright copyright';
     .footer-logo {
