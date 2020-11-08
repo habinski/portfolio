@@ -7,22 +7,23 @@ import ReactMarkdown from "react-markdown"
 const query = graphql`
 {
     strapiAbout {
-      about
+      text
     }
   }`
 
 
 const About = () => {
   const data = useStaticQuery(query);
-  const about = data.strapiAbout.about
+  const text = data.strapiAbout.text
 
-  return (<section className='about  parent-title' >
-    <h2 className="title" > about </h2> <div className="text" >
-      <ReactMarkdown source={about} /> </div> </section>
+  return (<section className='about parent-title' >
+    <h2 className="title"> about </h2>
+    <div className="text">
+      <ReactMarkdown source={text} />
+    </div>
+  </section>
   )
 }
-
-
 
 
 export default About

@@ -1,16 +1,23 @@
 import React from 'react'
 
+import { graphql, useStaticQuery } from "gatsby"
+const query = graphql`
+  {
+    strapiHero {
+        introduce
+        description
+    }
+  }
+`
 
 const HeroSection = () => {
+	const data = useStaticQuery(query)
+	const { introduce, description } = data.strapiHero
 	return (
 		<section className='hero'>
 			<div className='hero-content'>
-				<h1>Andriy Habinski</h1>
-				<p>
-					Hey there, my name is Andriy Habinski,
-					and I'm a freelance creative developer currently based in Lodz, Poland.
-					If you want to see the latest projects I worked on, just keep scrolling, or,
-if you wish to say hi, write me an email.</p>
+				<h1>{introduce}</h1>
+				<p>{description}</p>
 			</div>
 		</section>
 	)

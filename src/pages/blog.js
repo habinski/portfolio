@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import ArticlesComponent from "../components/blog/articles"
 import CategoriesNav from '../components/blog/CategoriesNav'
 // import "../assets/css/main.css"
@@ -18,12 +18,17 @@ const Blog = () => (
                 strapiId
                 title
                 content
-                category {
-                  name
+                categories {
+                  category
                 }
-                image {
-			          	publicURL
-                }
+                cover {
+                  childImageSharp {
+                    fluid(maxWidth: 500, quality: 100)
+                      {
+                            ...GatsbyImageSharpFluid
+                          }
+                        }
+                    }
               }
             }
           }

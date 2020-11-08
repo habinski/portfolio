@@ -8,14 +8,14 @@ const Card = ({ article }) => {
 				<div className="uk-card-media-top">
 					<img
 						width='100px'
-						src={article.node.image.publicURL}
-						alt={article.node.image.publicURL}
+						src={article.node.cover.publicURL}
+						alt={article.node.cover.publicURL}
 
 					/>
 				</div>
 				<div className="uk-card-body">
 					<p id="category" className="uk-text-uppercase">
-						{article.node.category.name}
+						{article.node.categories.category}
 					</p>
 					<p id="title" className="uk-text-large">
 						{article.node.title}

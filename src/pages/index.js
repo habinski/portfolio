@@ -1,19 +1,17 @@
 import React from "react"
 import Layout from "../components/Layout"
 import HeroSection from '../components/home/hero'
-// import graffiti from '../assets/graffiti.svg'
 import Projects from '../components/home/projects'
 import Stack from '../components/home/stack'
-import Experience from '../components/home/Experience'
-import About from '../components/home/About'
+import Experience from '../components/home/experience'
+import About from '../components/home/about'
 import ArticlesBlock from '../components/home/articles'
-import SocialLinks from '../components/home/socialLinks'
+import SocialLinks from '../components/home/sociallinks'
 
 
 export default function Home() {
   return <Layout title={"Habinski"}>
     <HeroSection />
-    {/* <img src={graffiti} alt="graffiti" className='graffiti' /> */}
     <Projects />
     <Stack />
     <Experience />

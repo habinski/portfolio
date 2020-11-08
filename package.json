@@ -1,45 +1,45 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "dependencies": {
-    "gatsby": "^2.24.47",
-    "gatsby-cli": "^2.12.107",
-    "gatsby-image": "^2.4.21",
-    "gatsby-plugin-sass": "^2.3.12",
-    "gatsby-plugin-sharp": "^2.6.42",
-    "gatsby-remark-images": "^3.3.35",
-    "gatsby-remark-prismjs": "^3.5.16",
-    "gatsby-source-strapi": "0.0.12",
-    "gatsby-transformer-remark": "^2.8.38",
-    "gatsby-transformer-sharp": "^2.5.17",
-    "node-sass": "^4.14.1",
-    "prismjs": "^1.22.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-markdown": "^4.3.1",
-    "react-moment": "^0.9.7",
-    "strapi-plugin-graphql": "^3.1.4"
-  },
-  "devDependencies": {
-    "prettier": "2.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+    "name": "portfolio",
+    "private": true,
+    "description": "My portfolio",
+    "version": "0.1.0",
+    "license": "0BSD",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+        "start": "npm run develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    },
+    "dependencies": {
+        "gatsby": "^2.25.1",
+        "gatsby-cli": "^2.12.115",
+        "gatsby-image": "^2.4.21",
+        "gatsby-plugin-sass": "^2.4.1",
+        "gatsby-plugin-sharp": "^2.7.0",
+        "gatsby-remark-images": "^3.4.0",
+        "gatsby-remark-prismjs": "^3.6.0",
+        "gatsby-source-strapi": "0.0.12",
+        "gatsby-transformer-remark": "^2.9.1",
+        "gatsby-transformer-sharp": "^2.5.21",
+        "node-sass": "^4.14.1",
+        "prismjs": "^1.22.0",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
+        "react-markdown": "^4.3.1",
+        "react-moment": "^0.9.7",
+        "strapi-plugin-graphql": "^3.2.5"
+    },
+    "devDependencies": {
+        "prettier": "2.0.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    },
+    "bugs": {
+        "url": "https://github.com/gatsbyjs/gatsby/issues"
+    }
 }

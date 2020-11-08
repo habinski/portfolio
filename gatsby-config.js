@@ -15,7 +15,8 @@ module.exports = {
         {
             resolve: "gatsby-source-strapi",
             options: {
-                apiURL: "http://localhost:1337",
+                apiURL: "https://habinski-admin.herokuapp.com",
+                // apiURL: "http://localhost:1337/",
                 contentTypes: [
                     "article",
                     "category",
@@ -27,7 +28,8 @@ module.exports = {
                 ],
                 singleTypes: [
                     "about",
-                    "privacy"
+                    "privacy",
+                    "hero"
                 ],
                 queryLimit: 1000,
             },
@@ -37,7 +39,6 @@ module.exports = {
         {
             resolve: `gatsby-transformer-remark`,
             options: {
-
                 plugins: [{
                     resolve: `gatsby-remark-images`,
                     options: {

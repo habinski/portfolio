@@ -12,7 +12,7 @@ const CategoriesNav = () => (
                     edges {
                       node {
                         strapiId
-                        name
+                        category
                       }
                     }
                   }

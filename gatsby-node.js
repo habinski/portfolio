@@ -31,7 +31,7 @@ exports.createPages = async({ graphql, actions }) => {
           categories: allStrapiCategory {
             edges {
               node {
-                name
+                category
                 strapiId
               }
             }
@@ -62,7 +62,7 @@ exports.createPages = async({ graphql, actions }) => {
     categories.forEach((category, index) => {
         createPage({
             // path: `/article/${article.node.title.replace(/ /g, "-")}`,
-            path: `/category/${category.node.name}`,
+            path: `/category/${category.node.category}`,
             component: require.resolve("./src/templates/category.js"),
             context: {
                 id: category.node.strapiId,

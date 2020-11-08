@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const articleCard = (article) => {
 	const backgroundImage = {
-		backgroundImage: 'url(' + article.article.node.image.publicURL + ')',
+		backgroundImage: 'url(' + article.article.node.cover.childImageSharp.fluid.src + ')'
 	};
 
 	return (

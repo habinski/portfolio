@@ -7,20 +7,26 @@ const query = graphql`
     allStrapiArticle(limit: 3, sort: {fields: updated_at, order: DESC}) {
 		edges {
 			node {
-        category {
-          name
+				categories {
+          category
           id
         }
         title
         updated_at
         id
-        image {
-          publicURL
-        }
+		cover {
+			childImageSharp {
+			  fluid(maxWidth: 500, quality: 100)
+				{
+					  ...GatsbyImageSharpFluid
+					}
+				  }
+			  }
       }
     } }
   }
 `
+
 const ArticlesBlock = () => {
 	const data = useStaticQuery(query)
 	const articles = data.allStrapiArticle.edges.map(article => {
