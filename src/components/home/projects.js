@@ -21,7 +21,7 @@ const Projects = () => {
 	})
 
 	return (
-		<section className='projects parent-title' id='projects'>
+		<section className='projects' id='projects'>
 			<h2 className='title'>Projects</h2>
 
 			<div className="projects-items">

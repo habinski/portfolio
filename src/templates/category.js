@@ -1,66 +1,71 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, StaticQuery } from "gatsby"
 
 import ArticlesComponent from "../components/blog/articles"
-import CategoriesNav from "../components/blog/CategoriesNav"
+import CategoriesNav from "../components/blog/categoriesNav"
 import Layout from "../components/Layout"
 
 export const query = graphql`
-query Category {
-  articles: allStrapiArticle   {
+query Category($id: Int!) {
+  articles:  allStrapiArticle(filter: {categories: {elemMatch: {id: {eq: $id}}}}) {
     edges {
       node {
         strapiId
         title
         categories {
           category
-          id
         }
         cover {
-              publicURL
+          childImageSharp{
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
   }
-  category: strapiCategory  {
+  category: strapiCategory(strapiId: { eq: $id }) {
     category
-  id
-  
   }
 }
 `
-// query Category($id: Int!) {
-//   articles: allStrapiArticle(filter: { categories: { id: { eq: $id } } }) {
+// query Category {
+//   articles: allStrapiArticle   {
 //     edges {
 //       node {
 //         strapiId
 //         title
-//         category {
+//         categories {
 //           category
+//           id
 //         }
 //         cover {
-//               publicURL
+//           childImageSharp{
+//             fluid {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
 //         }
 //       }
 //     }
 //   }
-//   category: strapiCategory(strapiId: { eq: $id }) {
+//   category: strapiCategory  {
 //     category
+//   id
+
 //   }
 // }
+
+
 const Category = ({ data }) => {
-  console.log()
-  const id = data.pageContext.id;
-  const articles = data.articles.edges
-  const category = data.category.category
 
   return (
-    <Layout>
+    <Layout title={data.category.category}>
       <CategoriesNav />
       <div className='blog'>
-
-        <h1>{category}</h1>
-        <ArticlesComponent articles={articles} />
+        <h1>{data.category.category}</h1>
+        <ArticlesComponent articles={data.articles.edges} />
 
       </div>
     </Layout>

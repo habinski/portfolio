@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import ArticlesComponent from "../components/blog/articles"
-import CategoriesNav from '../components/blog/CategoriesNav'
+import CategoriesNav from '../components/blog/categoriesNav'
 // import "../assets/css/main.css"
 
 const Blog = () => (

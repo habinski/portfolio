@@ -9,15 +9,17 @@ import ArticlesBlock from '../components/home/articles'
 import SocialLinks from '../components/home/sociallinks'
 
 
+
 export default function Home() {
   return <Layout title={"Habinski"}>
-    <HeroSection />
-    <Projects />
-    <Stack />
-    <Experience />
-    <About />
-    <ArticlesBlock />
-    <SocialLinks />
-
+    <main>
+      <HeroSection />
+      <Projects />
+      <Stack />
+      <Experience />
+      <About />
+      <ArticlesBlock />
+      <SocialLinks />
+    </main>
   </Layout>
 }

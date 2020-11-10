@@ -1,8 +1,9 @@
 import { Link } from "gatsby"
-
 import React from "react"
 import logo from "../assets/logo.svg"
 import PageLinks from "../constants/links"
+
+
 const Navbar = ({ toggleSidebar, title }) => {
 	return (
 		<nav className="navbar">

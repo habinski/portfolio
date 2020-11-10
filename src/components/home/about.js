@@ -16,7 +16,7 @@ const About = () => {
   const data = useStaticQuery(query);
   const text = data.strapiAbout.text
 
-  return (<section className='about parent-title' >
+  return (<section className='about' >
     <h2 className="title"> about </h2>
     <div className="text">
       <ReactMarkdown source={text} />

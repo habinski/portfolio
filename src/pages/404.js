@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 const Err = () => {
 	return (
-		<Layout>
+		<Layout title='404'>
 			<div className="err-page">
 				<div className="err-content">
 					<h1>404</h1>

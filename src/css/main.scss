@@ -3,15 +3,16 @@
 $text-color: #FFFFFF;
 $text-size: 1.4rem;
 $primary-first: #7700BB;
+$primary-middle: #5e23df;
 $primary-second: #0090FF;
 $bg-color: #070707;
-$primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100%);
+$primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%, $primary-second 100%);
 // $primary-gradient:linear-gradient(90deg, #7700BB 0%, #2082e9 50%, #0090FF 100%);
 ;
 @mixin primary-text-gradient {
-    background: $primary-gradient;
-    -webkit-background-clip: text;
-    color: transparent;
+    background: $primary-gradient !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
 }
 
 @mixin primary-stroke-gradient($px) {
@@ -146,7 +147,9 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-second 100
 //         transform: rotate(-360deg);
 //     }
 // }
-@media (max-width: 767px) {}
+.activeLink {
+    @include primary-text-gradient();
+}
 
 * {
     margin: 0;
@@ -175,7 +178,9 @@ html {
 main {
     display: grid;
     justify-items: center;
-    gap: 7rem;
+    .homepage-main__gap {
+        gap: 7rem;
+    }
 }
 
 section {
@@ -183,16 +188,6 @@ section {
     width: 90vw;
     position: relative;
     align-content: center;
-}
-
-.graffiti {
-    position: absolute;
-    z-index: -1;
-    animation: rotating 20s linear infinite;
-    top: 75vh;
-    width: 400px;
-    height: 400px;
-    right: -200px;
 }
 
 .title {

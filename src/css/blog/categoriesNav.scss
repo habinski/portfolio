@@ -1,26 +1,30 @@
 .CategoriesNav {
-    position: sticky;
-    top: 0;
-    font-size: 1.2rem;
-    font-family: Montserrat;
-    font-weight: 800;
-    background-image: $primary-gradient;
-    width: 100vw;
+    // position: sticky;
+    // top: 0;
+    font-size: .95rem;
+    font-family: Monument;
+    font-weight: 400;
+    // background-image: $primary-gradient;
+    // width: 100vw;
     display: grid;
-    justify-items: center;
     height: 150%;
     z-index: 10;
     .blog-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         width: 80vw;
-        justify-items: center;
-        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        gap: 1.5rem;
         a {
             text-transform: lowercase;
             text-decoration: none;
-            @include text-hover($primary-first);
             color: $text-color;
+            // opacity: .5;
+            @include text-hover($primary-first);
         }
     }
+}
+
+.active-link {
+    color: red;
 }

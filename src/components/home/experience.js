@@ -5,7 +5,6 @@ import Moment from "react-moment"
 export const query = graphql`
   {
 	allStrapiExperience(sort: {fields: to, order: DESC}) {
-    
 		nodes {
 		  company
 		  description
@@ -13,7 +12,6 @@ export const query = graphql`
 		  to
 		  strapiId
 		  position
-		
 	  }
 	}
   }`
@@ -22,7 +20,7 @@ const Experience = () => {
 	const data = useStaticQuery(query);
 	// console.log(data.allStrapiExperience.edges)
 	const experiences = data.allStrapiExperience.nodes.map(work => {
-		console.log(work)
+		// console.log(work)
 		return (
 
 			<div className="work" key={work.strapiId}>
@@ -41,7 +39,7 @@ const Experience = () => {
 		)
 	})
 	return (
-		<section className='experience parent-title'>
+		<section className='experience'>
 			<h2 className='title'>Experience</h2>
 			{experiences}
 		</section>

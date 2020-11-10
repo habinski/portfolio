@@ -13,7 +13,7 @@ const query = graphql`
 export default function Privacy() {
 	const data = useStaticQuery(query);
 	const gdpr = data.strapiPrivacy.gdpr
-	return <Layout >
+	return <Layout title='privacy'>
 		<section className='privacy'>
 			<div className='privacy-content'>
 				<ReactMarkdown source={gdpr} />

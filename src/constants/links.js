@@ -15,7 +15,7 @@ const data = [
   {
     id: 3,
     text: "blog",
-    url: "/blog/",
+    url: "/blog",
   },
   {
     id: 4,
@@ -26,7 +26,7 @@ const data = [
 
 const tempLinks = data.map(link => {
   return (
-    <Link key={link.id} to={link.url}>{link.text}</Link>
+    <Link activeClassName='activeLink' key={link.id} to={link.url}>{link.text}</Link>
   )
 })
 
@@ -36,6 +36,5 @@ export default () => {
     <>
       {tempLinks}
     </>
-    // </div>
   )
 }
