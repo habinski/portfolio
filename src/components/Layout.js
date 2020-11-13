@@ -13,7 +13,7 @@ const Layout = ({ children, title }) => {
 		<>
 			<Navbar toggleSidebar={toggleSidebar} title={title} />
 			<Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-			<main className='homepage-main__gap'>{children}</main>
+			<main>{children}</main>
 			<Footer />
 		</>
 	)

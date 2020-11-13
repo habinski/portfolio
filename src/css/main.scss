@@ -26,6 +26,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     transition: 0.3s;
     &::before {
         content: "show";
+        -webkit-text-stroke: 0px !important;
         font-size: .7rem;
         transition: .3s;
         // display: none;
@@ -178,7 +179,8 @@ html {
 main {
     display: grid;
     justify-items: center;
-    .homepage-main__gap {
+    .main-grid {
+        display: grid;
         gap: 7rem;
     }
 }
@@ -205,6 +207,9 @@ section {
 }
 
 .btn-more {
+    @include text-hover($primary-second);
+    align-self: center;
+    justify-self: center;
     -webkit-text-stroke: 0.5px $text-color;
     color: transparent;
     font-size: 2rem;
@@ -212,21 +217,21 @@ section {
     text-transform: uppercase;
     transition: .3s;
     // @include page-links;
-    position: relative;
-    &::before {
-        content: attr(data-text);
-        transition: .3s;
-        position: absolute;
-        z-index: -1;
-        @include primary-stroke-gradient(.5px);
-        color: transparent;
-    }
-    &:hover {
-        transform: translate(8px, 8px);
-        &::before {
-            transform: translate(-16px, -16px);
-        }
-    }
+    // position: relative;
+    // &::before {
+    //     content: attr(data-text);
+    //     transition: .3s;
+    //     position: absolute;
+    //     z-index: -1;
+    //     @include primary-stroke-gradient(.5px);
+    //     color: transparent;
+    // }
+    // &:hover {
+    //     transform: translate(8px, 8px);
+    //     &::before {
+    //         transform: translate(-16px, -16px);
+    //     }
+    // }
 }
 
 @media (max-width: 767px) {
@@ -246,3 +251,4 @@ section {
 @import 'home/home',
 '/privacy';
 @import 'blog/blog';
+@import 'projects/projects';

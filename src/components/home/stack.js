@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
-
+import Img from 'gatsby-image'
 export const query = graphql`
 {
 	allStrapiStack {
@@ -11,8 +11,8 @@ export const query = graphql`
 		  id
 		  icon {
 			childImageSharp {
-			  fluid(maxWidth: 34, quality: 100) {
-				...GatsbyImageSharpFluid
+				fixed(height: 30){
+				...GatsbyImageSharpFixed
 			  }
 			}
 		  }
@@ -34,7 +34,7 @@ const Stack = () => {
 							// console.log(technologyItem.icon.childImageSharp.fluid)
 							return (
 								<div className='item' key={technologyItem.id}>
-									<img alt={technologyItem.name} src={technologyItem.icon.childImageSharp.fluid.src} />
+									<Img alt={technologyItem.name} fixed={technologyItem.icon.childImageSharp.fixed} ></Img>
 									<p>{technologyItem.name}</p>
 								</div>
 							)

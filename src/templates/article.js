@@ -28,7 +28,6 @@ query ArticleQuery($id: Int!) {
 
 const Article = ({ data }) => {
 	const article = data.strapiArticle
-	// console.log(article.cover.childImageSharp.fixed)
 	const backgroundImage = {
 		backgroundImage: 'url(' + article.cover.childImageSharp.fixed.src + ')',
 	};

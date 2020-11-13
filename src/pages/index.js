@@ -12,7 +12,7 @@ import SocialLinks from '../components/home/sociallinks'
 
 export default function Home() {
   return <Layout title={"Habinski"}>
-    <main>
+    <div className='main-grid'>
       <HeroSection />
       <Projects />
       <Stack />
@@ -20,6 +20,6 @@ export default function Home() {
       <About />
       <ArticlesBlock />
       <SocialLinks />
-    </main>
+    </div>
   </Layout>
 }

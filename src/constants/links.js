@@ -10,7 +10,7 @@ const data = [
   {
     id: 2,
     text: "projects",
-    url: "/#projects",
+    url: "/projects",
   },
   {
     id: 3,

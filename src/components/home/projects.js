@@ -17,7 +17,7 @@ const Projects = () => {
 	const data = useStaticQuery(query)
 
 	const projects = data.allStrapiProject.nodes.map((project) => {
-		return <h3 key={project.id}>{project.name}</h3>
+		return <Link className='project-link' to={`projects#${project.name}`} data-text={project.name} key={project.id}>{project.name}</Link>
 	})
 
 	return (
@@ -26,7 +26,7 @@ const Projects = () => {
 
 			<div className="projects-items">
 				{projects}
-				<Link to='/projects' className='btn-more' data-text='more'>more</Link>
+				<Link to='/projects' className='btn-more' >more</Link>
 			</div>
 		</section>
 	)

@@ -19,7 +19,7 @@ const SocialLinks = () => {
 		return <a href={link.link} target='_blank' key={link.id} rel="noreferrer" >{link.name}</a>
 	})
 	return (
-		<section className='socialLinks'>
+		<section className='socialLinks' id='contact'>
 			<h2 className='title'>follow</h2>
 			<div className="links">
 				{links}

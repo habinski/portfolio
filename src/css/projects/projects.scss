@@ -1,0 +1,44 @@
+.projects-grid {}
+
+.porjects-page {
+    display: grid;
+    width: 60vw;
+    align-items: center;
+    h1 {
+        text-align: center;
+        z-index: 5;
+        font-size: 4rem;
+        -webkit-text-stroke: 0.5px #FFFFFF;
+        color: transparent;
+        text-transform: uppercase;
+        left: 0;
+        margin: 3rem;
+    }
+}
+
+.project-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    .screenshot {
+        @include gradient-block-shadow;
+    }
+    .description {
+        color: $text-color;
+        h3 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        p {
+            font-family: Montserrat;
+            font-size: 1rem;
+            line-height: 1rem*1.5;
+            letter-spacing: 0px;
+        }
+    }
+    .technology {
+        .technology-item {
+            @include primary-text-gradient;
+        }
+    }
+}
