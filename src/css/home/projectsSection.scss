@@ -33,13 +33,14 @@
     }
 }
 
-// .projects {
-//     display: grid;
-//     align-items: center;
-// }
+.projects {
+    display: grid;
+    align-items: center;
+}
+
 @media (max-width: 767px) {
     .projects-items {
-        h3 {
+        .project-link {
             font-size: 4rem;
             -webkit-text-stroke: 1px $text-color;
         }

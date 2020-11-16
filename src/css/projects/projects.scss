@@ -10,7 +10,7 @@
     h1 {
         text-align: center;
         z-index: 5;
-        font-size: 4rem;
+        font-size: 3rem;
         -webkit-text-stroke: 0.5px #FFFFFF;
         color: transparent;
         text-transform: uppercase;
@@ -28,6 +28,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 'name name' 'screenshot description' 'btn btn';
     gap: 1.5rem 2rem;
+    align-items: center;
     .screenshot {
         @include gradient-block-shadow;
         grid-area: screenshot;
