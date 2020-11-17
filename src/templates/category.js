@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, StaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 
 import ArticlesComponent from "../components/blog/articles"
 import CategoriesNav from "../components/blog/categoriesNav"
@@ -17,7 +17,7 @@ query Category($id: Int!) {
         }
         cover {
           childImageSharp{
-            fluid {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -30,32 +30,6 @@ query Category($id: Int!) {
   }
 }
 `
-// query Category {
-//   articles: allStrapiArticle   {
-//     edges {
-//       node {
-//         strapiId
-//         title
-//         categories {
-//           category
-//           id
-//         }
-//         cover {
-//           childImageSharp{
-//             fluid {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//   category: strapiCategory  {
-//     category
-//   id
-
-//   }
-// }
 
 
 const Category = ({ data }) => {
