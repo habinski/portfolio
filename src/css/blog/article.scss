@@ -78,6 +78,7 @@
         font-size: 1.3rem;
         line-height: 1.3rem*1.5;
         letter-spacing: 0px;
+        margin: 0 1.5rem;
         h1,
         h2,
         h3 {
@@ -122,6 +123,20 @@
                 }
             }
         }
+    }
+}
+
+.more {
+    margin-top: 5rem;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+}
+
+@media(max-width: 768px) {
+    .more {
+        grid-template-columns: 1fr;
     }
 }
 

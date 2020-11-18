@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
 
 import Layout from "../components/Layout"
-
+import ArticleCard from "../components/home/articleCard"
 /*
 todo:
 1. добавити gatsby-image в md
@@ -32,7 +32,20 @@ query ArticleQuery($id: Int!) {
           }
       }
 	}
-
+	more: strapiCategory(articles: {elemMatch: {id: {eq: $id}}}) {
+		category
+		articles {
+		  id
+		  title
+		  cover {
+			childImageSharp {
+				fluid(maxWidth: 1920) {
+				  ...GatsbyImageSharpFluid
+				}
+			  }
+		  }
+		}
+	  }
   }
  `
 
@@ -40,10 +53,21 @@ query ArticleQuery($id: Int!) {
 const Article = ({ data }) => {
 	const article = data.strapiArticle
 
-	const tags = article.categories.map(category => {
-		return (
-			<p><Link to={`/category/${category.category.replace(/\s/g, '-')}`}>{category.category}</Link></p>
-		)
+	const more = data.more.articles.map((moreArticle, i) => {
+
+		if (moreArticle.id !== article.strapiId && i <= 2) {
+			console.log(moreArticle)
+			return (
+				<Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`} className="article" key={moreArticle.id}>
+					<div className='cover'>
+						<Img style={coverImg} fluid={moreArticle.cover.childImageSharp.fluid} />
+						<h3>{moreArticle.title}</h3>
+					</div>
+				</Link>
+			)
+
+		}
+
 	})
 	const coverImg = {
 		width: '100vw',
@@ -66,10 +90,11 @@ const Article = ({ data }) => {
 
 				<div className="content">
 					<ReactMarkdown source={article.content} />
-					<div className="tags">
-						{tags}
-					</div>
+
 				</div>
+			</div>
+			<div className="more">
+				{more}
 			</div>
 		</Layout >
 	)

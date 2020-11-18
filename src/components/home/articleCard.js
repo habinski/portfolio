@@ -10,9 +10,7 @@ const articleCard = (article) => {
 	return (
 		<Link to={`/blog/${article.article.node.title.replace(/\s/g, '-')}`} className="article">
 			{/* <div className="shadow"></div> */}
-			<div className='cover'
-
-			>
+			<div className='cover'>
 				<Img style={coverImg} fluid={article.article.node.cover.childImageSharp.fluid} />
 				<h3>{article.article.node.title}</h3>
 			</div>
