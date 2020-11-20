@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from 'gatsby-image'
 import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
-
+import Prism from 'prismjs';
 import Layout from "../components/Layout"
 import ArticleCard from "../components/home/articleCard"
 /*
@@ -55,8 +55,8 @@ const Article = ({ data }) => {
 
 	const more = data.more.articles.map((moreArticle, i) => {
 
-		if (moreArticle.id !== article.strapiId && i <= 2) {
-			console.log(moreArticle)
+		if (moreArticle.id !== article.strapiId && i <= 1) {
+			console.log(i)
 			return (
 				<Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`} className="article" key={moreArticle.id}>
 					<div className='cover'>
@@ -69,6 +69,7 @@ const Article = ({ data }) => {
 		}
 
 	})
+
 	const coverImg = {
 		width: '100vw',
 		height: '50vh'
@@ -81,21 +82,23 @@ const Article = ({ data }) => {
 					<div className="header-info">
 						<h1>{article.title}</h1>
 						<div className="info">
-							<p><Moment format="MMMM Do YYYY">{article.published_at}</Moment></p>
+							<p><Moment format="MMMM Do YYYY">{article.published_at}</Moment> (<Moment fromNow >{article.published_at}</Moment>)</p>
 							<p>{Math.round(article.content.length / 600) + ' minutes read'}</p>
 						</div>
 					</div>
 					<Img style={coverImg} fluid={article.cover.childImageSharp.fluid} alt="cover" />
 				</div>
 
-				<div className="content">
+				<article>
 					<ReactMarkdown source={article.content} />
 
-				</div>
+				</article>
 			</div>
-			<div className="more">
-				{more}
-			</div>
+			<div className="read-next">
+				<h1>Read next</h1>
+				<div className="more">
+					{more}
+				</div></div>
 		</Layout >
 	)
 }

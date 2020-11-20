@@ -7,7 +7,7 @@ $primary-middle: #5e23df;
 $primary-second: #0090FF;
 $bg-color: #070707;
 $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%, $primary-second 100%);
-// $primary-gradient:linear-gradient(90deg, #7700BB 0%, #2082e9 50%, #0090FF 100%);
+// $primary-gradient:linear-gradient(90deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
 ;
 @mixin primary-text-gradient {
     background: $primary-gradient !important;
@@ -97,10 +97,11 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     position: relative;
     z-index: 1;
     transition: 0.3s;
+    transform: translate(.5rem, .5rem);
     &:hover {
-        transform: translate(8px, 8px);
+        transform: translate(1rem, 1rem);
         &::after {
-            transform: translate(-32px, -32px);
+            transform: translate(-2rem, -2rem);
             z-index: -1;
         }
     }
@@ -109,7 +110,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
         content: '';
         position: absolute;
         background-image: $primary-gradient;
-        transform: translate(-16px, -16px);
+        transform: translate(-1rem, -1rem);
         z-index: -1;
         transition: 0.3s;
         top: 0;
@@ -152,6 +153,39 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     @include primary-text-gradient();
 }
 
+body::-webkit-scrollbar {
+    /* 1 */
+    width: .7rem;
+}
+
+body::-webkit-scrollbar-button {
+    display: none;
+}
+
+body::-webkit-scrollbar-track {
+    background: none;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: $bg-color;
+    /* 4 */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(0deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
+    ;
+}
+
+body::-webkit-scrollbar-corner {
+    /* 6 */
+    background-image: transparent;
+}
+
+body::-webkit-scrollbar-thumb:horizontal:decrement:hover {
+    /* Select the down or left scroll button when it's being hovered by the mouse */
+    background-color: red;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -160,6 +194,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
 body {
     // margin: 0 20px;
     overflow-x: hidden;
+    overflow-y: auto;
     font-family: Monument Extended Ultrabold;
     display: grid;
     // grid-auto-columns: 90%;
