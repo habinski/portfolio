@@ -6,7 +6,7 @@ const articleCard = (article) => {
 	const coverImg = {
 
 		width: '100%',
-		height: '350px'
+		height: '25rem'
 
 
 	}

@@ -5,6 +5,7 @@
     align-items: center;
     justify-items: center;
     .project-link {
+        text-align: center;
         -webkit-text-stroke: 0.5px $text-color;
         // color: transparent;
         font-size: 5rem;
@@ -13,13 +14,14 @@
         transition: .3s;
         // @include page-links;
         position: relative;
-        color: rgba(0, 0, 0, 0.25);
+        color: rgba(29, 29, 31, 0.5);
         &::before {
             content: attr(data-text);
             transition: .3s;
             position: absolute;
             z-index: -1;
-            @include primary-stroke-gradient(.5px);
+            @include primary-text-gradient;
+            -webkit-text-stroke: 0px;
             color: transparent;
             transform: translate(-8px, -8px);
         }

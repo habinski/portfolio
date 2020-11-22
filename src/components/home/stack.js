@@ -27,11 +27,11 @@ const Stack = () => {
 		// console.log(stack)
 		return (
 			<div className='bg' key={stack.id}>
-				<div className='glass'>
+				<div className='items-block'>
 					<h4>{stack.type}</h4>
-					<div className='items'>
+
+					<div className="items">
 						{stack.technology.map((technologyItem) => {
-							// console.log(technologyItem.icon.childImageSharp.fluid)
 							return (
 								<div className='item' key={technologyItem.id}>
 									<Img alt={technologyItem.name} fixed={technologyItem.icon.childImageSharp.fixed} ></Img>
@@ -39,6 +39,7 @@ const Stack = () => {
 								</div>
 							)
 						})}
+
 					</div>
 				</div>
 			</div>)

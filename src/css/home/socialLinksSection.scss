@@ -6,10 +6,38 @@
         gap: 2rem;
         justify-items: center;
         a {
-            font-family: Monument Extended Ultrabold;
-            font-weight: 400;
+            -webkit-text-stroke: .5px #000;
+            font-size: 5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: .3s;
+            position: relative;
+            color: rgba(191, 191, 223, 0.5);
+            &::before {
+                content: attr(data-text);
+                transition: .3s;
+                position: absolute;
+                z-index: -1;
+                @include primary-stroke-gradient(.5px);
+                color: transparent;
+                transform: translate(-8px, -8px);
+            }
+            transform: translate(4px, 4px);
+            &:hover {
+                transform: translate(8px, 8px);
+                &::before {
+                    transform: translate(-16px, -16px);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .socialLinks {
+        .a {
             font-size: 4rem;
-            @include page-links;
+            -webkit-text-stroke: 1px #000;
         }
     }
 }
