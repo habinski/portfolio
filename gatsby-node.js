@@ -173,24 +173,25 @@ exports.createPages = async({ graphql, actions }) => {
     const { createPage } = actions
     const result = await graphql(
         `
-      {
-        articles: allStrapiArticle {
-          edges {
-            node {
-              title
-              strapiId
+        {
+          articles: allStrapiArticle(sort: {order: DESC, fields: published_at}) {
+            edges {
+              node {
+                title
+                strapiId
+              }
+            }
+          }
+          categories: allStrapiCategory(sort: {order: DESC, fields: published_at}) {
+            edges {
+              node {
+                category
+                strapiId
+              }
             }
           }
         }
-        categories: allStrapiCategory {
-          edges {
-            node {
-              category
-              strapiId
-            }
-          }
-        }
-      }
+        
     `
     )
 

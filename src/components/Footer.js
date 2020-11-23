@@ -3,11 +3,6 @@ import logo from '../assets/logo.svg'
 import PageLinks from "../constants/links"
 import { Link } from "gatsby"
 
-const activeLink = {
-	background: "linear-gradient(90deg, #7700BB 0%, #0090FF 100%)",
-	WebkitBackgroundClip: "text",
-	color: "transparent"
-}
 
 const Footer = () => {
 	return (

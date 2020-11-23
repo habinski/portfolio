@@ -7,7 +7,7 @@ const Articles = ({ articles }) => {
 		<div className="articles_grid">
 			{articles.map((article) => {
 				return (
-					<ArticleCard article={article} key={`article__${article.node.id}`} />
+					<ArticleCard article={article} key={article.node.strapiId} />
 				)
 			})}
 		</div>

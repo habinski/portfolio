@@ -12,7 +12,7 @@ const Blog = () => (
     <StaticQuery
       query={graphql`
         query {
-          allStrapiArticle {
+          allStrapiArticle(sort: {order: DESC, fields: published_at}) {
             edges {
               node {
                 strapiId

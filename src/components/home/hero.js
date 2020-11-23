@@ -4,7 +4,8 @@ import { graphql, useStaticQuery } from "gatsby"
 const query = graphql`
   {
     strapiHero {
-        introduce
+        first_specialty
+        second_specialty
         description
     }
   }
@@ -12,11 +13,14 @@ const query = graphql`
 
 const HeroSection = () => {
 	const data = useStaticQuery(query)
-	const { introduce, description } = data.strapiHero
+	const { first_specialty, second_specialty, description } = data.strapiHero
 	return (
 		<section className='hero'>
 			<div className='hero-content'>
-				<h1>{introduce}</h1>
+				<div className="introduce">
+					<h1>{first_specialty}</h1>
+					<h1>{second_specialty}</h1>
+				</div>
 				<p>{description}</p>
 			</div>
 		</section>

@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from 'gatsby-image'
 import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
-import Prism from 'prismjs';
+// import Prism from 'prismjs';
 import Layout from "../components/Layout"
 import ArticleCard from "../components/home/articleCard"
 /*
@@ -54,7 +54,6 @@ const Article = ({ data }) => {
 	const article = data.strapiArticle
 
 	const more = data.more.articles.map((moreArticle, i) => {
-
 		if (moreArticle.id !== article.strapiId && i <= 1) {
 			console.log(i)
 			return (
@@ -65,9 +64,7 @@ const Article = ({ data }) => {
 					</div>
 				</Link>
 			)
-
 		}
-
 	})
 
 	const coverImg = {

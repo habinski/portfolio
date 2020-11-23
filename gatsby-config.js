@@ -15,8 +15,7 @@ module.exports = {
         {
             resolve: "gatsby-source-strapi",
             options: {
-                apiURL: "https://habinski-admin.herokuapp.com",
-                // apiURL: "http://localhost:1337/",
+                apiURL: "https://habinski.herokuapp.com",
                 contentTypes: [
                     "article",
                     "category",

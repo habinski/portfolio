@@ -181,11 +181,6 @@ body::-webkit-scrollbar-corner {
     background-image: transparent;
 }
 
-body::-webkit-scrollbar-thumb:horizontal:decrement:hover {
-    /* Select the down or left scroll button when it's being hovered by the mouse */
-    background-color: red;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -209,6 +204,7 @@ html {
     scroll-behavior: smooth;
     background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
     background-size: 32.00px 32.00px;
+    // background: repeating-linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
 }
 
 main {
