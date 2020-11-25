@@ -11,28 +11,27 @@ const Blog = () => (
     <CategoriesNav />
     <StaticQuery
       query={graphql`
-        query {
-          allStrapiArticle(sort: {order: DESC, fields: published_at}) {
-            edges {
-              node {
-                strapiId
-                title
-                content
-                categories {
-                  category
+      {
+        allStrapiArticle(sort: {order: DESC, fields: published_at}) {
+          edges {
+            node {
+              strapiId
+              title
+              content
+              categories {
+                category
+              }
+              cover {
+                childImageSharp {
+                  fluid(maxWidth: 500, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
-                cover {
-                  childImageSharp {
-                    fluid(maxWidth: 500, quality: 100)
-                      {
-                            ...GatsbyImageSharpFluid
-                          }
-                        }
-                    }
               }
             }
           }
         }
+      }
       `}
       render={data => (
         <section className='blog'>

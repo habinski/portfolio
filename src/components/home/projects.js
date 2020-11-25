@@ -3,14 +3,14 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
 const query = graphql`
-  {
-    allStrapiProject {
-      nodes {
-        id
-        name
-      }
-    }
-  }
+{
+	allStrapiProject(sort: {fields: id, order: DESC}) {
+	  nodes {
+		id
+		name
+	  }
+	}
+  }  
 `
 
 const Projects = () => {

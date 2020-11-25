@@ -49,14 +49,14 @@
             letter-spacing: 0px;
         }
         .technology {
+            display: flex;
+            // flex-wrap: wrap;
+            gap: 1.5rem;
             margin-top: 1rem;
             width: 100%;
             background: $primary-gradient !important;
             -webkit-background-clip: text !important;
             width: max-content;
-            // display: flex;
-            // gap: 5px;
-            // flex-direction: row;
             .technology-item {
                 color: transparent !important;
             }

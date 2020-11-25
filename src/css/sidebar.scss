@@ -12,6 +12,9 @@
     transition: .3s;
     transform: translateX(-100%);
     overflow: hidden;
+    .activeLink {
+        color: white !important;
+    }
 }
 
 .show-sidebar {

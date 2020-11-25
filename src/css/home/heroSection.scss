@@ -39,12 +39,12 @@
     .introduce {
         text-transform: uppercase;
         margin: 0;
-        font-size: 6rem;
+        font-size: 3.5rem;
         color: $text-color;
         z-index: 1;
-        width: min-content;
+        // width: min-content;
         @include primary-text-gradient;
-        animation: translateXleft 150s linear infinite;
+        animation: translateXleft 120s linear infinite;
     }
     p {
         // animation: translateXright 100s linear infinite;

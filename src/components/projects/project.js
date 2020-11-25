@@ -6,7 +6,6 @@ import Img from "gatsby-image"
 
 const Project = ({ item }) => {
 
-	console.log(item)
 	return (
 		<div className="project-item">
 			<a href={item.link} className="screenshot">
@@ -19,7 +18,7 @@ const Project = ({ item }) => {
 					{
 						item.technology.map(t => {
 							return (
-								<span className='technology-item'>{t.name}</span>
+								<span key={t.id} className='technology-item'>{t.name}</span>
 							)
 						})
 					}</div>

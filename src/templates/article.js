@@ -21,6 +21,7 @@ query ArticleQuery($id: Int!) {
       title
       content
 	  published_at
+	  updated_at
 	  categories {
 		  category
 	  }
@@ -79,7 +80,8 @@ const Article = ({ data }) => {
 					<div className="header-info">
 						<h1>{article.title}</h1>
 						<div className="info">
-							<p><Moment format="MMMM Do YYYY">{article.published_at}</Moment> (<Moment fromNow >{article.published_at}</Moment>)</p>
+							<p>Published: <Moment format="D MMMM YY">{article.published_at}</Moment> (<Moment fromNow >{article.published_at}</Moment>)</p>
+							<p>Last update: <Moment format="D MMMM YY">{article.updated_at}</Moment> (<Moment fromNow >{article.updated_at}</Moment>)</p>
 							<p>{Math.round(article.content.length / 600) + ' minutes read'}</p>
 						</div>
 					</div>

@@ -8,19 +8,21 @@
         grid-template-columns: repeat(2, 1fr);
         // grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
         justify-self: center;
-        padding: 10% 2rem;
-        gap: 3rem 1rem;
-        justify-self: start;
+        padding: 10% 2.5rem;
+        gap: 3rem 2rem;
     }
     .item {
+        justify-items: center;
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 15px;
+        gap: 1rem;
+        width: max-content;
         p {
             font-family: Montserrat;
             font-weight: 800;
             font-size: 1.2rem;
             align-self: center;
+            justify-self: center;
             width: max-content;
         }
         img {

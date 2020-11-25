@@ -6,7 +6,7 @@ import Project from '../components/projects/project'
 
 export const query = graphql`
 query {
-	projects: allStrapiProject {
+	projects: allStrapiProject(sort: {fields: id, order: DESC}) {
 	  nodes {
 		id
 		name
