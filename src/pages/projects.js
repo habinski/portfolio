@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from '../components/Layout'
 import Project from '../components/projects/project'
+import SEO from '../components/SEO'
 
 export const query = graphql`
 query {
@@ -35,6 +36,7 @@ query {
 	}
   }
 `
+
 const projectsPage = ({ data }) => {
 	// const data = useStaticQuery(query);
 	console.log(data)
@@ -43,6 +45,7 @@ const projectsPage = ({ data }) => {
 	})
 	return (
 		<Layout title='projects'>
+			<SEO title='Portfolio' />
 			<section className="porjects-page">
 				<h1>Projects</h1>
 				<div className='projects-grid'>

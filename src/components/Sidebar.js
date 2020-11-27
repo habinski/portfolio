@@ -8,8 +8,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <button className="close-btn" onClick={toggleSidebar}>
         ba<br></br>ck
       </button>
-
-      <div className={`${isOpen ? "sidebar-links" : ""}`} onClick={toggleSidebar}>
+      <div className={`${isOpen ? "sidebar-links" : ""}`} onClick={toggleSidebar} role="Navigation">
         <Links />
       </div>
     </aside>

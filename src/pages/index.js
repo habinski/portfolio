@@ -7,11 +7,12 @@ import Experience from '../components/home/experience'
 import About from '../components/home/about'
 import ArticlesBlock from '../components/home/articles'
 import SocialLinks from '../components/home/sociallinks'
-
+import SEO from '../components/SEO'
 
 
 export default function Home() {
   return <Layout title={"Habinski"}>
+    <SEO title='Homepage' />
     <div className='main-grid'>
       <HeroSection />
       <Projects />

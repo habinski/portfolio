@@ -6,6 +6,7 @@ import Moment from "react-moment"
 // import Prism from 'prismjs';
 import Layout from "../components/Layout"
 import ArticleCard from "../components/home/articleCard"
+import SEO from "../components/SEO"
 /*
 todo:
 1. добавити gatsby-image в md
@@ -75,6 +76,11 @@ const Article = ({ data }) => {
 
 	return (
 		<Layout title='blog'>
+			<SEO
+				title={article.title}
+				image={article.cover.childImageSharp.fluid.src}
+				pathname={this.props.location.pathname}
+			/>
 			<div className='post'>
 				<div className='head' >
 					<div className="header-info">
