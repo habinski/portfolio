@@ -79,7 +79,7 @@ const Article = ({ data }) => {
 			<SEO
 				title={article.title}
 				image={article.cover.childImageSharp.fluid.src}
-				pathname={this.props.location.pathname}
+			// pathname={this.props.location.pathname}
 			/>
 			<div className='post'>
 				<div className='head' >
