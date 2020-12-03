@@ -4,7 +4,7 @@ module.exports = {
         description: "",
         author: "Andriy Habinski",
         image: "/",
-        siteUrl: "http://habinski.dev",
+        siteUrl: "https://habinski.dev",
         keywords: [
             'developer',
             'front-end',
@@ -12,8 +12,7 @@ module.exports = {
             'web developer',
             'web develop',
             'react',
-            'freelancer',
-
+            'freelancer'
         ]
     },
     plugins: [
@@ -152,5 +151,3 @@ module.exports = {
         },
     ]
 }
-
-//  УДАЛЯЙ МОДУЛИ, ОНИ ОПЯТЬ ЕБНУЛИСЬ!

@@ -247,22 +247,50 @@ section {
     text-decoration: none;
     text-transform: uppercase;
     transition: .3s;
-    // @include page-links;
-    // position: relative;
-    // &::before {
-    //     content: attr(data-text);
-    //     transition: .3s;
-    //     position: absolute;
-    //     z-index: -1;
-    //     @include primary-stroke-gradient(.5px);
-    //     color: transparent;
-    // }
-    // &:hover {
-    //     transform: translate(8px, 8px);
-    //     &::before {
-    //         transform: translate(-16px, -16px);
-    //     }
-    // }
+}
+
+.cookies-banner-wrap {
+    position: sticky;
+    z-index: 100;
+    padding: .5rem;
+    bottom: 1rem;
+    width: 80vw;
+    opacity: .8;
+    background: $primary-gradient;
+    .cookies-banner {
+        background: $bg-color;
+        padding: 2rem;
+        font-family: Monument Extended;
+        p {
+            font-family: Montserrat;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+    .cookies-btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 1rem;
+        gap: 2rem;
+        align-items: center;
+        a {
+            justify-self: end;
+            text-decoration: none;
+            color: $primary-second;
+        }
+        .cookies-btn-agree {
+            font-family: Monument Extended;
+            background-color: $primary-second;
+            border: none;
+            justify-self: start;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+.hide-cookies-banner {
+    display: none;
 }
 
 @media (max-width: 767px) {

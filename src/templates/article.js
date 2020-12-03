@@ -52,7 +52,7 @@ query ArticleQuery($id: Int!) {
  `
 
 
-const Article = ({ data }) => {
+const Article = ({ data }, location) => {
 	const article = data.strapiArticle
 
 	const more = data.more.articles.map((moreArticle, i) => {
@@ -79,7 +79,7 @@ const Article = ({ data }) => {
 			<SEO
 				title={article.title}
 				image={article.cover.childImageSharp.fluid.src}
-			// pathname={this.props.location.pathname}
+				pathname={location.pathname}
 			/>
 			<div className='post'>
 				<div className='head' >
