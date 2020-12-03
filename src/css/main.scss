@@ -250,7 +250,10 @@ section {
 }
 
 .cookies-banner-wrap {
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
+    // bottom: 0;
     z-index: 100;
     padding: .5rem;
     bottom: 1rem;
@@ -262,9 +265,10 @@ section {
         padding: 2rem;
         font-family: Monument Extended;
         p {
+            text-align: center;
             font-family: Montserrat;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
     .cookies-btns {
