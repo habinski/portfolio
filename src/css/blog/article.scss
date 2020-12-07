@@ -21,52 +21,25 @@
                 font-size: 5rem;
                 // text-align: center;
             }
-            .info {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                p {
-                    font-family: Montserrat;
-                    font-weight: 800;
-                    align-self: center;
-                }
-            }
         }
     }
-    // .head {
-    //     .cover {
-    //         position: relative;
-    //         width: 100vw;
-    //         height: 50vh;
-    //         // position: absolute !important;
-    //         overflow: hidden;
-    //         .cover-img {}
-    //     }
-    //     text-align: center;
-    //     display: grid;
-    //     width: 100vw;
-    //     height: 50vh;
-    //     justify-content: center;
-    //     align-content: center;
-    //     background-repeat: no-repeat;
-    //     background-position: center;
-    //     background-size: 100%;
-    //     background-attachment: fixed;
-    //     h1 {
-    //         margin: 0 1rem;
-    //         font-size: 5rem;
-    //         text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-    //         color: $text-color;
-    //         text-align: center;
-    //     }
-    //     p {
-    //         text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-    //         font-size: 1rem;
-    //     }
-    // }
-    article {
-        // background-color: $bg-color;
+    .article-info {
+        margin: .5rem 0;
         display: grid;
-        // gap: 1.2rem;
+        // grid-template-columns: repeat(2, 1fr);
+        max-width: 760px;
+        gap: 1rem;
+        opacity: .7;
+        justify-items: center;
+        justify-self: center;
+        p {
+            font-family: Montserrat;
+            font-weight: 800;
+            align-self: center;
+        }
+    }
+    article {
+        display: grid;
         justify-self: center;
         width: 760px;
         color: $text-color;
@@ -74,7 +47,7 @@
         font-size: 1.3rem;
         line-height: 1.3rem*1.5;
         letter-spacing: 0px;
-        margin: 4rem 1.5rem;
+        margin: 2rem 1.5rem;
         h1,
         h2,
         h3 {
@@ -150,14 +123,26 @@
             width: 100%;
         }
     }
-}
-
-.more {
-    margin-top: 5rem;
-    width: 80vw;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
+    .read-next {
+        width: 760px;
+        justify-self: center;
+        margin-top: 3rem;
+        text-align: center;
+        color: $text-color;
+        .more {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            // background: $primary-gradient !important;
+            // -webkit-background-clip: text !important;
+            @include primary-text-gradient;
+            a {
+                font-size: 1.5rem;
+                // color: transparent !important;
+            }
+        }
+    }
 }
 
 @media(max-width: 768px) {
@@ -175,9 +160,12 @@
                 }
             }
         }
-    }
-    .more {
-        grid-template-columns: 1fr;
+        .read-next {
+            width: 90vw;
+            .more {
+                grid-template-columns: 1fr;
+            }
+        }
     }
 }
 

@@ -4,12 +4,10 @@ import Img from "gatsby-image"
 const articleCard = (article) => {
 
 	const coverImg = {
-
 		width: '100%',
 		height: '25rem'
-
-
 	}
+
 	return (
 		<Link to={`/blog/${article.article.node.title.replace(/\s/g, '-')}`} className="article">
 			<div className='cover'>

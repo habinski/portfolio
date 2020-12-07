@@ -5,6 +5,7 @@ export const query = graphql`
 {
 	allStrapiStack {
 	  nodes {
+		id
 		type
 		technology {
 		  name
@@ -24,12 +25,11 @@ export const query = graphql`
 const Stack = () => {
 	const data = useStaticQuery(query)
 	const stacks = data.allStrapiStack.nodes.map((stack) => {
-		// console.log(stack)
+
 		return (
 			<div className='bg' key={stack.id}>
 				<div className='items-block'>
 					<h4>{stack.type}</h4>
-
 					<div className="items">
 						{stack.technology.map((technologyItem) => {
 							return (

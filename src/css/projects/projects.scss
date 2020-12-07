@@ -54,12 +54,8 @@
             gap: 1.5rem;
             margin-top: 1rem;
             width: 100%;
-            background: $primary-gradient !important;
-            -webkit-background-clip: text !important;
             width: max-content;
-            .technology-item {
-                color: transparent !important;
-            }
+            @include primary-text-gradient;
         }
     }
     .btn-more {

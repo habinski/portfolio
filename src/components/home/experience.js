@@ -18,13 +18,10 @@ export const query = graphql`
 
 const Experience = () => {
 	const data = useStaticQuery(query);
-	// console.log(data.allStrapiExperience.edges)
+
 	const experiences = data.allStrapiExperience.nodes.map(work => {
-		// console.log(work)
 		return (
-
 			<div className="work" key={work.strapiId}>
-
 				<p className='period'>
 					<Moment format='MMM YYYY'>{work.from}</Moment> — {work.to !== null ? <Moment format='MMM YYYY'>{work.to}</Moment> : 'now'}
 				</p>

@@ -4,34 +4,35 @@ import ArticleCard from "./articleCard"
 // import ReactMarkdown from "react-markdown"
 const query = graphql`
 {
-    allStrapiArticle(limit: 3, sort: {fields: updated_at, order: DESC}) {
-		edges {
-			node {
-				categories {
-          category
-          id
-        }
-        title
-        updated_at
-        id
-		cover {
+	allStrapiArticle(limit: 3, sort: {fields: updated_at, order: DESC}) {
+	  edges {
+		node {
+		  categories {
+			category
+			id
+		  }
+		  title
+		  updated_at
+		  id
+		  cover {
 			childImageSharp {
-			  fluid(maxWidth: 500)
-				{
-					  ...GatsbyImageSharpFluid
-					}
-				  }
+			  fluid(maxWidth: 500) {
+				...GatsbyImageSharpFluid
 			  }
-      }
-    } }
+			}
+		  }
+		}
+	  }
+	}
   }
+  
 `
 
 const ArticlesBlock = () => {
 	const data = useStaticQuery(query)
 	const articles = data.allStrapiArticle.edges.map(article => {
 		return (
-			<ArticleCard article={article}></ArticleCard>
+			<ArticleCard article={article} key={article.node.id}></ArticleCard>
 		)
 
 	})

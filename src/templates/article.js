@@ -29,6 +29,7 @@ query ArticleQuery($id: Int!) {
       cover {
 		childImageSharp {
             fluid(maxWidth: 1920) {
+				src
               ...GatsbyImageSharpFluid
             }
           }
@@ -39,17 +40,11 @@ query ArticleQuery($id: Int!) {
 		articles {
 		  id
 		  title
-		  cover {
-			childImageSharp {
-				fluid(maxWidth: 1920) {
-				  ...GatsbyImageSharpFluid
-				}
-			  }
-		  }
 		}
 	  }
   }
  `
+
 
 
 const Article = ({ data }, location) => {
@@ -57,14 +52,16 @@ const Article = ({ data }, location) => {
 
 	const more = data.more.articles.map((moreArticle, i) => {
 		if (moreArticle.id !== article.strapiId && i <= 1) {
-			console.log(i)
 			return (
-				<Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`} className="article" key={moreArticle.id}>
-					<div className='cover'>
-						<Img style={coverImg} fluid={moreArticle.cover.childImageSharp.fluid} />
-						<h3>{moreArticle.title}</h3>
-					</div>
-				</Link>
+				// <Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`}
+				// 	className="article"
+				// 	key={moreArticle.id}>
+				// 	<div className='cover'>
+				// 		<Img style={coverImg} fluid={moreArticle.cover.childImageSharp.fluid} />
+				// 		<h3>{moreArticle.title}</h3>
+				// 	</div>
+				// </Link>
+				<Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`}>{moreArticle.title}</Link>
 			)
 		}
 	})
@@ -73,7 +70,6 @@ const Article = ({ data }, location) => {
 		width: '100vw',
 		height: '50vh'
 	}
-
 	return (
 		<Layout title='blog'>
 			<SEO
@@ -85,25 +81,28 @@ const Article = ({ data }, location) => {
 				<div className='head' >
 					<div className="header-info">
 						<h1>{article.title}</h1>
-						<div className="info">
-							<p>Published: <Moment format="D MMMM YY">{article.published_at}</Moment> (<Moment fromNow >{article.published_at}</Moment>)</p>
-							<p>Last update: <Moment format="D MMMM YY">{article.updated_at}</Moment> (<Moment fromNow >{article.updated_at}</Moment>)</p>
-							<p>{Math.round(article.content.length / 600) + ' minutes read'}</p>
-						</div>
 					</div>
 					<Img style={coverImg} fluid={article.cover.childImageSharp.fluid} alt="cover" />
 				</div>
+				<div className="article-info">
+					<p>Published: <Moment format="D MMM YYYY">{article.published_at}</Moment> (<Moment fromNow >{article.published_at}</Moment>)</p>
+					{
+						article.published_at === article.updated_at ? <p>Last update: <Moment format="D MMM YYYY">{article.updated_at}</Moment> (<Moment fromNow >{article.updated_at}</Moment>)</p> : ''
+					}
+					<p>{Math.round(article.content.length / 600) + ' minutes read'}</p>
 
+				</div>
 				<article>
 					<ReactMarkdown source={article.content} />
-
 				</article>
+				<div className="read-next">
+					<h1>Read next</h1>
+					<div className="more">
+						{more}
+					</div>
+				</div>
 			</div>
-			<div className="read-next">
-				<h1>Read next</h1>
-				<div className="more">
-					{more}
-				</div></div>
+
 		</Layout >
 	)
 }

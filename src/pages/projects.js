@@ -38,8 +38,6 @@ query {
 `
 
 const projectsPage = ({ data }) => {
-	// const data = useStaticQuery(query);
-	console.log(data)
 	const projects = data.projects.nodes.map(item => {
 		return (<Project key={item.id} item={item}></Project>)
 	})

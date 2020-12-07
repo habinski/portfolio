@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Img from "gatsby-image"
 
 
@@ -7,7 +6,7 @@ import Img from "gatsby-image"
 const Project = ({ item }) => {
 
 	return (
-		<div className="project-item">
+		<div className="project-item" id={item.name}>
 			<a href={item.link} className="screenshot">
 				<Img fluid={item.screenshot.childImageSharp.fluid} />
 			</a>
