@@ -26,7 +26,7 @@ module.exports = {
         {
             resolve: "gatsby-source-strapi",
             options: {
-                apiURL: "https://habinski.herokuapp.com",
+                apiURL: "http://localhost:1337/",
                 contentTypes: [
                     "article",
                     "category",
@@ -103,7 +103,7 @@ module.exports = {
                                     superscript_keywords: /(superif|superelse)/,
                                 },
                             },
-                        }, ],
+                        },],
                         // Customize the prompt used in shell output
                         // Values below are default
                         //!!!!!!!!
