@@ -1,8 +1,9 @@
+@import '../variables.scss';
 .about {
     display: grid;
     align-items: center;
     justify-items: center;
-    .text {
+    .aboutText {
         font-family: Montserrat;
         display: grid;
         gap: 20px;

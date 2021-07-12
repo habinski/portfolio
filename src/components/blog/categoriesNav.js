@@ -7,7 +7,8 @@ const query = graphql`
     edges {
       node {
         strapiId
-        category
+        name
+        url
       }
     }
   }
@@ -18,8 +19,8 @@ const CategoriesNav = () => {
   const data = useStaticQuery(query)
   const categories = data.allStrapiCategory.edges.map(category => {
     return (
-      <Link activeClassName='activeLink' key={category.node.strapiId} to={`/category/${category.node.category}`}>
-        {category.node.category}
+      <Link activeClassName='activeLink' key={category.node.strapiId} to={`/category/${category.node.url}`}>
+        {category.node.name}
       </Link>
     )
   })
@@ -27,7 +28,7 @@ const CategoriesNav = () => {
     <div className="blog-links">
       {categories}
       <Link activeClassName='activeLink' to={`/blog`}>all articles
-</Link>
+      </Link>
     </div>
   </div>)
 }

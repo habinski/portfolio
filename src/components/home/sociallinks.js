@@ -1,6 +1,11 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
+import {
+	socialLinks,
+	linksBlock
+} from '../../css/home/socialLinksSection.modules.scss'
+
 
 export const query = graphql`
 {
@@ -19,9 +24,9 @@ const SocialLinks = () => {
 		return <a href={link.link} data-text={link.name} target='_blank' key={link.id} rel="noreferrer" >{link.name}</a>
 	})
 	return (
-		<section className='socialLinks' id='contact'>
+		<section className={socialLinks} id='contact'>
 			<h2 className='title'>follow</h2>
-			<div className="links">
+			<div className={linksBlock}>
 				{links}
 			</div>
 		</section>

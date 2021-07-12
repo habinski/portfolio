@@ -1,9 +1,10 @@
-.articles {
+@import '../variables.scss';
+.articlesSection {
     display: grid;
     justify-items: center;
 }
 
-.articles-block {
+.articlesBlck {
     width: 40vw;
     display: grid;
     gap: 5rem;
@@ -15,5 +16,3 @@
         width: 60vw;
     }
 }
-
-@import '/articleCard';

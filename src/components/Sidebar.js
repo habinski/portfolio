@@ -1,14 +1,20 @@
 import React from "react"
 import Links from "../constants/links"
-// import SocialLinks from "../constants/socialLinks"
+import {
+  sidebar,
+  showSidebar,
+  closeBtn,
+  sidebarLinks
+} from "../css/sidebar.module.scss"
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+  // 
   return (
-    <aside className={`sidebar ${isOpen ? "show-sidebar" : ""} `}>
-      <button className="close-btn" onClick={toggleSidebar}>
+    <aside className={`${sidebar} ${isOpen ? showSidebar : ''}`}>
+      <button className={closeBtn} onClick={toggleSidebar}>
         ba<br></br>ck
       </button>
-      <div className={`${isOpen ? "sidebar-links" : ""}`} onClick={toggleSidebar} role="Navigation">
+      <div className={`${isOpen ? sidebarLinks : ""}`} onClick={toggleSidebar} role="Navigation">
         <Links />
       </div>
     </aside>

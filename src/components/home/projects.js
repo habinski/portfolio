@@ -1,7 +1,12 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
-
+import {
+	projectsSection,
+	projectsItems,
+	btnMore,
+	projectLink
+} from '../../css/home/projectsSection.module.scss'
 const query = graphql`
 {
 	allStrapiProject(sort: {fields: id, order: DESC}) {
@@ -17,17 +22,17 @@ const Projects = () => {
 	const data = useStaticQuery(query)
 
 	const projects = data.allStrapiProject.nodes.map((project) => {
-		return <Link className='project-link' to={`projects#${project.name}`} data-text={project.name} key={project.id}>{project.name}</Link>
+		return <Link className={projectLink} to={`projects#${project.name}`} data-text={project.name} key={project.id}>{project.name}</Link>
 	})
 
 	return (
-		<section className='projects' id='projects'>
+		<section className={projectsSection} id='projects'>
 			<h2 className='title'>Projects</h2>
 
-			<div className="projects-items">
+			<div className={projectsItems}>
 				{projects}
 			</div>
-			<Link to='/projects' className='btn-more' >more</Link>
+			<Link to='/projects' className={btnMore} >more</Link>
 		</section>
 	)
 }

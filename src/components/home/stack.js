@@ -1,6 +1,17 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
-import Img from 'gatsby-image'
+import { StaticImage } from "gatsby-plugin-image"
+
+import {
+	bg,
+	itemsDiv,
+	items,
+	item,
+	stack,
+	stackItems
+} from '../../css/home/stackSection.module.scss'
+
+
 export const query = graphql`
 {
 	allStrapiStack {
@@ -11,11 +22,7 @@ export const query = graphql`
 		  name
 		  id
 		  icon {
-			childImageSharp {
-				fixed(height: 30){
-				...GatsbyImageSharpFixed
-			  }
-			}
+			url
 		  }
 		}
 	  }
@@ -27,14 +34,14 @@ const Stack = () => {
 	const stacks = data.allStrapiStack.nodes.map((stack) => {
 
 		return (
-			<div className='bg' key={stack.id}>
-				<div className='items-block'>
+			<div className={bg} key={stack.id}>
+				<div className={itemsDiv}>
 					<h4>{stack.type}</h4>
-					<div className="items">
+					<div className={items}>
 						{stack.technology.map((technologyItem) => {
 							return (
-								<div className='item' key={technologyItem.id}>
-									<Img alt={technologyItem.name} fixed={technologyItem.icon.childImageSharp.fixed} ></Img>
+								<div className={item} key={technologyItem.id}>
+									<StaticImage alt={technologyItem.name} src={technologyItem.icon.url} ></StaticImage>
 									<p>{technologyItem.name}</p>
 								</div>
 							)
@@ -46,9 +53,9 @@ const Stack = () => {
 	})
 
 	return (
-		<section className='stack'>
+		<section className={stack}>
 			<h2 className='title'>stack</h2>
-			<div className="stack-items">
+			<div className={stackItems}>
 				{stacks}
 			</div>
 		</section>

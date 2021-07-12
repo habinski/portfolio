@@ -27,14 +27,13 @@ module.exports = {
             resolve: "gatsby-source-strapi",
             options: {
                 apiURL: "http://localhost:1337",
-                contentTypes: [
+                collectionTypes: [
                     "article",
                     "category",
                     "experience",
                     "project",
                     "stack",
                     "social-link"
-
                 ],
                 singleTypes: [
                     "about",
@@ -44,8 +43,9 @@ module.exports = {
                 queryLimit: 1000,
             },
         },
-        "gatsby-transformer-sharp",
-        "gatsby-plugin-sharp",
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {

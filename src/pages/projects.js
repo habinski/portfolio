@@ -6,7 +6,7 @@ import Project from '../components/projects/project'
 import SEO from '../components/SEO'
 
 export const query = graphql`
-query {
+{
 	projects: allStrapiProject(sort: {fields: id, order: DESC}) {
 	  nodes {
 		id
@@ -15,26 +15,19 @@ query {
 		description
 		published_at
 		screenshot {
-			childImageSharp {
-				fluid(maxWidth: 1000) {
-					...GatsbyImageSharpFluid
-				  }
-			  }
+		 url
 		}
 		technology {
 		  name
 		  id
 		  icon {
-			childImageSharp {
-				fluid(maxWidth: 1000) {
-					...GatsbyImageSharpFluid
-				  }
-			  }
+			url
 		  }
 		}
 	  }
 	}
   }
+  
 `
 
 const projectsPage = ({ data }) => {

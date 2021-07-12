@@ -1,6 +1,5 @@
 import React from 'react'
-import Img from "gatsby-image"
-
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 
 const Project = ({ item }) => {
@@ -8,7 +7,7 @@ const Project = ({ item }) => {
 	return (
 		<div className="project-item" id={item.name}>
 			<a href={item.link} className="screenshot">
-				<Img fluid={item.screenshot.childImageSharp.fluid} />
+				<GatsbyImage src={item.screenshot.url} alt='project' />
 			</a>
 			<h3>{item.name}</h3>
 			<div className="description">

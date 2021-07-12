@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img from 'gatsby-image'
+import { StaticImage } from "gatsby-plugin-image"
 import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
 // import Prism from 'prismjs';
@@ -24,19 +24,18 @@ query ArticleQuery($id: Int!) {
 	  published_at
 	  updated_at
 	  categories {
-		  category
+		  name
 	  }
-      cover {
-		childImageSharp {
-            fluid(maxWidth: 1920) {
-				src
-              ...GatsbyImageSharpFluid
-            }
-          }
+      cover { 
+		localFile {
+			childImageSharp {
+			  gatsbyImageData
+			}
+		  }
       }
 	}
 	more: strapiCategory(articles: {elemMatch: {id: {eq: $id}}}) {
-		category
+		name
 		articles {
 		  id
 		  title
@@ -49,18 +48,10 @@ query ArticleQuery($id: Int!) {
 
 const Article = ({ data }, location) => {
 	const article = data.strapiArticle
-
+	console.log(article)
 	const more = data.more.articles.map((moreArticle, i) => {
 		if (moreArticle.id !== article.strapiId && i <= 1) {
 			return (
-				// <Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`}
-				// 	className="article"
-				// 	key={moreArticle.id}>
-				// 	<div className='cover'>
-				// 		<Img style={coverImg} fluid={moreArticle.cover.childImageSharp.fluid} />
-				// 		<h3>{moreArticle.title}</h3>
-				// 	</div>
-				// </Link>
 				<Link to={`/blog/${moreArticle.title.replace(/\s/g, '-')}`}>{moreArticle.title}</Link>
 			)
 		}
@@ -74,7 +65,7 @@ const Article = ({ data }, location) => {
 		<Layout title='blog'>
 			<SEO
 				title={article.title}
-				image={article.cover.childImageSharp.fluid.src}
+
 				pathname={location.pathname}
 			/>
 			<div className='post'>
@@ -82,7 +73,8 @@ const Article = ({ data }, location) => {
 					<div className="header-info">
 						<h1>{article.title}</h1>
 					</div>
-					<Img style={coverImg} fluid={article.cover.childImageSharp.fluid} alt="cover" />
+					<StaticImage style={coverImg} image={article.cover.localFile.childImageSharp.gatsbyImageData} alt="cover"></StaticImage>
+
 				</div>
 				<div className="article-info">
 					<p>Published: <Moment format="D MMM YYYY">{article.published_at}</Moment> (<Moment fromNow >{article.published_at}</Moment>)</p>

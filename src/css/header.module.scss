@@ -1,3 +1,4 @@
+@import './variables';
 nav {
     display: grid;
     font-size: 1rem;
@@ -5,7 +6,7 @@ nav {
     // grid-template-columns: 1fr 2fr;
     padding: .5rem;
     justify-items: center;
-    .header-logo {
+    .headerLogo {
         display: grid;
         grid-template-columns: repeat(2, auto);
         text-transform: capitalize;
@@ -18,11 +19,11 @@ nav {
             transform: scale(90%);
         }
     }
-    .line-nav {
+    .lineNav {
         width: 80vw;
         display: grid;
         grid-template-columns: min-content 1fr;
-        .nav-links {
+        .navLinks {
             justify-self: end;
             gap: 2rem;
             display: grid;
@@ -35,11 +36,11 @@ nav {
         text-transform: uppercase;
         text-decoration: none;
         color: $text-color;
-        &:not(.header-logo) {
+        &:not(.headerLogo) {
             @include text-hover($primary-second);
         }
     }
-    .burger-menu {
+    .burgerMenu {
         display: none;
     }
 }
@@ -48,31 +49,21 @@ p {
     color: $text-color;
 }
 
-@mixin nav-btns {
-    background: none;
-    border: none;
-    color: $text-color;
-    font-family: Monument Extended Ultrabold;
-    font-size: 2rem;
-    text-transform: uppercase;
-    // @include text-hover($primary-first);
-}
-
 @media (max-width: 767px) {
-    .header-logo>img {
+    .headerLogo>img {
         width: 100px;
     }
-    nav>.line-nav {
+    nav>.lineNav {
         display: none;
     }
-    nav>.burger-menu {
+    nav>.burgerMenu {
         display: grid;
         grid-template-columns: repeat(2, 40vw);
-        .header-logo {
+        .headerLogo {
             align-self: center;
             justify-self: start;
         }
-        .burger-btn {
+        .burgerBtn {
             width: min-content;
             align-self: center;
             justify-self: end;
@@ -81,4 +72,4 @@ p {
     }
 }
 
-@import '/sidebar';
+// @import '/sidebar';

@@ -1,4 +1,5 @@
-.article {
+@import '../variables.scss';
+.articleLink {
     @include gradient-block-shadow;
     .cover {
         position: relative;

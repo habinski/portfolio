@@ -1,6 +1,7 @@
+@import '../variables.scss';
 .socialLinks {
     display: grid;
-    .links {
+    .linksBlock {
         align-self: center;
         display: grid;
         gap: 2rem;

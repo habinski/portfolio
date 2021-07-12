@@ -1,3 +1,4 @@
+@import './variables';
 footer {
     font-family: Montserrat;
     background: $primary-gradient;
@@ -14,7 +15,7 @@ footer {
         font-weight: bold;
     }
     grid-template-areas: 'logo navigation' 'copyright copyright';
-    .footer-logo {
+    .footerLogo {
         grid-area: logo;
         width: 10rem;
         transition: .3s;

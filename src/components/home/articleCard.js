@@ -1,17 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
+import { cover, articleLink } from '../../css/home/articleCard.module.scss'
 const articleCard = (article) => {
 
 	const coverImg = {
 		width: '100%',
 		height: '25rem'
 	}
-
+	console.log(article)
 	return (
-		<Link to={`/blog/${article.article.node.title.replace(/\s/g, '-')}`} className="article">
-			<div className='cover'>
-				<Img style={coverImg} fluid={article.article.node.cover.childImageSharp.fluid} />
+		<Link to={`/blog/${article.article.node.url}`} className={articleLink}>
+			<div className={cover}>
+				<StaticImage style={coverImg} src={article.article.node.cover.url} />
 				<h3>{article.article.node.title}</h3>
 			</div>
 		</Link>

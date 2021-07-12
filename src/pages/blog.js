@@ -21,14 +21,10 @@ const Blog = () => (
               title
               content
               categories {
-                category
+                name
               }
               cover {
-                childImageSharp {
-                  fluid(maxWidth: 500, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
+               url
               }
             }
           }

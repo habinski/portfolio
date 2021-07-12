@@ -1,6 +1,14 @@
 import React from 'react'
 
 import { graphql, useStaticQuery } from "gatsby"
+
+import {
+	hero,
+	heroContent,
+	introduce,
+} from '../../css/home/heroSection.module.scss'
+
+
 const query = graphql`
   {
     strapiHero {
@@ -15,9 +23,9 @@ const HeroSection = () => {
 	const data = useStaticQuery(query)
 	const { first_specialty, second_specialty, description } = data.strapiHero
 	return (
-		<section className='hero'>
-			<div className='hero-content'>
-				<div className="introduce">
+		<section className={hero}>
+			<div className={heroContent}>
+				<div className={introduce}>
 					<h1>{first_specialty}</h1>
 					<h1>{second_specialty}</h1>
 				</div>

@@ -1,3 +1,4 @@
+@import '../variables.scss';
 .stack {
     min-height: 60vh;
     display: grid;
@@ -38,7 +39,7 @@
     }
 }
 
-.stack-items {
+.stackItems {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
@@ -52,7 +53,7 @@
             transform: translate(20px, 20px);
         }
     }
-    .items-block {
+    .itemsDiv {
         background-color: rgba(29, 29, 31, 0.72);
         // background-color: rgb(255, 255, 255);
         backdrop-filter: saturate(180%);
@@ -80,7 +81,7 @@
 }
 
 @media (max-width: 767px) {
-    .stack-items {
+    .stackItems {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
     }

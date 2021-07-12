@@ -1,25 +1,26 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import ArticleCard from "./articleCard"
-// import ReactMarkdown from "react-markdown"
+import {
+	articlesSection,
+	articlesBlck, btnMore
+} from '../../css/home/articlesSection.module.scss'
 const query = graphql`
 {
 	allStrapiArticle(limit: 3, sort: {fields: updated_at, order: DESC}) {
 	  edges {
 		node {
 		  categories {
-			category
+			name
 			id
 		  }
 		  title
+		  url
 		  updated_at
 		  id
 		  cover {
-			childImageSharp {
-			  fluid(maxWidth: 500) {
-				...GatsbyImageSharpFluid
-			  }
-			}
+			  url
+			
 		  }
 		}
 	  }
@@ -37,13 +38,13 @@ const ArticlesBlock = () => {
 
 	})
 	return (
-		<section className='articles'>
+		<section className={articlesSection}>
 			<h2 className='title'>blog</h2>
-			<div className="articles-block">
+			<div className={articlesBlck}>
 				{articles}
-				<Link className="btn-more" data-text="more" to="/blog">more</Link>
+				<Link className={btnMore} data-text="more" to="/blog">more</Link>
 			</div>
-		</section>
+		</section >
 	)
 }
 export default ArticlesBlock

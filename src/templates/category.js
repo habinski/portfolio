@@ -13,20 +13,16 @@ query Category($id: Int!) {
         strapiId
         title
         categories {
-          category
+          name
         }
         cover {
-          childImageSharp{
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+         url
         }
       }
     }
   }
   category: strapiCategory(strapiId: { eq: $id }) {
-    category
+    name
   }
 }
 `
@@ -35,8 +31,8 @@ query Category($id: Int!) {
 const Category = ({ data }) => {
 
   return (
-    <Layout title={data.category.category}>
-      <SEO title={data.category.category} />
+    <Layout title={data.category.name}>
+      <SEO title={data.category.name} />
       <CategoriesNav />
       <div className='blog'>
         <h1>{data.category.category}</h1>

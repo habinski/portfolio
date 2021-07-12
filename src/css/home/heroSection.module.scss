@@ -1,3 +1,4 @@
+@import '../variables.scss';
 .hero {
     font-family: 'Monument Extended Ultrabold';
     display: grid;
@@ -28,7 +29,7 @@
     }
 }
 
-.hero-content {
+.heroContent {
     // margin: 0 5rem;
     justify-self: center;
     align-self: center;
@@ -56,7 +57,7 @@
 }
 
 @media (max-width: 767px) {
-    .hero-content {
+    .heroContent {
         // writing-mode: vertical-rl;
         h1 {
             font-size: 3rem;
