@@ -5,11 +5,11 @@ import Layout from "../components/Layout"
 import ArticlesComponent from "../components/blog/articles"
 import CategoriesNav from '../components/blog/categoriesNav'
 // import "../assets/css/main.css"
-import SEO from '../components/SEO'
+import Seo from '../components/SEO'
 
 const Blog = () => (
   <Layout title='blog'>
-    <SEO title='Blog' />
+    <Seo title='Blog' />
     <CategoriesNav />
     <StaticQuery
       query={graphql`

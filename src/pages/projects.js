@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from '../components/Layout'
 import Project from '../components/projects/project'
-import SEO from '../components/SEO'
+import Seo from '../components/SEO'
 
 export const query = graphql`
 {
@@ -11,19 +11,8 @@ export const query = graphql`
 	  nodes {
 		id
 		name
-		link
 		description
 		published_at
-		screenshot {
-		 url
-		}
-		technology {
-		  name
-		  id
-		  icon {
-			url
-		  }
-		}
 	  }
 	}
   }
@@ -36,7 +25,7 @@ const projectsPage = ({ data }) => {
 	})
 	return (
 		<Layout title='projects'>
-			<SEO title='Portfolio' />
+			<Seo title='Portfolio' />
 			<section className="porjects-page">
 				<h1>Projects</h1>
 				<div className='projects-grid'>

@@ -6,7 +6,7 @@ import Moment from "react-moment"
 // import Prism from 'prismjs';
 import Layout from "../components/Layout"
 import ArticleCard from "../components/home/articleCard"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 /*
 todo:
 1. добавити gatsby-image в md
@@ -63,7 +63,7 @@ const Article = ({ data }, location) => {
 	}
 	return (
 		<Layout title='blog'>
-			<SEO
+			<Seo
 				title={article.title}
 
 				pathname={location.pathname}

@@ -21,9 +21,6 @@ export const query = graphql`
 		technology {
 		  name
 		  id
-		  icon {
-			url
-		  }
 		}
 	  }
 	}

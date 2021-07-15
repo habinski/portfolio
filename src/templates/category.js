@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import ArticlesComponent from "../components/blog/articles"
 import CategoriesNav from "../components/blog/categoriesNav"
 import Layout from "../components/Layout"
-import SEO from '../components/SEO'
+import Seo from '../components/SEO'
 export const query = graphql`
 query Category($id: Int!) {
   articles:  allStrapiArticle(filter: {categories: {elemMatch: {id: {eq: $id}}}}) {
@@ -32,7 +32,7 @@ const Category = ({ data }) => {
 
   return (
     <Layout title={data.category.name}>
-      <SEO title={data.category.name} />
+      <Seo title={data.category.name} />
       <CategoriesNav />
       <div className='blog'>
         <h1>{data.category.category}</h1>
