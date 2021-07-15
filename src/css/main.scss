@@ -1,6 +1,19 @@
 @import './variables.scss';
+@font-face {
+    font-family: "Punc";
+    font-weight: 800;
+    src: url("./fonts/Punc-Bold.otf");
+}
+
+@font-face {
+    font-family: "Punc";
+    font-weight: normal;
+    src: url("./fonts/Punc-Regular.otf");
+}
+
 .activeLink {
-    @include primary-text-gradient();
+    // @include primary-text-gradient();
+    color: $dominant;
 }
 
 body::-webkit-scrollbar {
@@ -48,13 +61,13 @@ body {
     // gap: 520px;
 }
 
-$bg-stripes-width: 0.10%;
+// $bg-stripes-width: 0.10%;
 html {
-    // background-color: $bg-color;
-    scroll-behavior: smooth;
-    background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
-    background-size: 32.00px 32.00px;
-    // background: repeating-linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
+    background-color: $bg-color;
+    //     scroll-behavior: smooth;
+    //     background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
+    //     background-size: 32.00px 32.00px;
+    //     // background: repeating-linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
 }
 
 main {
@@ -74,17 +87,19 @@ section {
 }
 
 .title {
-    height: 100%;
-    writing-mode: vertical-rl;
-    text-align: center;
-    z-index: 5;
-    position: absolute;
-    font-size: 4rem;
-    -webkit-text-stroke: 0.5px $text-color;
-    color: transparent;
-    text-transform: uppercase;
-    left: 0;
-    transform: rotateZ(180deg);
+    // height: 100%;
+    font-family: Punc;
+    font-size: 6rem;
+    color: $text-color;
+    text-align: left;
+    // writing-mode: vertical-rl;
+    // text-align: center;
+    // z-index: 5;
+    // position: absolute;
+    // -webkit-text-stroke: 0.5px $text-color;
+    // text-transform: uppercase;
+    // left: 0;
+    // transform: rotateZ(180deg);
 }
 
 .btn-more {

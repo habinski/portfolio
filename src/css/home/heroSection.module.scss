@@ -1,8 +1,11 @@
 @import '../variables.scss';
 .hero {
-    font-family: 'Monument Extended Ultrabold';
+    // font-family: 'Monument Extended Ultrabold';
+    font-family: "Punc";
     display: grid;
     min-height: 90vh;
+    // margin: 0 100px;
+    // width: 100vw;
 }
 
 @keyframes translateXleft {
@@ -30,36 +33,45 @@
 }
 
 .heroContent {
-    // margin: 0 5rem;
-    justify-self: center;
+    // justify-self: center;
     align-self: center;
     display: grid;
     // justify-items: center;
     // grid-template-rows: repeat(2, min-content);
-    gap: 5vw;
+    gap: 3vw;
     .introduce {
-        text-transform: uppercase;
+        .first {
+            font-weight: 800;
+            color: $dominant;
+        }
+        .second {
+            font-weight: normal;
+        }
+        // font-size: 96px;
         margin: 0;
-        font-size: 3.5rem;
+        font-size: 5rem;
         color: $text-color;
         z-index: 1;
         // width: min-content;
-        @include primary-text-gradient;
-        animation: translateXleft 120s linear infinite;
+        // @include primary-text-gradient;
+        // animation: translateXleft 120s linear infinite;
     }
     p {
-        // animation: translateXright 100s linear infinite;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
         justify-self: end;
-        width: 60vw;
-        text-align: end;
-        font-family: 'Monument Extended';
+        width: 600px;
+        // text-align: start;
+        // font-family: 'Monument Extended';
     }
 }
 
 @media (max-width: 767px) {
     .heroContent {
         // writing-mode: vertical-rl;
-        h1 {
+        .introduce {
             font-size: 3rem;
         }
         p {

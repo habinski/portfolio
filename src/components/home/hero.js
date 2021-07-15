@@ -6,6 +6,8 @@ import {
 	hero,
 	heroContent,
 	introduce,
+	first,
+	second
 } from '../../css/home/heroSection.module.scss'
 
 
@@ -26,8 +28,8 @@ const HeroSection = () => {
 		<section className={hero}>
 			<div className={heroContent}>
 				<div className={introduce}>
-					<h1>{first_specialty}</h1>
-					<h1>{second_specialty}</h1>
+					<h1 className={first}>{first_specialty}</h1>
+					<h1 className={second}>{second_specialty}</h1>
 				</div>
 				<p>{description}</p>
 			</div>

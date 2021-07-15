@@ -38,7 +38,7 @@ const Stack = () => {
 						{stack.technology.map((technologyItem) => {
 							return (
 								<div className={item} key={technologyItem.id}>
-									<StaticImage alt={technologyItem.name} src={technologyItem.icon.url} ></StaticImage>
+									{/* <StaticImage alt={technologyItem.name} src={technologyItem.icon.url} ></StaticImage> */}
 									<p>{technologyItem.name}</p>
 								</div>
 							)

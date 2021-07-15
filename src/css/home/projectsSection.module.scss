@@ -1,4 +1,17 @@
 @import '../variables.scss';
+.projectsSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.desriptionBlock {
+    display: grid;
+    align-items: center;
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 18px;
+}
+
 .projectsItems {
     display: grid;
     max-width: 80vw;
@@ -9,20 +22,24 @@
     .projectLink {
         text-align: center;
         -webkit-text-stroke: 0.5px $text-color;
-        // color: transparent;
-        font-size: 5rem;
+        font-size: 3rem;
         text-decoration: none;
         text-transform: uppercase;
         transition: .3s;
         // @include page-links;
         position: relative;
-        color: rgba(29, 29, 31, 0.5);
+        // color: rgba(29, 29, 31, 0.5);
+        color: transparent;
+        backdrop-filter: blur(20px);
         &::before {
             content: attr(data-text);
             transition: .3s;
             position: absolute;
             z-index: -1;
-            @include primary-text-gradient;
+            // @include primary-text-gradient;
+            background-color: $dominant;
+            -webkit-background-clip: text !important;
+            color: transparent !important;
             -webkit-text-stroke: 0px;
             color: transparent;
             transform: translate(-8px, -8px);
@@ -43,6 +60,9 @@
 }
 
 @media (max-width: 767px) {
+    .projectsSection {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .projectsItems {
         .projectLink {
             font-size: 2.8rem;

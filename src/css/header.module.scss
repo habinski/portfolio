@@ -37,7 +37,7 @@ nav {
         text-decoration: none;
         color: $text-color;
         &:not(.headerLogo) {
-            @include text-hover($primary-second);
+            @include text-hover($dominant);
         }
     }
     .burgerMenu {
