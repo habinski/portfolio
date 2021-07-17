@@ -2,7 +2,8 @@
 nav {
     display: grid;
     font-size: 1rem;
-    font-family: "Monument Extended Ultrabold";
+    font-family: Montserrat;
+    font-weight: 800;
     // grid-template-columns: 1fr 2fr;
     padding: .5rem;
     justify-items: center;
@@ -43,10 +44,9 @@ nav {
     .burgerMenu {
         display: none;
     }
-}
-
-p {
-    color: $text-color;
+    p {
+        color: $text-color;
+    }
 }
 
 @media (max-width: 767px) {

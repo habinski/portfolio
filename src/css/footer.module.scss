@@ -1,15 +1,15 @@
 @import './variables';
 footer {
     font-family: Montserrat;
-    background: $primary-gradient;
+    background: $dominant;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     padding: 2rem 0;
-    box-shadow: inset 0px 21px 21px rgba(0, 0, 0, 0.25);
     gap: 1rem;
     font-weight: 400;
     text-transform: uppercase;
+    color: $bg-color;
     span {
         // font-family: Monument Extended;
         font-weight: bold;
@@ -19,21 +19,23 @@ footer {
         grid-area: logo;
         width: 10rem;
         transition: .3s;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-name: heartbeat;
+        filter: invert(1);
+        // animation-duration: 1s;
+        // animation-iteration-count: infinite;
+        // animation-name: heartbeat;
     }
     .navigation {
         grid-area: navigation;
         display: grid;
         grid-auto-rows: auto;
         a {
-            font-family: Monument;
-            color: $text-color;
+            font-family: Montserrat;
+            font-weight: 800;
+            color: $bg-color;
             text-decoration: none;
             transition: .3s;
             &:hover {
-                transform: skewX(-20deg) translate(20px);
+                transform: translate(5px);
             }
         }
     }
@@ -41,6 +43,7 @@ footer {
         // justify-self: center;
         grid-area: copyright;
         text-align: center;
+        color: $bg-color !important;
     }
     .activeLink {
         color: white !important;
@@ -50,7 +53,7 @@ footer {
 .spikes {
     margin-top: 7rem;
     position: relative;
-    background: #070707;
+    background: $bg-color;
     // height: 50vh;
 }
 
@@ -64,6 +67,6 @@ footer {
     display: block;
     height: 30px;
     background-size: 30px 100%;
-    background-image: linear-gradient(135deg, #070707 25%, transparent 25%), linear-gradient(225deg, #070707 25%, transparent 25%);
+    background-image: linear-gradient(135deg, $bg-color 25%, transparent 25%), linear-gradient(225deg, $bg-color 25%, transparent 25%);
     background-position: 0 0;
 }

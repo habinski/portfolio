@@ -24,7 +24,7 @@ const Footer = () => {
 					<Link activeClassName={activeLink} to='/privacy'>privacy policy</Link>
 				</div>
 				<div className={copyright}>
-					<p>copyright &copy; {new Date().getFullYear()} <span>Habinski</span></p>
+					<p>copyright &copy; {new Date().getFullYear()} <span>Habiński</span></p>
 					<p>all rights reserved</p>
 				</div>
 

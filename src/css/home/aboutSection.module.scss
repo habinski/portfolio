@@ -1,21 +1,32 @@
 @import '../variables.scss';
 .about {
     display: grid;
-    align-items: center;
-    justify-items: center;
-    .aboutText {
-        font-family: Montserrat;
+    gap: 10vh;
+    min-height: 70vh;
+    .content {
         display: grid;
-        gap: 20px;
-        width: 60vw;
-        font-size: $text-size;
-        font-weight: 600;
-        color: $text-color;
-        h2 {
-            text-transform: uppercase;
-            font-size: 2rem;
-            @include primary-text-gradient;
-            font-weight: 800;
+        justify-items: center;
+        .aboutText {
+            width: 700px;
+            font-family: Montserrat;
+            display: grid;
+            gap: 20px;
+            width: 60vw;
+            font-size: $text-size;
+            color: $text-color;
+            h3 {
+                text-transform: uppercase;
+                font-size: 2rem;
+                color: $dominant;
+                text-align: right;
+                font-weight: 800;
+            }
+            p {
+                font-weight: 300;
+            }
+            a {
+                color: $dominant;
+            }
         }
     }
 }

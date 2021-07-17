@@ -16,24 +16,19 @@ const query = graphql`
 		  }
 		  title
 		  url
-		  updated_at
+		  updated_at(formatString: "DD MMM YY")
 		  id
-		  cover {
-			  url
-			
-		  }
 		}
 	  }
 	}
   }
-  
 `
 
 const ArticlesBlock = () => {
 	const data = useStaticQuery(query)
-	const articles = data.allStrapiArticle.edges.map(article => {
+	const articles = data.allStrapiArticle.edges.map((article, index) => {
 		return (
-			<ArticleCard article={article} key={article.node.id}></ArticleCard>
+			<ArticleCard article={article} id={article.node.id} key={article.node.id}></ArticleCard>
 		)
 
 	})
@@ -42,9 +37,9 @@ const ArticlesBlock = () => {
 			<h2 className='title'>blog</h2>
 			<div className={articlesBlck}>
 				{articles}
-				<Link className={btnMore} data-text="more" to="/blog">more</Link>
 			</div>
-		</section >
+			<Link className={btnMore} data-text="more" to="/blog">more</Link>
+		</section>
 	)
 }
 export default ArticlesBlock

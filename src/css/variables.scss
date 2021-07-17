@@ -104,7 +104,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
 }
 
-@mixin gradient-block-shadow {
+@mixin gradient-block-shadow($after-color) {
     position: relative;
     z-index: 1;
     transition: 0.3s;
@@ -120,7 +120,8 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
         // content: attr(text-attr);
         content: '';
         position: absolute;
-        background-image: $primary-gradient;
+        border: 1px solid $after-color;
+        background-color: transparent;
         transform: translate(-1rem, -1rem);
         z-index: -1;
         transition: 0.3s;

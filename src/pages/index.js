@@ -11,7 +11,7 @@ import Seo from '../components/SEO'
 
 
 export default function Home() {
-  return <Layout title={"Habinski"}>
+  return <Layout title={"Habiński"}>
     <Seo title='Homepage' />
     <div className='main-grid'>
       <HeroSection />

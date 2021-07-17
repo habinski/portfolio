@@ -1,7 +1,7 @@
 @import './variables.scss';
 @font-face {
     font-family: "Punc";
-    font-weight: 800;
+    font-weight: bold;
     src: url("./fonts/Punc-Bold.otf");
 }
 
@@ -9,6 +9,30 @@
     font-family: "Punc";
     font-weight: normal;
     src: url("./fonts/Punc-Regular.otf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: bold;
+    src: url("./fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 500; //medium
+    src: url("./fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400; //regular
+    src: url("./fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 300; //light
+    src: url("./fonts/Montserrat-Light.ttf");
 }
 
 .activeLink {
@@ -152,7 +176,8 @@ section {
     }
     .cookies-btn-agree {
         color: $text-color;
-        font-family: Monument Extended;
+        font-family: Montserrat;
+        font-weight: 400;
         background-color: $primary-second;
         justify-self: center;
         padding: 1rem;
