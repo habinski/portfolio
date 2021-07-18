@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import ArticleCard from "./articleCard"
 import {
 	articlesSection,
-	articlesBlck, btnMore
+	articlesBlck,
 } from '../../css/home/articlesSection.module.scss'
 const query = graphql`
 {
@@ -38,7 +38,7 @@ const ArticlesBlock = () => {
 			<div className={articlesBlck}>
 				{articles}
 			</div>
-			<Link className={btnMore} data-text="more" to="/blog">more</Link>
+			<Link className="btnMore" data-text="more" to="/blog">more</Link>
 		</section>
 	)
 }

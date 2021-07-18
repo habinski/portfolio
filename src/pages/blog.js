@@ -6,6 +6,10 @@ import ArticlesComponent from "../components/blog/articles"
 import CategoriesNav from '../components/blog/categoriesNav'
 // import "../assets/css/main.css"
 import Seo from '../components/SEO'
+import { blog, articlesGrid } from '../css/blog/blog.module.scss'
+import BigArticleCard from "../components/blog/bigArticleCard"
+
+
 
 const Blog = () => (
   <Layout title='blog'>
@@ -19,24 +23,36 @@ const Blog = () => (
             node {
               strapiId
               title
+              url
               content
+              updated_at(formatString: "DD MMMM YY")
               categories {
                 name
               }
               cover {
-               url
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600)
+                  }
+                }
               }
             }
           }
         }
       }
-      `}
+   `}
       render={data => (
-        <section className='blog'>
-          <h1>BLOG</h1>
-          {/* <div className="blog-content"> */}
-          <ArticlesComponent articles={data.allStrapiArticle.edges} />
-          {/* </div> */}
+        <section className={blog}>
+          <h3 className='title'>BLOG</h3>
+
+          <div className={articlesGrid}>
+            {data.allStrapiArticle.edges.map((article) => {
+              console.log(article)
+              return (
+                <BigArticleCard article={article.node} key={article.node.strapiId} />
+              )
+            })}
+          </div>
         </section>
       )}
     />

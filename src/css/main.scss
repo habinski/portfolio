@@ -126,8 +126,10 @@ section {
     // transform: rotateZ(180deg);
 }
 
-.btn-more {
-    @include text-hover($primary-second);
+.btnMore {
+    font-family: Montserrat;
+    font-weight: 800;
+    @include text-hover($dominant);
     align-self: center;
     justify-self: center;
     -webkit-text-stroke: 0.5px $text-color;

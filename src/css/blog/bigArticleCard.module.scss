@@ -1,0 +1,19 @@
+@import '../variables.scss';
+.articleDiv {
+    display: grid;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.articleInfo {
+    h5 {
+        font-family: Montserrat;
+        font-weight: 800;
+        font-size: 2rem;
+        color: $dominant;
+    }
+    p {
+        font-family: Punc;
+        color: $text-color
+    }
+}

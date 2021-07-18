@@ -58,9 +58,6 @@
             @include primary-text-gradient;
         }
     }
-    .btn-more {
-        grid-area: btn;
-    }
 }
 
 @media(max-width: 767px) {

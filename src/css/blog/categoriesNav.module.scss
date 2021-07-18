@@ -1,15 +1,17 @@
-.CategoriesNav {
-    // position: sticky;
-    // top: 0;
+@import '../variables.scss';
+.categoriesNavigation {
+    // border: 0 solid $dominant;
+    // border-top: 1px solid $dominant;
+    // border-bottom: 1px solid $dominant;
     font-size: .95rem;
-    font-family: Monument;
-    font-weight: 400;
+    font-family: Montserrat;
+    font-weight: 800;
     // background-image: $primary-gradient;
     // width: 100vw;
     display: grid;
     height: 150%;
     z-index: 10;
-    .blog-links {
+    .blogLinks {
         width: 80vw;
         display: flex;
         flex-wrap: wrap;
@@ -20,11 +22,7 @@
             text-decoration: none;
             color: $text-color;
             // opacity: .5;
-            @include text-hover($primary-first);
+            @include text-hover($dominant);
         }
     }
-}
-
-.active-link {
-    color: red;
 }

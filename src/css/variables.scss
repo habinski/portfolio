@@ -40,6 +40,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
     &:hover {
         transform: translate(4px, 4px);
+        color: $text-color;
         &::before {
             transform: translate(-8px, -8px);
             opacity: 1;
