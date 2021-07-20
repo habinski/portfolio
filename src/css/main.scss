@@ -59,8 +59,8 @@ body::-webkit-scrollbar-track-piece {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(0deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
-    ;
+    // background-image: linear-gradient(0deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
+    background-color: $dominant;
 }
 
 body::-webkit-scrollbar-corner {
@@ -74,7 +74,7 @@ body::-webkit-scrollbar-corner {
 }
 
 body {
-    // margin: 0 20px;
+    // margin: 0 100px;
     overflow-x: hidden;
     overflow-y: auto;
     font-family: Monument Extended Ultrabold;
@@ -88,7 +88,7 @@ body {
 // $bg-stripes-width: 0.10%;
 html {
     background-color: $bg-color;
-    //     scroll-behavior: smooth;
+    scroll-behavior: smooth;
     //     background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
     //     background-size: 32.00px 32.00px;
     //     // background: repeating-linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);

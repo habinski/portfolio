@@ -8,34 +8,14 @@ import Layout from "../components/Layout"
 // import ArticleCard from "../components/home/articleCard"
 import Seo from "../components/SEO"
 
-// export const query = graphql`
-// query ArticleQuery($id: Int!) {
-//     strapiArticle(strapiId: { eq: $id }) {
-//       strapiId
-//       title
-//       content
-// 	  published_at
-// 	  updated_at
-// 	  categories {
-// 		  name
-// 	  }
-//       cover { 
-// 		localFile {
-// 			childImageSharp {
-// 			  gatsbyImageData
-// 			}
-// 		  }
-//       }
-// 	}
-// 	more: strapiCategory(articles: {elemMatch: {id: {eq: $id}}}) {
-// 		name
-// 		articles {
-// 		  id
-// 		  title
-// 		}
-// 	  }
-//   }
-//  `
+import {
+	post,
+	head,
+	headerInfo,
+	articleInfo,
+	readNext,
+	more
+} from '../css/blog/article.module.scss'
 
 
 
@@ -53,32 +33,38 @@ const Article = ({ pageContext }, location) => {
 				title={title}
 				pathname={location.pathname}
 			/>
-			<div className='post'>
-				<div className='head' >
-					<div className="header-info">
+			<section className={post}>
+				<div className={head} >
+					<div className={headerInfo}>
 						<h1>{title}</h1>
+						<p>Published at {published_at}</p>
+						{
+							published_at === updated_at ? <p>Last update: {updated_at}</p> : ''
+						}
+						<p>{Math.round(content.length / 600) + ' minutes read'}</p>
+
 					</div>
 					<GatsbyImage image={coverImage} alt="cover" />
 
 				</div>
-				<div className="article-info">
+				{/* <div className={articleInfo}>
 					<p>Published at {published_at}</p>
 					{
 						published_at === updated_at ? <p>Last update: {updated_at}</p> : ''
 					}
 					<p>{Math.round(content.length / 600) + ' minutes read'}</p>
 
-				</div>
+				</div> */}
 				<article>
 					<ReactMarkdown children={content} />
 				</article>
-				<div className="read-next">
+				<div className={readNext}>
 					<h1>Read next</h1>
-					<div className="more">
+					<div className={more}>
 						{/* {more} */}
 					</div>
 				</div>
-			</div>
+			</section>
 
 		</Layout >
 	)
