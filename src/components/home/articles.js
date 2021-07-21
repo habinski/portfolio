@@ -7,7 +7,7 @@ import {
 } from '../../css/home/articlesSection.module.scss'
 const query = graphql`
 {
-	allStrapiArticle(limit: 3, sort: {fields: updated_at, order: DESC}) {
+	allStrapiArticle(limit: 6, sort: {fields: updated_at, order: DESC}) {
 	  edges {
 		node {
 		  categories {

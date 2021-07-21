@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
 import ReactMarkdown from "react-markdown"
 import {
 	projectsSection,
 	projectsItems,
-	btnMore,
 	projectLink,
 	desriptionBlock
 } from '../../css/home/projectsSection.module.scss'
@@ -30,7 +28,7 @@ const Projects = () => {
 	const data = useStaticQuery(query)
 
 	const projects = data.allStrapiProject.nodes.map((project) => {
-		return <p className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id}>{project.name}</p>
+		return <p className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id}>{project.name}</p> //must be button
 	})
 
 	return (

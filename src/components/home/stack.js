@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+
 
 import {
 	bg,

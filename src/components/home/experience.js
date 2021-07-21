@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
 	workSection,
 	period,
-	fromTo,
 	experience,
 	expirienceItems
 

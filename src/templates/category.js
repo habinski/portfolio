@@ -1,11 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 import BigArticleCard from "../components/blog/bigArticleCard"
-
 import CategoriesNav from "../components/blog/categoriesNav"
 import Layout from "../components/Layout"
 import Seo from '../components/SEO'
+
 import { blog, articlesGrid } from '../css/blog/blog.module.scss'
 
 

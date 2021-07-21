@@ -27,10 +27,11 @@ const tempLinks = data.map(link => {
 })
 
 
-export default () => {
+const PageLinks = () => {
   return (
     <>
       {tempLinks}
     </>
   )
 }
+export default PageLinks

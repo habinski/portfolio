@@ -1,9 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ReactMarkdown from "react-markdown"
-
-
 import Layout from "../components/Layout"
 import CodeBlock from "../components/blog/CodeBlock";
 import ArticleCard from '../components/home/articleCard'
@@ -13,7 +10,6 @@ import {
 	post,
 	head,
 	headerInfo,
-	articleInfo,
 	readNext,
 	more
 } from '../css/blog/article.module.scss'
@@ -21,7 +17,7 @@ import {
 
 
 const Article = ({ pageContext }, location) => {
-	const { title, updated_at, cover, content, categories, published_at } = pageContext.article.node
+	const { title, updated_at, cover, content, published_at } = pageContext.article.node
 	const previous = pageContext.article.previous
 	const next = pageContext.article.next
 

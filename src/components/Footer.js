@@ -16,9 +16,8 @@ const Footer = () => {
 	return (
 		<>
 			<div className={spikes}></div>
-			<footer >
-
-				<img src={logo} alt="logo" className={footerLogo} />
+			<footer>
+				<Link to='/'><img src={logo} alt="logo" className={footerLogo} /></Link>
 				<div className={navigation}>
 					<PageLinks styleClass={navLinks}></PageLinks>
 					<Link activeClassName={activeLink} to='/privacy'>privacy policy</Link>
