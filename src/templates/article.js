@@ -2,10 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ReactMarkdown from "react-markdown"
-// import Moment from "react-moment"
-// import Prism from 'prismjs';
+
+
 import Layout from "../components/Layout"
-// import ArticleCard from "../components/home/articleCard"
+import CodeBlock from "../components/blog/CodeBlock";
+import ArticleCard from '../components/home/articleCard'
 import Seo from "../components/SEO"
 
 import {
@@ -20,10 +21,10 @@ import {
 
 
 const Article = ({ pageContext }, location) => {
-	console.log(pageContext.article.node)
 	const { title, updated_at, cover, content, categories, published_at } = pageContext.article.node
 	const previous = pageContext.article.previous
 	const next = pageContext.article.next
+
 	const coverImage = getImage(cover.localFile)
 
 
@@ -47,21 +48,21 @@ const Article = ({ pageContext }, location) => {
 					<GatsbyImage image={coverImage} alt="cover" />
 
 				</div>
-				{/* <div className={articleInfo}>
-					<p>Published at {published_at}</p>
-					{
-						published_at === updated_at ? <p>Last update: {updated_at}</p> : ''
-					}
-					<p>{Math.round(content.length / 600) + ' minutes read'}</p>
 
-				</div> */}
 				<article>
-					<ReactMarkdown children={content} />
+					<ReactMarkdown children={content} components={CodeBlock} />
 				</article>
 				<div className={readNext}>
 					<h1>Read next</h1>
 					<div className={more}>
-						{/* {more} */}
+						{/* <ArticleCard article={previous} /> */}
+						{console.log(previous)}
+						{console.log(`///`)}
+						{console.log(next)}
+
+						{previous !== null ? <ArticleCard article={previous} /> : ''}
+						{next !== null ? <ArticleCard article={next} /> : ''}
+
 					</div>
 				</div>
 			</section>

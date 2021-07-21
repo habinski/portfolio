@@ -1,44 +1,32 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import ArticlesComponent from "../components/blog/articles"
+import BigArticleCard from "../components/blog/bigArticleCard"
+
 import CategoriesNav from "../components/blog/categoriesNav"
 import Layout from "../components/Layout"
 import Seo from '../components/SEO'
-export const query = graphql`
-query Category($id: Int!) {
-  articles:  allStrapiArticle(filter: {categories: {elemMatch: {id: {eq: $id}}}}) {
-    edges {
-      node {
-        strapiId
-        title
-        categories {
-          name
-        }
-        cover {
-         url
-        }
-      }
-    }
-  }
-  category: strapiCategory(strapiId: { eq: $id }) {
-    name
-  }
-}
-`
+import { blog, articlesGrid } from '../css/blog/blog.module.scss'
 
 
-const Category = ({ data }) => {
-
+const Category = ({ pageContext }) => {
+  console.log(pageContext)
+  const { name, articles } = pageContext.category.node
   return (
-    <Layout title={data.category.name}>
-      <Seo title={data.category.name} />
+    <Layout title={name}>
+      <Seo title={name} />
       <CategoriesNav />
-      <div className='blog'>
-        <h1>{data.category.category}</h1>
-        <ArticlesComponent articles={data.articles.edges} />
+      <section className={blog}>
+        <h2 className='title'>{name}</h2>
+        <div className={articlesGrid}>
+          {articles.map((article) => {
+            return (
+              <BigArticleCard article={article} key={article.id} />
+            )
+          })}
+        </div>
+      </section>
 
-      </div>
     </Layout>
   )
 }

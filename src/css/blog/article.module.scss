@@ -35,6 +35,7 @@
                 font-size: 5rem;
                 font-family: Montserrat;
                 font-weight: 800;
+                line-height: normal;
             }
         }
     }
@@ -144,18 +145,16 @@
         justify-self: center;
         margin-top: 3rem;
         text-align: center;
-        color: $text-color;
+        color: $dominant;
+        font-family: Punc;
         .more {
             margin-top: 2rem;
             display: grid;
+            justify-content: center;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            // background: $primary-gradient !important;
-            // -webkit-background-clip: text !important;
-            @include primary-text-gradient;
+            gap: 5rem;
             a {
                 font-size: 1.5rem;
-                // color: transparent !important;
             }
         }
     }
@@ -184,16 +183,3 @@
         }
     }
 }
-
-// .gatsby-highlight {
-//     background-color: #1d1f21;
-//     border-radius: 0.3em;
-//     margin: 0.5em 0;
-//     padding: 1em;
-//     overflow: auto;
-// }
-// .gatsby-highlight pre[class*="language-"].line-numbers {
-//     padding: 0;
-//     padding-left: 2.8em;
-//     overflow: initial;
-// }

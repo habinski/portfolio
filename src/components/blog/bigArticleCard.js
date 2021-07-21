@@ -4,18 +4,18 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { articleInfo, articleDiv } from '../../css/blog/bigArticleCard.module.scss'
 
 const BigArticleCard = (article) => {
-	const { title, url, content, categories, cover, updated_at } = article.article;
+	const { title, url, categories = '', cover, updated_at } = article.article;
 	const image = getImage(cover.localFile)
 	console.log(categories)
 	return (
 		<Link className={articleDiv} to={`/blog/${url}`}>
 			<GatsbyImage image={image} />
 			<div className={articleInfo}>
-				<p>{
+				{categories !== '' ? <p>{
 					categories.map(c => {
 						return <span>{c.name} </span>
 					})
-				}</p>
+				}</p> : ''}
 				<h5>{title}</h5>
 				<p>{updated_at}</p>
 			</div>

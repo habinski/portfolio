@@ -116,7 +116,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/${category.node.url}`,
       component: require.resolve("./src/templates/category.js"),
       context: {
-        id: category.node.strapiId,
+        category: category,
       },
     })
   })

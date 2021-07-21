@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import ArticlesComponent from "../components/blog/articles"
+
 import CategoriesNav from '../components/blog/categoriesNav'
 // import "../assets/css/main.css"
 import Seo from '../components/SEO'

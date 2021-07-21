@@ -9,7 +9,7 @@ nav {
     justify-items: center;
     .headerLogo {
         display: grid;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, max-content);
         text-transform: capitalize;
         align-items: center;
         img {

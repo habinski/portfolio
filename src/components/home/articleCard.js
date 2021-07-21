@@ -2,8 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { articleLink } from '../../css/home/articleCard.module.scss'
-const articleCard = (article, id) => {
-	const { categories, title, updated_at, url } = article.article.node;
+
+const ArticleCard = (article) => {
+	const { categories, title, updated_at, url } = article.article;
+	console.log(article.article)
 	return (
 		<Link to={`/blog/${url}`} className={articleLink}>
 			<div>
@@ -21,4 +23,4 @@ const articleCard = (article, id) => {
 	)
 }
 
-export default articleCard
+export default ArticleCard

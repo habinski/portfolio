@@ -28,7 +28,7 @@ const ArticlesBlock = () => {
 	const data = useStaticQuery(query)
 	const articles = data.allStrapiArticle.edges.map((article, index) => {
 		return (
-			<ArticleCard article={article} id={article.node.id} key={article.node.id}></ArticleCard>
+			<ArticleCard article={article.node} id={article.node.id} key={article.node.id}></ArticleCard>
 		)
 
 	})
