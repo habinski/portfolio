@@ -1,6 +1,6 @@
 @import './variables.scss';
 .sidebar {
-    background: $primary-gradient;
+    background: $dominant;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +31,8 @@
 .sidebar-links a {
     text-decoration: none;
     font-size: 3.5rem;
-    // @include page-links;
+    font-family: Montserrat;
+    font-weight: 800;
     color: transparent;
     -webkit-text-stroke: 1px $text-color;
     transition: .3s;

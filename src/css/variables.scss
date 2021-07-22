@@ -67,10 +67,17 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     background: none;
     border: none;
     color: $text-color;
-    font-family: Monument Extended Ultrabold;
+    font-family: Montserrat;
     font-size: 2rem;
     text-transform: uppercase;
-    // @include text-hover($primary-first);
+    color: $text-color;
+    font-family: Montserrat;
+    font-weight: 800;
+    transition: 0.3s;
+    line-height: 100%;
+    &:hover {
+        color: $dominant;
+    }
 }
 
 // @mixin text-hover($color) {
