@@ -34,7 +34,7 @@
     font-family: Montserrat;
     font-weight: 800;
     color: transparent;
-    -webkit-text-stroke: 1px $text-color;
+    -webkit-text-stroke: 0.5px $text-color;
     transition: .3s;
     &:hover {
         color: $text-color;

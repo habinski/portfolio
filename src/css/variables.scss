@@ -100,7 +100,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
 @mixin page-links {
     filter: drop-shadow(-7px -7px 0px $primary-first);
     text-decoration: none;
-    -webkit-text-stroke: 1px $text-color;
+    -webkit-text-stroke: 0.5px $text-color;
     transition: .3s;
     color: transparent;
     &:hover {
