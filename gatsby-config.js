@@ -38,7 +38,8 @@ module.exports = {
                 singleTypes: [
                     "about",
                     "privacy",
-                    "hero"
+                    "hero",
+                    "contact"
                 ],
                 queryLimit: 1000,
             },

@@ -1,0 +1,31 @@
+@import '../variables.scss';
+.contact {
+    display: grid;
+    gap: 10vh;
+    align-items: center;
+    .grid {
+        display: grid;
+        align-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10vh;
+        color: $text-color;
+        a {
+            transition: 0.3s;
+            font-size: 2rem;
+            text-decoration: none;
+            font-weight: 800;
+            justify-self: center;
+            align-self: center;
+            color: $dominant;
+            &:hover {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contact>.grid {
+        grid-template-columns: 1fr;
+    }
+}
