@@ -9,6 +9,7 @@ import Seo from "../components/SEO"
 import {
 	post,
 	head,
+	imageCover,
 	headerInfo,
 	readNext,
 	more

@@ -1,0 +1,16 @@
+@import './variables.scss';
+.privacy {
+    margin: 3rem 0;
+    color: $text-color;
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+}
+
+.privacyContent {
+    // display: grid;
+    // width: 80vw;
+    // font-family: Montserrat;
+    // font-size: 1.2rem;
+    @include md-styles;
+}
