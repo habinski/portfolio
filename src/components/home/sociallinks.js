@@ -25,7 +25,7 @@ const SocialLinks = () => {
 		return <a href={link.link} data-text={link.name} target='_blank' key={link.id} rel="noreferrer" >{link.name}</a>
 	})
 	return (
-		<section className={linksBlock} id='contact'>
+		<section className={linksBlock}>
 			<h2 className='title'>follow</h2>
 			<div className={linksContent}>
 				{links}
