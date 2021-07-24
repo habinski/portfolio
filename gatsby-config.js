@@ -71,12 +71,25 @@ module.exports = {
                 ],
             },
         },
+        // {
+        //     resolve: "gatsby-plugin-google-tagmanager",
+        //     options: {
+        //         id: "GTM-M5C7B7D",
+        //         includeInDevelopment: true,
+        //         defaultDataLayer: { platform: "gatsby" }
+        //     },
+        // },
         {
-            resolve: "gatsby-plugin-google-tagmanager",
+            resolve: `gatsby-plugin-gdpr-cookies`,
             options: {
-                id: "GTM-M5C7B7D",
-                includeInDevelopment: true,
-                defaultDataLayer: { platform: "gatsby" }
+
+                googleTagManager: {
+                    trackingId: 'GTM-M5C7B7D', // leave empty if you want to disable the tracker
+                    cookieName: 'gatsby-gdpr-google-tagmanager', // default
+                    dataLayerName: 'dataLayer', // default
+                },
+                // defines the environments where the tracking should be available  - default is ["production"]
+                environments: ['production', 'development']
             },
         },
     ]

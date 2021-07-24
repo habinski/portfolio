@@ -140,57 +140,9 @@ section {
     transition: .3s;
 }
 
-.cookies-banner-wrap {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 1rem !important;
-    z-index: 100;
-    padding: .5rem;
-    opacity: .9;
-    color: $text-color;
-    background: $primary-gradient;
-    backdrop-filter: blur(20px);
-    .cookies-banner {
-        background: $bg-color;
-        padding: 2rem 2rem .5rem 2rem;
-        font-family: Monument Extended;
-        p {
-            text-align: center;
-            font-family: Montserrat;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-    }
-    button {
-        background: none;
-        border: none;
-    }
-    .cookies-btns {
-        background: $bg-color;
-        display: grid;
-        // margin-top: 1rem;
-        padding: .5rem 2rem 2rem;
-    }
-    a {
-        text-decoration: none;
-        color: $primary-second;
-    }
-    .cookies-btn-agree {
-        color: $text-color;
-        font-family: Montserrat;
-        font-weight: 400;
-        background-color: $primary-second;
-        justify-self: center;
-        padding: 1rem;
-        font-size: 1rem;
-    }
-}
-
-.hide-cookies-banner {
-    display: none;
-}
-
+// .hide-cookies-banner {
+//     display: none;
+// }
 @media (max-width: 767px) {
      :root {
         font-size: 12px;
@@ -199,7 +151,7 @@ section {
         font-size: 3rem;
         -webkit-text-stroke: 0.2px $text-color;
     }
-    .cookies-banner-wrap {
-        width: 80vw;
-    }
+    // .cookies-banner-wrap {
+    //     width: 80vw;
+    // }
 }
