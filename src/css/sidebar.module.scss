@@ -33,11 +33,12 @@
     font-size: 3.5rem;
     font-family: Montserrat;
     font-weight: 800;
-    color: transparent;
-    -webkit-text-stroke: 0.5px $text-color;
     transition: .3s;
+    color: $text-color;
+    -webkit-text-stroke: 0.5px transparent;
     &:hover {
-        color: $text-color;
+        -webkit-text-stroke: 0.5px $text-color;
+        color: transparent;
     }
 }
 
@@ -45,7 +46,12 @@
     position: absolute;
     right: 8vw;
     top: 10px;
+    -webkit-text-stroke: 0.5px transparent;
     @include nav-btns;
+    &:hover {
+        transition: 0.3s;
+        -webkit-text-stroke: 0.5px $text-color;
+    }
 }
 
 @media screen and (min-width: 992px) {

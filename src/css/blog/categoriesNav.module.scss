@@ -24,5 +24,8 @@
             // opacity: .5;
             @include text-hover($dominant);
         }
+        .activeLink {
+            color: $dominant;
+        }
     }
 }

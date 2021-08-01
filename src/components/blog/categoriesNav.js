@@ -3,7 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import {
   categoriesNavigation,
-  blogLinks
+  blogLinks,
+  activeLink
 } from '../../css/blog/categoriesNav.module.scss'
 
 const query = graphql`
@@ -24,7 +25,7 @@ const CategoriesNav = () => {
   const data = useStaticQuery(query)
   const categories = data.allStrapiCategory.edges.map(category => {
     return (
-      <Link activeClassName='activeLink' key={category.node.strapiId} to={`/blog/${category.node.url}`}>
+      <Link activeClassName={activeLink} key={category.node.strapiId} to={`/blog/${category.node.url}`}>
         {category.node.name}
       </Link>
     )
@@ -32,7 +33,7 @@ const CategoriesNav = () => {
   return (<div className={categoriesNavigation}>
     <div className={blogLinks}>
       {categories}
-      <Link activeClassName='activeLink' to={`/blog`}>all articles
+      <Link activeClassName={activeLink} to={`/blog`}>all articles
       </Link>
     </div>
   </div>)

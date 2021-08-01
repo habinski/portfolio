@@ -2,6 +2,8 @@
 .projectsSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 5vh;
+    // transform: translate(-25%);
 }
 
 .desriptionBlock {
@@ -11,19 +13,24 @@
     font-weight: 300;
     font-size: 18px;
     color: $text-color;
+    transition: .3s;
+    @include md-styles;
 }
 
 .projectsItems {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    justify-content: center;
+    align-items: flex-start;
     max-width: 80vw;
     min-height: 70vh;
-    align-items: center;
-    justify-items: center;
-    justify-self: center;
+    // align-items: center;
+    // justify-items: center;
+    // justify-self: center;
     .projectLink {
         font-family: Montserrat;
         font-weight: 800;
-        text-align: center;
         -webkit-text-stroke: 0.5px $text-color;
         font-size: 3rem;
         text-decoration: none;
@@ -64,7 +71,13 @@
 
 @media (max-width: 767px) {
     .projectsSection {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+    .projectsItems {
+        align-items: flex-end;
+    }
+    .desriptionBlock {
+        display: none;
     }
     .projectsItems {
         .projectLink {

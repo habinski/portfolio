@@ -1,0 +1,29 @@
+@import './variables.scss';
+.errPage {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 5rem;
+    height: 30vh;
+    .errContent {
+        display: grid;
+        height: min-content;
+    }
+    h1 {
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+        font-family: Montserrat;
+        font-size: 7rem;
+        color: $dominant;
+        text-transform: uppercase;
+    }
+    h2 {
+        margin: 0;
+        font-family: Montserrat;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+}
