@@ -1,11 +1,12 @@
-@import url(//db.onlinewebfonts.com/c/a4745f4b1d04fa025c6a05d891ed0126?family=Monument+Extended+Ultrabold);
-@import url(//db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended);
+// @import url(//db.onlinewebfonts.com/c/a4745f4b1d04fa025c6a05d891ed0126?family=Monument+Extended+Ultrabold);
+// @import url(//db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended);
 $text-color: #FFFFFF;
+$dominant: #E6AF2E;
 $text-size: 1.4rem;
 $primary-first: #7700BB;
 $primary-middle: #5e23df;
 $primary-second: #0090FF;
-$bg-color: #070707;
+$bg-color: #090C08;
 $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%, $primary-second 100%);
 // $primary-gradient:linear-gradient(90deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
 ;
@@ -39,6 +40,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
     &:hover {
         transform: translate(4px, 4px);
+        color: $text-color;
         &::before {
             transform: translate(-8px, -8px);
             opacity: 1;
@@ -65,10 +67,17 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     background: none;
     border: none;
     color: $text-color;
-    font-family: Monument Extended Ultrabold;
+    font-family: Montserrat;
     font-size: 2rem;
     text-transform: uppercase;
-    // @include text-hover($primary-first);
+    color: $text-color;
+    font-family: Montserrat;
+    font-weight: 800;
+    transition: 0.3s;
+    line-height: 100%;
+    &:hover {
+        color: $dominant;
+    }
 }
 
 // @mixin text-hover($color) {
@@ -91,7 +100,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
 @mixin page-links {
     filter: drop-shadow(-7px -7px 0px $primary-first);
     text-decoration: none;
-    -webkit-text-stroke: 1px $text-color;
+    -webkit-text-stroke: 0.5px $text-color;
     transition: .3s;
     color: transparent;
     &:hover {
@@ -103,7 +112,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
 }
 
-@mixin gradient-block-shadow {
+@mixin gradient-block-shadow($after-color) {
     position: relative;
     z-index: 1;
     transition: 0.3s;
@@ -119,7 +128,8 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
         // content: attr(text-attr);
         content: '';
         position: absolute;
-        background-image: $primary-gradient;
+        border: 1px solid $after-color;
+        background-color: transparent;
         transform: translate(-1rem, -1rem);
         z-index: -1;
         transition: 0.3s;
@@ -130,23 +140,110 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
 }
 
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
+@mixin md-styles {
+    display: grid;
+    justify-self: center;
+    width: 760px;
+    color: $text-color;
+    font-family: Montserrat;
+    font-size: 1.3rem;
+    line-height: 1.3rem*1.5;
+    letter-spacing: 0px;
+    margin: 2rem 1.5rem;
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        font-family: Montserrat;
+        font-weight: 800;
+        margin-top: 2rem;
     }
-    15% {
-        transform: scale(0.97);
+    h1 {
+        font-size: 2rem;
+        line-height: 2rem*1.5;
     }
-    30% {
-        transform: scale(1);
+    h2 {
+        font-size: 1.7rem;
+        line-height: 1.5rem*1.5;
     }
-    45% {
-        transform: scale(0.97);
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.5rem*1.5;
     }
-    60% {
-        transform: scale(1);
+    li {
+        padding-left: 1em;
+        list-style-position: inside;
     }
-    100% {
-        transform: scale(1);
+    li::marker {
+        // list-style-type: none;
+        // color: $primary-first;
+        font-weight: 100;
+    }
+    ul {
+        // list-style-type: "◙";
+    }
+    ol {}
+    a {
+        font-weight: 600;
+        color: $text-color;
+        text-decoration: none;
+        background-image: $primary-gradient;
+        background-size: 100% 30%;
+        background-repeat: no-repeat;
+        letter-spacing: 1px;
+        transition: .3s;
+        background-size: 100% 50%;
+        background-position: 50% 100%;
+        &:hover {
+            background-position: 100% 0%;
+        }
+    }
+    p {
+        margin: 1.2rem 0;
+        img {
+            justify-self: center;
+            width: 100%;
+            transition: .3s;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+    table {
+        table-layout: auto;
+        width: 100%;
+        border-collapse: collapse;
+        border: 3px solid $primary-first;
+        transition: .3s;
+        tr {
+            &:hover {
+                transition: .3s;
+                background-image: linear-gradient(90deg, #7800bd80 0%, #6024e080 50%, #0091ff80 100%);
+            }
+        }
+        th,
+        td {
+            padding: 2rem 1rem;
+        }
+        th {
+            font-family: Monument Extended;
+            text-align: center !important;
+        }
+        td {
+            text-align: left !important;
+        }
+    }
+    hr {
+        width: 100%;
+    }
+    @media(max-width: 768px) {
+        width: 90vw;
+        p {
+            img {
+                &:hover {
+                    transform: scale(1);
+                }
+            }
+        }
     }
 }

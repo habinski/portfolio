@@ -14,30 +14,82 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage(page)
   }
 }
+//pageContext 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(
     `
-        {
-          articles: allStrapiArticle(sort: {order: DESC, fields: published_at}) {
-            edges {
-              node {
-                title
-                url
-                strapiId
+    {
+      articles: allStrapiArticle(sort: {order: DESC, fields: published_at}) {
+        edges {
+          node {
+            title
+            url
+            id
+            content
+            published_at(formatString: "DD MMMM YYYY")
+            updated_at(formatString: "DD MMMM YYYY")
+            categories {
+              id
+              name
+              url
+            }
+            cover {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
           }
-          categories: allStrapiCategory(sort: {order: DESC, fields: published_at}) {
-            edges {
-              node {
-                name
-                url
-                strapiId
+          next {
+            url
+            categories {
+              id
+              name
+            }
+            updated_at(formatString: "DD MMMM YYYY")
+            title
+            strapiId
+          }
+          previous {
+            url
+            categories {
+              id
+              name
+            }
+            updated_at(formatString: "DD MMMM YYYY")
+            title
+            strapiId
+          }
+        }
+      }
+      categories: allStrapiCategory(sort: {order: DESC, fields: published_at}) {
+        edges {
+          node {
+            name
+            url
+            strapiId
+            articles {
+              title
+              url
+              id
+              content
+              published_at(formatString: "DD MMMM YYYY")
+              updated_at(formatString: "DD MMMM YYYY")
+              cover {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
               }
             }
           }
         }
+      }
+    }
+    
     `
   )
 
@@ -54,17 +106,17 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/${article.node.url}`,
       component: require.resolve("./src/templates/article.js"),
       context: {
-        id: article.node.strapiId,
+        article: article
       },
     })
   })
 
   categories.forEach((category, index) => {
     createPage({
-      path: `/category/${category.node.url}`,
+      path: `/blog/${category.node.url}`,
       component: require.resolve("./src/templates/category.js"),
       context: {
-        id: category.node.strapiId,
+        category: category,
       },
     })
   })

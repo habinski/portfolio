@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import ReactMarkdown from "react-markdown"
-import { about, aboutText } from '../../css/home/aboutSection.module.scss'
+import { about, aboutText, content } from '../../css/home/aboutSection.module.scss'
 
 const query = graphql`
 {
@@ -17,9 +17,11 @@ const About = () => {
 
 
   return (<section className={about} >
-    <h2 className="title"> about </h2>
-    <div className={aboutText}>
-      <ReactMarkdown children={data.strapiAbout.text} />
+    <h2 className="title">about</h2>
+    <div className={content}>
+      <div className={aboutText}>
+        <ReactMarkdown children={data.strapiAbout.text} />
+      </div>
     </div>
   </section>
   )

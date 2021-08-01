@@ -15,17 +15,18 @@
         "restart": "npm run clean && npm run develop"
     },
     "dependencies": {
-        "gatsby": "^3.9.0",
+        "gatsby": "^3.10.0",
         "gatsby-cli": "^3.9.0",
+        "gatsby-plugin-gdpr-cookies": "^2.0.6",
         "gatsby-plugin-google-tagmanager": "^3.9.0",
         "gatsby-plugin-image": "^1.9.0",
         "gatsby-plugin-sass": "^4.9.0",
-        "gatsby-plugin-sharp": "^3.9.0",
-        "gatsby-remark-images": "^5.6.0",
-        "gatsby-remark-prismjs": "^5.6.0",
+        "gatsby-plugin-sharp": "^3.10.0",
+        "gatsby-remark-images": "^5.7.0",
+        "gatsby-remark-prismjs": "^5.7.0",
         "gatsby-source-filesystem": "^3.9.0",
         "gatsby-source-strapi": "1.0.2",
-        "gatsby-transformer-remark": "^4.6.0",
+        "gatsby-transformer-remark": "^4.7.0",
         "gatsby-transformer-sharp": "^3.9.0",
         "node-sass": "^6.0.1",
         "prismjs": "^1.24.1",
@@ -35,7 +36,9 @@
         "react-helmet": "^6.1.0",
         "react-markdown": "^6.0.2",
         "react-moment": "^1.1.1",
-        "strapi-plugin-graphql": "^3.6.5"
+        "react-syntax-highlighter": "^15.4.3",
+        "strapi-plugin-graphql": "^3.6.5",
+        "trim-newlines": "^4.0.2"
     },
     "devDependencies": {
         "prettier": "2.3.2"

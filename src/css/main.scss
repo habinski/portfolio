@@ -1,6 +1,43 @@
 @import './variables.scss';
+@font-face {
+    font-family: "Punc";
+    font-weight: bold;
+    src: url("./fonts/Punc-Bold.otf");
+}
+
+@font-face {
+    font-family: "Punc";
+    font-weight: normal;
+    src: url("./fonts/Punc-Regular.otf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: bold;
+    src: url("./fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 500; //medium
+    src: url("./fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400; //regular
+    src: url("./fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 300; //light
+    src: url("./fonts/Montserrat-Light.ttf");
+}
+
 .activeLink {
-    @include primary-text-gradient();
+    // @include primary-text-gradient();
+    color: $dominant;
 }
 
 body::-webkit-scrollbar {
@@ -22,8 +59,8 @@ body::-webkit-scrollbar-track-piece {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(0deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
-    ;
+    // background-image: linear-gradient(0deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
+    background-color: $dominant;
 }
 
 body::-webkit-scrollbar-corner {
@@ -37,10 +74,10 @@ body::-webkit-scrollbar-corner {
 }
 
 body {
-    // margin: 0 20px;
+    // margin: 0 100px;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: Monument Extended Ultrabold;
+    font-family: Montserrat;
     display: grid;
     // grid-auto-columns: 90%;
     // justify-items: center;
@@ -48,13 +85,13 @@ body {
     // gap: 520px;
 }
 
-$bg-stripes-width: 0.10%;
+// $bg-stripes-width: 0.10%;
 html {
-    // background-color: $bg-color;
+    background-color: $bg-color;
     scroll-behavior: smooth;
-    background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
-    background-size: 32.00px 32.00px;
-    // background: repeating-linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
+    //     background-image: linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
+    //     background-size: 32.00px 32.00px;
+    //     // background: repeating-linear-gradient(0deg, #0f0f0f 3.13%, #070707 3.13%, #070707 50%, #0f0f0f 50%, #0f0f0f 53.13%, #070707 53.13%, #070707 100%);
 }
 
 main {
@@ -74,21 +111,25 @@ section {
 }
 
 .title {
-    height: 100%;
-    writing-mode: vertical-rl;
-    text-align: center;
-    z-index: 5;
-    position: absolute;
-    font-size: 4rem;
-    -webkit-text-stroke: 0.5px $text-color;
-    color: transparent;
-    text-transform: uppercase;
-    left: 0;
-    transform: rotateZ(180deg);
+    // height: 100%;
+    font-family: Punc;
+    font-size: 5rem;
+    color: $text-color;
+    text-align: left;
+    // writing-mode: vertical-rl;
+    // text-align: center;
+    // z-index: 5;
+    // position: absolute;
+    // -webkit-text-stroke: 0.5px $text-color;
+    // text-transform: uppercase;
+    // left: 0;
+    // transform: rotateZ(180deg);
 }
 
-.btn-more {
-    @include text-hover($primary-second);
+.btnMore {
+    font-family: Montserrat;
+    font-weight: 800;
+    @include text-hover($dominant);
     align-self: center;
     justify-self: center;
     -webkit-text-stroke: 0.5px $text-color;
@@ -99,56 +140,9 @@ section {
     transition: .3s;
 }
 
-.cookies-banner-wrap {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 1rem !important;
-    z-index: 100;
-    padding: .5rem;
-    opacity: .9;
-    color: $text-color;
-    background: $primary-gradient;
-    backdrop-filter: blur(20px);
-    .cookies-banner {
-        background: $bg-color;
-        padding: 2rem 2rem .5rem 2rem;
-        font-family: Monument Extended;
-        p {
-            text-align: center;
-            font-family: Montserrat;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-    }
-    button {
-        background: none;
-        border: none;
-    }
-    .cookies-btns {
-        background: $bg-color;
-        display: grid;
-        // margin-top: 1rem;
-        padding: .5rem 2rem 2rem;
-    }
-    a {
-        text-decoration: none;
-        color: $primary-second;
-    }
-    .cookies-btn-agree {
-        color: $text-color;
-        font-family: Monument Extended;
-        background-color: $primary-second;
-        justify-self: center;
-        padding: 1rem;
-        font-size: 1rem;
-    }
-}
-
-.hide-cookies-banner {
-    display: none;
-}
-
+// .hide-cookies-banner {
+//     display: none;
+// }
 @media (max-width: 767px) {
      :root {
         font-size: 12px;
@@ -157,7 +151,7 @@ section {
         font-size: 3rem;
         -webkit-text-stroke: 0.2px $text-color;
     }
-    .cookies-banner-wrap {
-        width: 80vw;
-    }
+    // .cookies-banner-wrap {
+    //     width: 80vw;
+    // }
 }

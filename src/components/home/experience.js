@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
 	workSection,
 	period,
-	fromTo,
 	experience,
+	expirienceItems
 
 } from '../../css/home/experienceSection.module.scss'
 export const query = graphql`
@@ -43,7 +43,10 @@ const Experience = () => {
 	return (
 		<section className={experience}>
 			<h2 className='title'>Experience</h2>
-			{experiences}
+			<div className={expirienceItems}>
+
+				{experiences}
+			</div>
 		</section>
 	)
 }

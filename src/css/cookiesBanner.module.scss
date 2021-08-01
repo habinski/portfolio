@@ -1,0 +1,64 @@
+@import './variables.scss';
+.cookiesBannerWrap {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1rem !important;
+    z-index: 100;
+    // padding: .5rem;
+    // opacity: .8;
+    color: $text-color;
+    background: $bg-color;
+    border: 1px solid $dominant;
+    // backdrop-filter: blur(20px);
+    .cookiesBanner {
+        // background: $bg-color;
+        padding: 1rem 1rem .5rem 1rem;
+        font-family: Montserrat;
+        p {
+            text-align: center;
+            font-family: Montserrat;
+            // font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+    .cookiesBtns {
+        // background: $bg-color;
+        display: flex;
+        flex-direction: row;
+        gap: 5vh;
+        // margin-top: 1rem;
+        justify-content: center;
+        align-content: center;
+        padding: .5rem 0 1rem;
+        button {
+            background: none;
+            border: none;
+            color: $text-color;
+            // font-family: Montserrat;
+            // font-weight: 00;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+        }
+        .declineBtn {
+            color: $dominant;
+        }
+        .cookiesBtnAgree {
+            background-color: $dominant;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $dominant;
+    }
+}
+
+.hideCookiesBanner {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .cookiesBannerWrap {
+        width: 80vw;
+    }
+}

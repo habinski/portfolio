@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
+import ReactMarkdown from "react-markdown"
 import {
 	projectsSection,
 	projectsItems,
-	btnMore,
-	projectLink
+	projectLink,
+	desriptionBlock, showDescriptionBlock
 } from '../../css/home/projectsSection.module.scss'
 const query = graphql`
 {
@@ -13,26 +13,41 @@ const query = graphql`
 	  nodes {
 		id
 		name
+		description
+		link
 	  }
 	}
   }  
 `
 
 const Projects = () => {
-	const data = useStaticQuery(query)
+	const [description, setDescription] = useState(null)
+	function showDescription(desc) {
+		setDescription(desc)
+	}
 
+	const data = useStaticQuery(query)
+	// target='_blank'
 	const projects = data.allStrapiProject.nodes.map((project) => {
-		return <Link className={projectLink} to={`projects#${project.name}`} data-text={project.name} key={project.id}>{project.name}</Link>
+		if (project.link) return <a href={project.link} className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </a>
+
+		else return <a className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </a>
+
 	})
 
 	return (
-		<section className={projectsSection} id='projects'>
+		<section id='projects'>
 			<h2 className='title'>Projects</h2>
+			<div className={`${projectsSection} ${description ? showDescriptionBlock : ''}`}>
+				<div className={desriptionBlock}>
+					<ReactMarkdown>{description}</ReactMarkdown>
+				</div>
+				<div className={projectsItems} >
+					{projects}
 
-			<div className={projectsItems}>
-				{projects}
+				</div>
+				{/* <Link to='/projects' className={btnMore} >more</Link> */}
 			</div>
-			<Link to='/projects' className={btnMore} >more</Link>
 		</section>
 	)
 }

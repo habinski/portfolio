@@ -1,18 +1,19 @@
 @import '../variables.scss';
 .articlesSection {
     display: grid;
-    justify-items: center;
+    gap: 10vh;
 }
 
 .articlesBlck {
-    width: 40vw;
     display: grid;
+    justify-self: center;
+    width: max-content;
     gap: 5rem;
-    // justify-self: center;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 @media screen and (max-width: 767px) {
-    .articles-block {
-        width: 60vw;
+    .articlesBlck {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

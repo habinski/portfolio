@@ -1,6 +1,6 @@
 @import './variables.scss';
 .sidebar {
-    background: $primary-gradient;
+    background: $dominant;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,12 +31,14 @@
 .sidebar-links a {
     text-decoration: none;
     font-size: 3.5rem;
-    // @include page-links;
-    color: transparent;
-    -webkit-text-stroke: 1px $text-color;
+    font-family: Montserrat;
+    font-weight: 800;
     transition: .3s;
+    color: $text-color;
+    -webkit-text-stroke: 0.5px transparent;
     &:hover {
-        color: $text-color;
+        -webkit-text-stroke: 0.5px $text-color;
+        color: transparent;
     }
 }
 
@@ -44,7 +46,12 @@
     position: absolute;
     right: 8vw;
     top: 10px;
+    -webkit-text-stroke: 0.5px transparent;
     @include nav-btns;
+    &:hover {
+        transition: 0.3s;
+        -webkit-text-stroke: 0.5px $text-color;
+    }
 }
 
 @media screen and (min-width: 992px) {

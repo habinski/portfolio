@@ -2,13 +2,14 @@
 nav {
     display: grid;
     font-size: 1rem;
-    font-family: "Monument Extended Ultrabold";
+    font-family: Montserrat;
+    font-weight: 800;
     // grid-template-columns: 1fr 2fr;
     padding: .5rem;
     justify-items: center;
     .headerLogo {
         display: grid;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, max-content);
         text-transform: capitalize;
         align-items: center;
         img {
@@ -20,7 +21,7 @@ nav {
         }
     }
     .lineNav {
-        width: 80vw;
+        width: 90vw;
         display: grid;
         grid-template-columns: min-content 1fr;
         .navLinks {
@@ -37,16 +38,15 @@ nav {
         text-decoration: none;
         color: $text-color;
         &:not(.headerLogo) {
-            @include text-hover($primary-second);
+            @include text-hover($dominant);
         }
     }
     .burgerMenu {
         display: none;
     }
-}
-
-p {
-    color: $text-color;
+    p {
+        color: $text-color;
+    }
 }
 
 @media (max-width: 767px) {

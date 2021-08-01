@@ -21,7 +21,7 @@ const Project = ({ item }) => {
 						})
 					}</div>
 			</div>
-			<a href={item.link} className='btn-more' >site</a>
+			{/* <a href={item.link} className='btnMore' >site</a> */}
 		</div>
 	)
 

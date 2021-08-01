@@ -1,18 +1,22 @@
 @import '../variables.scss';
 .experience {
     display: grid;
-    grid-auto-rows: max-content;
-    gap: 5rem;
-    justify-items: center;
+    gap: 10vh;
+    .expirienceItems {
+        display: grid;
+        grid-auto-rows: max-content;
+        gap: 5rem;
+        justify-items: center;
+    }
     // align-items: center;
     .workSection {
         //border
         padding: 1rem;
-        border-left-width: 7px;
+        border-left-width: 1px;
         border-left-style: solid;
-        border-image: linear-gradient( to bottom, $primary-first, $primary-second) 1 100%;
+        border-color: $dominant;
         //end border
-        font-family: Montserrat;
+        font-family: "Montserrat";
         color: $text-color;
         font-weight: 600;
         width: 60vw;
@@ -27,15 +31,12 @@
     }
     .period {
         font-size: 1rem;
-    }
-    .fromTo {
-        font-size: .8rem;
+        font-family: Punc;
     }
     h4 {
-        font-family: Monument Extended Ultrabold;
         font-size: 2rem;
         font-weight: 800;
-        @include primary-text-gradient;
+        color: $dominant; // @include primary-text-gradient;
         text-transform: uppercase;
         width: min-content;
     }
@@ -45,6 +46,8 @@
         font-size: 1rem;
     }
     p {
+        font-family: Montserrat;
+        font-weight: normal;
         font-size: 1rem;
     }
 }

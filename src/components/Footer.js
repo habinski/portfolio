@@ -16,15 +16,14 @@ const Footer = () => {
 	return (
 		<>
 			<div className={spikes}></div>
-			<footer >
-
-				<img src={logo} alt="logo" className={footerLogo} />
+			<footer>
+				<Link to='/'><img src={logo} alt="logo" className={footerLogo} /></Link>
 				<div className={navigation}>
 					<PageLinks styleClass={navLinks}></PageLinks>
-					<Link activeClassName={activeLink} to='/privacy'>privacy policy</Link>
+					<Link to='/privacy'>privacy policy</Link>
 				</div>
 				<div className={copyright}>
-					<p>copyright &copy; {new Date().getFullYear()} <span>Habinski</span></p>
+					<p>copyright &copy; {new Date().getFullYear()} <span>Habiński</span></p>
 					<p>all rights reserved</p>
 				</div>
 

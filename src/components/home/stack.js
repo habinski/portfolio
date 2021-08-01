@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+
 
 import {
 	bg,
@@ -21,9 +21,6 @@ export const query = graphql`
 		technology {
 		  name
 		  id
-		  icon {
-			url
-		  }
 		}
 	  }
 	}
@@ -40,10 +37,7 @@ const Stack = () => {
 					<div className={items}>
 						{stack.technology.map((technologyItem) => {
 							return (
-								<div className={item} key={technologyItem.id}>
-									<StaticImage alt={technologyItem.name} src={technologyItem.icon.url} ></StaticImage>
-									<p>{technologyItem.name}</p>
-								</div>
+								<p className={item} key={technologyItem.id}>{technologyItem.name}</p>
 							)
 						})}
 

@@ -2,16 +2,20 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { Link } from "gatsby"
 
+import { errPage, errContent } from '../css/404.module.scss'
+
+
 const Err = () => {
 	return (
 		<Layout title='404'>
-			<div className="err-page">
-				<div className="err-content">
+			<div className={errPage}>
+				<div className={errContent}>
 					<h1>404</h1>
 					<h2>
 						Page not found
 					</h2>
-					<Link to='/'>Go home</Link>
+
+					<Link className="btnMore" to="/">Home page</Link>
 				</div>
 			</div>
 

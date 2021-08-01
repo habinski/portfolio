@@ -1,22 +1,26 @@
 import React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { cover, articleLink } from '../../css/home/articleCard.module.scss'
-const articleCard = (article) => {
 
-	const coverImg = {
-		width: '100%',
-		height: '25rem'
-	}
-	console.log(article)
+import { articleLink } from '../../css/home/articleCard.module.scss'
+
+const ArticleCard = (article) => {
+	const { categories, title, updated_at, url } = article.article;
+	console.log(article.article)
 	return (
-		<Link to={`/blog/${article.article.node.url}`} className={articleLink}>
-			<div className={cover}>
-				<StaticImage style={coverImg} src={article.article.node.cover.url} />
-				<h3>{article.article.node.title}</h3>
+		<Link to={`/blog/${url}`} className={articleLink}>
+			<div>
+				<p>
+					{
+						categories.map(category => {
+							return <span>{category.name}</span>
+						})
+					}
+				</p>
+				<h3>{title}</h3>
+				<p>{updated_at}</p>
 			</div>
 		</Link>
 	)
 }
 
-export default articleCard
+export default ArticleCard

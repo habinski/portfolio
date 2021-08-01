@@ -2,8 +2,12 @@ import React from "react"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
 import { graphql, useStaticQuery } from "gatsby"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 
+import {
+	privacy,
+	privacyContent
+} from '../css/privacy.module.scss'
 const query = graphql`
 {
     strapiPrivacy {
@@ -15,10 +19,11 @@ export default function Privacy() {
 	const data = useStaticQuery(query);
 	const gdpr = data.strapiPrivacy.gdpr
 	return <Layout title='privacy'>
-		<SEO title='Privacy' />
-		<section className='privacy'>
-			<div className='privacy-content'>
-				<ReactMarkdown source={gdpr} />
+		<Seo title='Privacy' />
+		<section className={privacy}>
+			<h2 className='title'>Privacy policy</h2>
+			<div className={privacyContent}>
+				<ReactMarkdown children={gdpr} />
 			</div>
 		</section>
 	</Layout >
