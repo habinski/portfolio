@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 module.exports = {
     siteMetadata: {
         title: "Habiński",
         description: "",
         author: "Andriy Habinski",
         image: "/",
-        siteUrl: "https://habinski.dev",
+        siteUrl: process.env.GATSBY_SITE_URL,
         keywords: [
             'developer',
             'front-end',
@@ -26,7 +28,7 @@ module.exports = {
         {
             resolve: "gatsby-source-strapi",
             options: {
-                apiURL: "http://localhost:1337",
+                apiURL: process.env.GATSBY_API_URL,
                 collectionTypes: [
                     "article",
                     "category",
@@ -65,7 +67,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 590,
+                            maxWidth: 1000,
                         },
                     },
                 ],
@@ -84,7 +86,7 @@ module.exports = {
             options: {
 
                 googleTagManager: {
-                    trackingId: 'GTM-M5C7B7D', // leave empty if you want to disable the tracker
+                    trackingId: process.env.GATSBY_TAG_MANAGER_ID, // leave empty if you want to disable the tracker
                     cookieName: 'gatsby-gdpr-google-tagmanager', // default
                     dataLayerName: 'dataLayer', // default
                 },

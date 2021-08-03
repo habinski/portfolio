@@ -15,6 +15,7 @@
         "restart": "npm run clean && npm run develop"
     },
     "dependencies": {
+        "dotenv": "^10.0.0",
         "gatsby": "^3.10.0",
         "gatsby-cli": "^3.9.0",
         "gatsby-plugin-gdpr-cookies": "^2.0.6",
