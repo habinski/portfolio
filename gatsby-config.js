@@ -81,6 +81,7 @@ module.exports = {
         //         defaultDataLayer: { platform: "gatsby" }
         //     },
         // },
+        // !!!!!!!!!
         {
             resolve: `gatsby-plugin-gdpr-cookies`,
             options: {

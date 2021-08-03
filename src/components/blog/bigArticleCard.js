@@ -6,7 +6,6 @@ import { articleInfo, articleDiv } from '../../css/blog/bigArticleCard.module.sc
 const BigArticleCard = (article) => {
 	const { title, url, categories = '', cover, updated_at } = article.article;
 	const image = getImage(cover.localFile)
-	console.log(categories)
 	return (
 		<Link className={articleDiv} to={`/blog/${url}`}>
 			<GatsbyImage image={image} />

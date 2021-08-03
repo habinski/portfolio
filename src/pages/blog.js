@@ -47,7 +47,6 @@ const Blog = () => (
 
           <div className={articlesGrid}>
             {data.allStrapiArticle.edges.map((article) => {
-              console.log(article)
               return (
                 <BigArticleCard article={article.node} key={article.node.strapiId} />
               )

@@ -52,10 +52,6 @@ const Article = ({ pageContext }, location) => {
 					<h1>Read next</h1>
 					<div className={more}>
 						{/* <ArticleCard article={previous} /> */}
-						{console.log(previous)}
-						{console.log(`///`)}
-						{console.log(next)}
-
 						{previous !== null ? <ArticleCard article={previous} /> : ''}
 						{next !== null ? <ArticleCard article={next} /> : ''}
 

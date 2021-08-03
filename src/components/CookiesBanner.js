@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { useLocation } from "@reach/router" // this helps tracking the location
-import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
+// import { useLocation } from "@reach/router" // this helps tracking the location
+// import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
 import CookieConsent from 'react-cookie-consent';
 
 import {
@@ -12,9 +12,9 @@ import {
 } from '../css/cookiesBanner.module.scss'
 
 const CookiesBanner = () => {
-
-	const location = useLocation()
-	initializeAndTrack(location)
+	// err build
+	// const location = useLocation()
+	// initializeAndTrack(location)
 
 	return (
 		<CookieConsent

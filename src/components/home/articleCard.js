@@ -5,7 +5,6 @@ import { articleLink } from '../../css/home/articleCard.module.scss'
 
 const ArticleCard = (article) => {
 	const { categories, title, updated_at, url } = article.article;
-	console.log(article.article)
 	return (
 		<Link to={`/blog/${url}`} className={articleLink}>
 			<div>

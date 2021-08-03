@@ -9,7 +9,6 @@ import { blog, articlesGrid } from '../css/blog/blog.module.scss'
 
 
 const Category = ({ pageContext }) => {
-  console.log(pageContext)
   const { name, articles } = pageContext.category.node
   return (
     <Layout title={name}>
