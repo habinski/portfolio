@@ -34,7 +34,7 @@ const Article = ({ pageContext }, location) => {
 				<div className={head} >
 					<div className={headerInfo}>
 						<h1>{title}</h1>
-						<p>Published at {published_at}</p>
+						<p>Published: {published_at}</p>
 						{
 							published_at === updated_at ? <p>Last update: {updated_at}</p> : ''
 						}

@@ -8,7 +8,6 @@ import {
 	footerLogo,
 	navigation,
 	navLinks,
-	activeLink,
 	copyright
 } from '../css/footer.module.scss'
 

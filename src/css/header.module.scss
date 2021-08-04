@@ -13,7 +13,8 @@ nav {
         text-transform: capitalize;
         align-items: center;
         img {
-            width: 70px;
+            height: 48px;
+            // width: max-content;
         }
         transition: .3s;
         &:hover {
@@ -50,15 +51,16 @@ nav {
 }
 
 @media (max-width: 767px) {
-    .headerLogo>img {
-        width: 100px;
+    nav>.headerLogo>img {
+        height: 48px;
     }
     nav>.lineNav {
         display: none;
     }
     nav>.burgerMenu {
         display: grid;
-        grid-template-columns: repeat(2, 40vw);
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
         .headerLogo {
             align-self: center;
             justify-self: start;
@@ -71,5 +73,3 @@ nav {
         }
     }
 }
-
-// @import '/sidebar';

@@ -1,26 +1,17 @@
 @import '../variables.scss';
 .contact {
     display: grid;
-    gap: 10vh;
     align-items: center;
     .grid {
         display: grid;
-        align-content: center;
+        gap: 1rem;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10vh;
         font-size: 1.3rem;
         color: $text-color;
         a {
-            transition: 0.3s;
-            font-size: 2rem;
-            text-decoration: none;
-            font-weight: 800;
-            justify-self: center;
-            align-self: center;
-            color: $dominant;
-            &:hover {
-                color: $text-color;
-            }
+            margin: auto;
+            font-size: 2em;
+            @include stroke-hover;
         }
     }
 }

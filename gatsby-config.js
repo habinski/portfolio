@@ -18,6 +18,20 @@ module.exports = {
         ]
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `A. Habinski`,
+                short_name: `Habinski`,
+                start_url: `/`,
+                background_color: `#090C08`,
+                theme_color: `#E6AF2E`,
+                display: `standalone`,
+                icon: `src/assets/icon.png`,
+                lang: `en`,
+                description: `Web developer & Designer for your next project`,
+            },
+        },
         `gatsby-plugin-sass`, {
             resolve: `gatsby-source-filesystem`,
             options: {

@@ -21,6 +21,7 @@
         "gatsby-plugin-gdpr-cookies": "^2.0.6",
         "gatsby-plugin-google-tagmanager": "^3.9.0",
         "gatsby-plugin-image": "^1.9.0",
+        "gatsby-plugin-manifest": "^3.11.0",
         "gatsby-plugin-sass": "^4.9.0",
         "gatsby-plugin-sharp": "^3.10.0",
         "gatsby-remark-images": "^5.7.0",

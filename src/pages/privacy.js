@@ -21,7 +21,7 @@ export default function Privacy() {
 	return <Layout title='privacy'>
 		<Seo title='Privacy' />
 		<section className={privacy}>
-			<h2 className='title'>Privacy policy</h2>
+			<h1 className='title'>Privacy policy</h1>
 			<div className={privacyContent}>
 				<ReactMarkdown children={gdpr} />
 			</div>

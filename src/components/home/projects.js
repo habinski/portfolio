@@ -5,7 +5,7 @@ import {
 	projectsSection,
 	projectsItems,
 	projectLink,
-	desriptionBlock, showDescriptionBlock
+	desriptionBlock, showDescriptionBlock, desriptionText
 } from '../../css/home/projectsSection.module.scss'
 const query = graphql`
 {
@@ -31,7 +31,7 @@ const Projects = () => {
 	const projects = data.allStrapiProject.nodes.map((project) => {
 		if (project.link) return <a href={project.link} className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </a>
 
-		else return <a className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </a>
+		else return <p className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </p>
 
 	})
 
@@ -40,13 +40,13 @@ const Projects = () => {
 			<h2 className='title'>Projects</h2>
 			<div className={`${projectsSection} ${description ? showDescriptionBlock : ''}`}>
 				<div className={desriptionBlock}>
-					<ReactMarkdown>{description}</ReactMarkdown>
-				</div>
+					<div className={desriptionText}>
+						<ReactMarkdown>{description}</ReactMarkdown>
+					</div></div>
 				<div className={projectsItems} >
 					{projects}
 
 				</div>
-				{/* <Link to='/projects' className={btnMore} >more</Link> */}
 			</div>
 		</section>
 	)

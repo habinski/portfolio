@@ -1,46 +1,15 @@
 @import '../variables.scss';
 .linksBlock {
     display: grid;
-    gap: 10vh;
     .linksContent {
         align-self: center;
         display: grid;
         gap: 2rem;
         justify-items: center;
         a {
-            font-family: Montserrat;
-            font-weight: 800;
-            text-align: center;
-            -webkit-text-stroke: 0.5px $text-color;
+            @include stroke-hover;
             font-size: 3.5rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: .3s;
-            // @include page-links;
-            position: relative;
-            // color: rgba(29, 29, 31, 0.5);
-            color: transparent;
-            backdrop-filter: blur(20px);
-            &::before {
-                content: attr(data-text);
-                transition: .3s;
-                position: absolute;
-                z-index: -1;
-                // @include primary-text-gradient;
-                background-color: $dominant;
-                -webkit-background-clip: text !important;
-                color: transparent !important;
-                -webkit-text-stroke: 0px;
-                color: transparent;
-                transform: translate(-8px, -8px);
-            }
-            transform: translate(4px, 4px);
-            &:hover {
-                transform: translate(8px, 8px);
-                &::before {
-                    transform: translate(-16px, -16px);
-                }
-            }
+            // text-transform: uppercase;
         }
     }
 }

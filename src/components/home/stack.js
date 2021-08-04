@@ -31,7 +31,7 @@ const Stack = () => {
 
 		return (
 
-			<div className={itemsDiv} key={stack.id} key={stack.id}>
+			<div className={itemsDiv} key={stack.id}>
 				<h4>{stack.type}</h4>
 				<div className={items}>
 					{stack.technology.map((technologyItem) => {

@@ -5,12 +5,12 @@
     display: grid;
     justify-items: center;
     gap: 20px;
+    h1 {
+        width: min-content;
+        text-align: center !important;
+    }
 }
 
 .privacyContent {
-    // display: grid;
-    // width: 80vw;
-    // font-family: Montserrat;
-    // font-size: 1.2rem;
     @include md-styles;
 }

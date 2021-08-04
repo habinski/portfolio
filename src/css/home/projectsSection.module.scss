@@ -3,18 +3,22 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5vh;
-    // transform: translate(-25%);
 }
 
 .desriptionBlock {
-    display: grid;
-    align-items: center;
-    font-family: Montserrat;
     font-weight: 300;
     // font-size: 18px;
     color: $text-color;
     transition: .3s;
     @include md-styles;
+    height: 440px;
+    // margin: 0;
+    .desriptionText {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        margin: auto 0;
+    }
 }
 
 .projectsItems {
@@ -25,43 +29,13 @@
     justify-content: center;
     align-items: flex-start;
     max-width: 80vw;
-    min-height: 70vh;
+    height: 100%;
     // align-items: center;
     // justify-items: center;
     // justify-self: center;
     .projectLink {
-        font-family: Montserrat;
-        font-weight: 800;
-        -webkit-text-stroke: 0.5px $text-color;
         font-size: 3rem;
-        text-decoration: none;
-        // text-transform: uppercase;
-        transition: .3s;
-        // @include page-links;
-        position: relative;
-        // color: rgba(29, 29, 31, 0.5);
-        color: transparent;
-        backdrop-filter: blur(20px);
-        &::before {
-            content: attr(data-text);
-            transition: .3s;
-            position: absolute;
-            z-index: -1;
-            // @include primary-text-gradient;
-            background-color: $dominant;
-            -webkit-background-clip: text !important;
-            color: transparent !important;
-            -webkit-text-stroke: 0px;
-            color: transparent;
-            transform: translate(-8px, -8px);
-        }
-        transform: translate(4px, 4px);
-        &:hover {
-            transform: translate(8px, 8px);
-            &::before {
-                transform: translate(-16px, -16px);
-            }
-        }
+        @include stroke-hover;
     }
 }
 

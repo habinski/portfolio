@@ -20,7 +20,7 @@ const Contact = () => {
 			<h2 className='title'>Contact me</h2>
 			<div className={grid}>
 				<p>{text}</p>
-				<a href={`mailto:${email}`}>{email}</a>
+				<a data-text={email} href={`mailto:${email}`}>{email}</a>
 			</div>
 		</section>
 	)
