@@ -69,18 +69,10 @@
     .heroContent {
         // writing-mode: vertical-rl;
         .introduce {
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
         p {
             width: 100%;
-        }
-    }
-}
-
-@media (max-width: 375px) {
-    .heroContent {
-        .introduce {
-            font-size: 2.5rem;
         }
     }
 }
