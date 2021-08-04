@@ -37,11 +37,14 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
-    .bg {
+    justify-items: center;
+    .itemsDiv {
         @include gradient-block-shadow($dominant);
         border: 1px solid $text-color;
         position: relative;
         height: 100%;
+        // min-width: max-content;
+        max-width: 85vw;
         transform: translate(15px, 15px);
         transition: .3s;
         &:hover {
@@ -55,27 +58,18 @@
         // backdrop-filter: blur(4px);
         filter: invert(0);
         height: 100%;
-        min-width: 29vw;
+        // min-width: 29vw;
+        width: 90%;
         z-index: 100;
-    }
-    .bg:nth-child(odd) .items-block {
-        background-color: rgba(255, 255, 255, 0.514);
-        // background-color: rgba(29, 29, 31, 0.72);
-        // background-color: rgb(255, 255, 255);
-        backdrop-filter: saturate(180%);
-        backdrop-filter: blur(15px);
-        filter: invert(0);
-        height: 100%;
-        h4,
-        p {
-            color: black;
-        }
     }
 }
 
 @media (max-width: 767px) {
     .stackItems {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
+        .itemsDiv {
+            width: 85vw;
+        }
+        // grid-template-rows: repeat(2, 1fr);
     }
 }

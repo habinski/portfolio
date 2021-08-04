@@ -1,11 +1,8 @@
 @import '../variables.scss';
 .hero {
-    // font-family: 'Monument Extended Ultrabold';
     font-family: "Punc";
     display: grid;
     min-height: 90vh;
-    // margin: 0 100px;
-    // width: 100vw;
 }
 
 @keyframes translateXleft {
@@ -75,7 +72,15 @@
             font-size: 3rem;
         }
         p {
-            width: 80vw;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .heroContent {
+        .introduce {
+            font-size: 2.5rem;
         }
     }
 }

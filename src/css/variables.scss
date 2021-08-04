@@ -184,18 +184,10 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
     ol {}
     a {
-        font-weight: 600;
-        color: $text-color;
-        text-decoration: none;
-        background-image: $primary-gradient;
-        background-size: 100% 30%;
-        background-repeat: no-repeat;
-        letter-spacing: 1px;
-        transition: .3s;
-        background-size: 100% 50%;
-        background-position: 50% 100%;
+        transition: 0.3s;
+        color: $dominant;
         &:hover {
-            background-position: 100% 0%;
+            color: $text-color;
         }
     }
     p {
@@ -213,12 +205,11 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
         table-layout: auto;
         width: 100%;
         border-collapse: collapse;
-        border: 3px solid $primary-first;
+        border: 3px solid $dominant;
         transition: .3s;
         tr {
             &:hover {
                 transition: .3s;
-                background-image: linear-gradient(90deg, #7800bd80 0%, #6024e080 50%, #0091ff80 100%);
             }
         }
         th,
@@ -226,7 +217,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
             padding: 2rem 1rem;
         }
         th {
-            font-family: Monument Extended;
+            font-family: Montserrat;
             text-align: center !important;
         }
         td {

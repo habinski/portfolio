@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 
 
 import {
-	bg,
 	itemsDiv,
 	items,
 	item,
@@ -31,19 +30,19 @@ const Stack = () => {
 	const stacks = data.allStrapiStack.nodes.map((stack) => {
 
 		return (
-			<div className={bg} key={stack.id}>
-				<div className={itemsDiv}>
-					<h4>{stack.type}</h4>
-					<div className={items}>
-						{stack.technology.map((technologyItem) => {
-							return (
-								<p className={item} key={technologyItem.id}>{technologyItem.name}</p>
-							)
-						})}
 
-					</div>
+			<div className={itemsDiv} key={stack.id} key={stack.id}>
+				<h4>{stack.type}</h4>
+				<div className={items}>
+					{stack.technology.map((technologyItem) => {
+						return (
+							<p className={item} key={technologyItem.id}>{technologyItem.name}</p>
+						)
+					})}
+
 				</div>
-			</div>)
+			</div>
+		)
 	})
 
 	return (

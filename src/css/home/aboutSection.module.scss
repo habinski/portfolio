@@ -7,10 +7,8 @@
         display: grid;
         justify-items: center;
         .aboutText {
-            width: 700px;
+            @include md-styles;
             font-family: Montserrat;
-            display: grid;
-            gap: 20px;
             width: 60vw;
             font-size: $text-size;
             color: $text-color;
@@ -28,5 +26,11 @@
                 color: $dominant;
             }
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .about>.content>.aboutText {
+        width: 100%;
     }
 }
