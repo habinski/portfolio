@@ -1,27 +1,21 @@
 @import '../variables.scss';
 .categoriesNavigation {
-    // border: 0 solid $dominant;
-    // border-top: 1px solid $dominant;
-    // border-bottom: 1px solid $dominant;
-    font-size: .95rem;
-    font-family: Montserrat;
+    font-size: 1.1rem;
     font-weight: 800;
-    // background-image: $primary-gradient;
-    // width: 100vw;
     display: grid;
-    height: 150%;
+    justify-self: center;
     z-index: 10;
+    width: 90%;
+    height: 60px;
     .blogLinks {
-        width: 80vw;
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row-reverse;
+        align-content: center;
+        flex-direction: reverse;
         gap: 1.5rem;
         a {
-            text-transform: lowercase;
             text-decoration: none;
             color: $text-color;
-            // opacity: .5;
             @include text-hover($dominant);
         }
         .activeLink {

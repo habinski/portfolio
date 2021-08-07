@@ -26,7 +26,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     position: relative;
     transition: 0.3s;
     &::before {
-        content: "show";
+        content: "SHOW";
         -webkit-text-stroke: 0px !important;
         font-size: .7rem;
         transition: .3s;
@@ -80,23 +80,6 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
 }
 
-// @mixin text-hover($color) {
-//     text-shadow: 0px 0px 0px $color;
-//     transition: 0.2s;
-//     &:hover:not(.header-logo) {
-//         text-shadow: -8px -8px 0px $color;
-//         transform: translate(4px, 4px);
-//     }
-// }
-@mixin box-hover {
-    box-shadow: 0px 0px 0px $primary-first;
-    transition: 0.2s;
-    &:hover {
-        box-shadow: -8px -8px 0px white;
-        transform: translate(4px, 4px);
-    }
-}
-
 @mixin page-links {
     filter: drop-shadow(-7px -7px 0px $primary-first);
     text-decoration: none;
@@ -112,25 +95,24 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
 }
 
-@mixin gradient-block-shadow($after-color) {
+@mixin box-stroke-hover($after-color) {
     position: relative;
     z-index: 1;
     transition: 0.3s;
-    transform: translate(.5rem, .5rem);
+    transform: translate(.25rem, .25rem);
     &:hover {
-        transform: translate(1rem, 1rem);
+        transform: translate(.5rem, .5rem);
         &::after {
-            transform: translate(-2rem, -2rem);
+            transform: translate(-1rem, -1rem);
             z-index: -1;
         }
     }
     &::after {
-        // content: attr(text-attr);
         content: '';
         position: absolute;
         border: 1px solid $after-color;
         background-color: transparent;
-        transform: translate(-1rem, -1rem);
+        transform: translate(-.5rem, -.5rem);
         z-index: -1;
         transition: 0.3s;
         top: 0;
@@ -241,6 +223,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
 
 @mixin stroke-hover {
     font-family: Montserrat;
+    font-size: 3rem;
     font-weight: 800;
     text-align: center;
     -webkit-text-stroke: 0.3px $text-color;
@@ -267,5 +250,8 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
         &::before {
             transform: translate(-8px, -8px);
         }
+    }
+    @media (max-width: 767px) {
+        font-size: 2.5rem;
     }
 }

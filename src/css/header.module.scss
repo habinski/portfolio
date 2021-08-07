@@ -1,7 +1,7 @@
 @import './variables';
 nav {
     display: grid;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: Montserrat;
     font-weight: 800;
     // grid-template-columns: 1fr 2fr;
@@ -12,9 +12,9 @@ nav {
         grid-template-columns: repeat(2, max-content);
         text-transform: capitalize;
         align-items: center;
+        gap: .3rem;
         img {
             height: 48px;
-            // width: max-content;
         }
         transition: .3s;
         &:hover {

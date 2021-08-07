@@ -1,12 +1,9 @@
 @import '../variables.scss';
 .blog {
     display: grid;
-    justify-content: center;
-    gap: 3vh;
     .articlesGrid {
         grid-template-columns: repeat(2, 1fr);
         display: grid;
-        width: 80vw;
         gap: 5rem;
     }
     h1 {

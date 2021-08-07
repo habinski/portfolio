@@ -8,17 +8,7 @@
         justify-items: center;
         a {
             @include stroke-hover;
-            font-size: 3.5rem;
             // text-transform: uppercase;
-        }
-    }
-}
-
-@media (max-width: 767px) {
-    .socialLinks {
-        .a {
-            font-size: 4rem;
-            -webkit-text-stroke: 0.5px #000;
         }
     }
 }

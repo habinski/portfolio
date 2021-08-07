@@ -2,12 +2,9 @@
 .stack {
     min-height: 70vh;
     display: grid;
-    // align-content: space-between;
-    // align-items: center;
     .items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        // grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
         justify-self: center;
         padding: 10% 2.5rem;
         gap: 3rem 2rem;
@@ -24,7 +21,7 @@
     }
     h4 {
         padding-top: 15%;
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: $text-color;
         text-align: center;
         font-family: Punc;
@@ -37,29 +34,15 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
     justify-items: center;
+    background-color: transparent;
+    height: 100%;
+    width: 90vw;
     .itemsDiv {
-        @include gradient-block-shadow($dominant);
+        @include box-stroke-hover($dominant);
         border: 1px solid $text-color;
         position: relative;
         height: 100%;
-        // min-width: max-content;
-        max-width: 85vw;
-        transform: translate(15px, 15px);
-        transition: .3s;
-        &:hover {
-            transform: translate(20px, 20px);
-        }
-    }
-    .itemsDiv {
-        // background-color: rgba(29, 29, 31, 0.72);
-        background-color: transparent;
-        // backdrop-filter: saturate(180%);
-        // backdrop-filter: blur(4px);
-        filter: invert(0);
-        height: 100%;
-        // min-width: 29vw;
-        width: 90%;
-        z-index: 100;
+        width: 85%;
     }
 }
 
@@ -69,6 +52,5 @@
         .itemsDiv {
             width: 85vw;
         }
-        // grid-template-rows: repeat(2, 1fr);
     }
 }
