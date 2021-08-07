@@ -1,13 +1,13 @@
 @import './variables.scss';
 .privacy {
     margin: 3rem 0;
-    color: $text-color;
     display: grid;
     justify-items: center;
     gap: 20px;
     h1 {
         width: min-content;
         text-align: center !important;
+        margin-bottom: 0 !important;
     }
 }
 

@@ -45,11 +45,14 @@
         }
         .cookiesBtnAgree {
             background-color: $dominant;
+            color: $bg-color;
+            font-weight: 600;
         }
     }
     a {
         text-decoration: none;
         color: $dominant;
+        font-weight: 600;
     }
 }
 
