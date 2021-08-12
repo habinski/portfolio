@@ -28,7 +28,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     &::before {
         content: "SHOW";
         -webkit-text-stroke: 0px !important;
-        font-size: .7rem;
+        font-size: 50%;
         transition: .3s;
         // display: none;
         opacity: 0;

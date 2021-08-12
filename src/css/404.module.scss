@@ -4,7 +4,7 @@
     justify-content: center;
     align-content: center;
     margin: 5rem;
-    height: 30vh;
+    min-height: 50vh;
     .errContent {
         display: grid;
         height: min-content;
@@ -21,9 +21,13 @@
     h2 {
         margin: 0;
         font-family: Montserrat;
+        text-align: center;
         font-size: 2.5rem;
         text-transform: uppercase;
         color: #fff;
         margin-bottom: 2rem;
+    }
+    a {
+        margin-top: 0 !important;
     }
 }
