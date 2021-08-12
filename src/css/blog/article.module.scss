@@ -28,7 +28,7 @@
             }
             h1 {
                 line-height: 1;
-                font-size: 5rem;
+                font-size: 5vw;
                 font-family: Montserrat;
                 font-weight: 800;
                 margin-bottom: 0.5rem;
@@ -51,6 +51,7 @@
         }
     }
     article {
+        margin-top: 10vh;
         @include md-styles;
     }
     .read-next {
@@ -81,6 +82,9 @@
             grid-auto-flow: dense;
             .headerInfo {
                 grid-row: 2;
+                h1 {
+                    font-size: 5rem;
+                }
             }
         }
         .read-next {

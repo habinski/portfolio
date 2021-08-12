@@ -39,31 +39,36 @@
     color: $dominant;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     /* 1 */
     width: .7rem;
+    height: .7rem;
 }
 
-body::-webkit-scrollbar-button {
+::-webkit-scrollbar-button {
     display: none;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: none;
 }
 
-body::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-track-piece {
     background-color: $bg-color;
     /* 4 */
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: $dominant;
 }
 
-body::-webkit-scrollbar-corner {
+::-webkit-scrollbar-corner {
     /* 6 */
     background-image: transparent;
+}
+
+::selection {
+    background-color: $dominant;
 }
 
 * {

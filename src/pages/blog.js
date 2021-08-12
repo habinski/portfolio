@@ -32,7 +32,7 @@ const Blog = () => (
               cover {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600)
+                    gatsbyImageData(width: 1000)
                   }
                 }
               }

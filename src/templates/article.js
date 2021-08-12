@@ -29,6 +29,7 @@ const Article = ({ pageContext }, location) => {
 			<Seo
 				title={title}
 				pathname={location.pathname}
+				image={coverImage}
 			/>
 			<section className={post}>
 				<div className={head} >
