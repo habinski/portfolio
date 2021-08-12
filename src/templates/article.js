@@ -50,7 +50,7 @@ const Article = ({ pageContext }, location) => {
 					<ReactMarkdown children={content} components={CodeBlock} />
 				</article>
 				<div className={readNext}>
-					<h1>Read next</h1>
+					<h5>Read next</h5>
 					<div className={more}>
 						{/* <ArticleCard article={previous} /> */}
 						{previous !== null ? <ArticleCard article={previous} /> : ''}

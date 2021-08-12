@@ -54,13 +54,16 @@
         margin-top: 10vh;
         @include md-styles;
     }
-    .read-next {
+    .readNext {
         width: 760px;
         justify-self: center;
         margin-top: 3rem;
-        text-align: center;
-        color: $dominant;
-        font-family: Punc;
+        h5 {
+            font-size: 2rem;
+            text-align: center;
+            color: $dominant;
+            font-family: Punc;
+        }
         .more {
             margin-top: 2rem;
             display: grid;
@@ -87,7 +90,7 @@
                 }
             }
         }
-        .read-next {
+        .readNext {
             width: 90vw;
             .more {
                 grid-template-columns: 1fr;

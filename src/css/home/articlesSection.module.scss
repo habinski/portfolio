@@ -6,7 +6,6 @@
 .articlesBlck {
     display: grid;
     justify-self: center;
-    width: max-content;
     gap: 5rem;
     grid-template-columns: repeat(2, 1fr);
 }
