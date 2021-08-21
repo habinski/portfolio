@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { articleLink } from '../../css/home/articleCard.module.scss'
+import { articleLink, updateDate } from '../../css/home/articleCard.module.scss'
 
 const ArticleCard = (article) => {
 	const { categories, title, updated_at, url } = article.article;
@@ -11,12 +11,12 @@ const ArticleCard = (article) => {
 				<p>
 					{
 						categories.map(category => {
-							return <span>{category.name}</span>
+							return <Link to={`/blog/${category.url}`}>{category.name}</Link>
 						})
 					}
 				</p>
 				<h3>{title}</h3>
-				<p>{updated_at}</p>
+				<p className={updateDate}>{updated_at}</p>
 			</div>
 		</Link>
 	)

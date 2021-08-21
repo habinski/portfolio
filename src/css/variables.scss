@@ -181,8 +181,11 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
             color: $dominant;
         }
     }
-    pre>div>code>span {
-        font-size: 1.3rem !important;
+    pre {
+        overflow: auto;
+        &>div>code>span {
+            font-size: 1.3rem !important;
+        }
     }
     blockquote {
         padding: 0 1rem;
@@ -218,6 +221,21 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
     @media(max-width: 768px) {
         width: 90vw;
+    }
+}
+
+@mixin categoriesBlock {
+    a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 700;
+        transition: .3s;
+        &:hover {
+            color: $dominant;
+        }
+        &:not(:last-child)::after {
+            content: ', ';
+        }
     }
 }
 

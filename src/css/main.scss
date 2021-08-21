@@ -100,6 +100,7 @@ main {
 section {
     min-height: 60vh;
     width: 90vw;
+    display: grid;
     position: relative;
     align-content: center;
 }

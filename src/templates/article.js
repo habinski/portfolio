@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ReactMarkdown from "react-markdown"
 import Layout from "../components/Layout"
@@ -9,6 +10,7 @@ import Seo from "../components/SEO"
 import {
 	post,
 	head,
+	categoriesDiv,
 	headerInfo,
 	readNext,
 	more
@@ -17,12 +19,12 @@ import {
 
 
 const Article = ({ pageContext }, location) => {
-	const { title, updated_at, cover, content, published_at } = pageContext.article.node
+	const { title, updated_at, cover, content, published_at, categories } = pageContext.article.node
 	const previous = pageContext.article.previous
 	const next = pageContext.article.next
 
 	const coverImage = getImage(cover.localFile)
-
+	console.log(categories)
 
 	return (
 		<Layout title='blog'>
@@ -34,12 +36,18 @@ const Article = ({ pageContext }, location) => {
 			<section className={post}>
 				<div className={head} >
 					<div className={headerInfo}>
+						<div className={categoriesDiv}>{
+							categories.map((category => {
+								return <Link to={`/blog/${category.url}`}>{category.name}</Link>
+
+							}))
+						}</div>
 						<h1>{title}</h1>
 						<p>Published: {published_at}</p>
 						{
-							published_at === updated_at ? <p>Last update: {updated_at}</p> : ''
+							published_at !== updated_at ? <p>Last update: {updated_at}</p> : ''
 						}
-						<p>{Math.round(content.length / 600) + ' minutes read'}</p>
+						<p>{Math.round(content.length / 500) + ' minutes read'}</p>
 
 					</div>
 					<GatsbyImage image={coverImage} alt="cover" />

@@ -17,7 +17,7 @@ const Category = ({ pageContext }) => {
       <section className={blog}>
         <h2 className='title'>{name}</h2>
         <div className={articlesGrid}>
-          {articles.map((article) => {
+          {articles.reverse().map((article) => {
             return (
               <BigArticleCard article={article} key={article.id} />
             )

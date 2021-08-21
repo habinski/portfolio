@@ -18,7 +18,7 @@ const Blog = () => (
     <StaticQuery
       query={graphql`
       {
-        allStrapiArticle(sort: {order: DESC, fields: published_at}) {
+        allStrapiArticle(sort: {order: DESC, fields: created_at}) {
           edges {
             node {
               strapiId
@@ -28,6 +28,8 @@ const Blog = () => (
               updated_at(formatString: "DD MMMM YY")
               categories {
                 name
+                url
+                id
               }
               cover {
                 localFile {

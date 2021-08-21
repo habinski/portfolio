@@ -11,7 +11,7 @@
 
 .articleInfo {
     display: grid;
-    gap: 3px;
+    gap: .5rem;
     line-height: 1;
     h5 {
         font-family: Montserrat;
@@ -22,5 +22,8 @@
     p {
         font-family: Punc;
         color: $text-color
+    }
+    .categoriesDiv {
+        @include categoriesBlock;
     }
 }

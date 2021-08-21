@@ -33,6 +33,9 @@
                 font-weight: 800;
                 margin-bottom: 0.5rem;
             }
+            .categoriesDiv {
+                @include categoriesBlock;
+            }
         }
     }
     .articleInfo {
@@ -55,7 +58,7 @@
         @include md-styles;
     }
     .readNext {
-        width: 760px;
+        // width: 760px;
         justify-self: center;
         margin-top: 3rem;
         h5 {

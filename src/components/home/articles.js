@@ -11,6 +11,7 @@ const query = graphql`
 	  edges {
 		node {
 		  categories {
+			  url
 			name
 			id
 		  }
