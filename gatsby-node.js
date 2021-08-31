@@ -47,6 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
             categories {
               id
               name
+              url
             }
             updated_at(formatString: "DD MMMM YYYY")
             title
@@ -57,6 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
             categories {
               id
               name
+              url
             }
             updated_at(formatString: "DD MMMM YYYY")
             title

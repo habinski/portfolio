@@ -54,7 +54,7 @@
         }
     }
     article {
-        margin-top: 10vh;
+        margin-top: 7vh;
         @include md-styles;
     }
     .readNext {
@@ -73,9 +73,6 @@
             justify-content: center;
             grid-template-columns: repeat(2, 1fr);
             gap: 5rem;
-            a {
-                font-size: 1.5rem;
-            }
         }
     }
 }

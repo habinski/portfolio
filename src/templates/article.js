@@ -22,9 +22,9 @@ const Article = ({ pageContext }, location) => {
 	const { title, updated_at, cover, content, published_at, categories } = pageContext.article.node
 	const previous = pageContext.article.previous
 	const next = pageContext.article.next
+	console.log(next)
 
 	const coverImage = getImage(cover.localFile)
-	console.log(categories)
 
 	return (
 		<Layout title='blog'>
