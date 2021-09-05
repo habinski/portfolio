@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import ReactMarkdown from "react-markdown"
+import Markdown from 'markdown-to-jsx';
 import Layout from "../components/Layout"
-import CodeBlock from "../components/blog/CodeBlock";
+import PreBlock from "../components/blog/CodeBlock";
 import ArticleCard from '../components/home/articleCard'
 import Seo from "../components/SEO"
 
@@ -53,10 +53,12 @@ const Article = ({ pageContext }, location) => {
 					<GatsbyImage image={coverImage} alt="cover" />
 
 				</div>
-
-				<article>
-					<ReactMarkdown children={content} components={CodeBlock} />
-				</article>
+				<Markdown options={{
+					wrapper: 'article',
+					overrides: {
+						pre: PreBlock,
+					},
+				}} children={content} />
 				<div className={readNext}>
 					<h5>Read next</h5>
 					<div className={more}>

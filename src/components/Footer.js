@@ -22,8 +22,8 @@ const Footer = () => {
 					<Link to='/privacy'>privacy policy</Link>
 				</div>
 				<div className={copyright}>
-					<p>copyright &copy; {new Date().getFullYear()} <span>Habiński</span></p>
-					<p>all rights reserved</p>
+					<p>Copyright &copy; {new Date().getFullYear()} <span>Habiński</span></p>
+					<p>All rights reserved</p>
 				</div>
 
 			</footer>

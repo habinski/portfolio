@@ -1,27 +1,8 @@
-// @import url(//db.onlinewebfonts.com/c/a4745f4b1d04fa025c6a05d891ed0126?family=Monument+Extended+Ultrabold);
-// @import url(//db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended);
-$text-color: #FFFFFF;
+$text-color: #ffffff;
 $dominant: #E6AF2E;
 $text-size: 1.4rem;
-$primary-first: #7700BB;
-$primary-middle: #5e23df;
-$primary-second: #0090FF;
-$bg-color: #090C08;
-$primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%, $primary-second 100%);
-// $primary-gradient:linear-gradient(90deg, #7700BB 0%, #5e23df 50%, #0090FF 100%);
+$bg-color: #0f0f0f;
 ;
-@mixin primary-text-gradient {
-    background: $primary-gradient !important;
-    -webkit-background-clip: text !important;
-    color: transparent !important;
-}
-
-@mixin primary-stroke-gradient($px) {
-    background: $primary-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: $px transparent;
-}
-
 @mixin text-hover($color) {
     position: relative;
     transition: 0.3s;
@@ -46,21 +27,6 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
             opacity: 1;
         }
     }
-    // &::after {
-    //     content: attr(data-text);
-    //     color: red;
-    //     position: absolute;
-    //     // top: 0;
-    //     // right: 0;
-    //     // left: 0;
-    //     // bottom: 0;
-    //     // @include primary-text-gradient;
-    //     z-index: 1;
-    // }
-    // &:hover:not(.header-logo) {
-    //     // text-shadow: -8px -8px 0px $color;
-    //     transform: translate(4px, 4px);
-    // }
 }
 
 @mixin nav-btns {
@@ -77,21 +43,6 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     line-height: 100%;
     &:hover {
         color: $dominant;
-    }
-}
-
-@mixin page-links {
-    filter: drop-shadow(-7px -7px 0px $primary-first);
-    text-decoration: none;
-    -webkit-text-stroke: 0.5px $text-color;
-    transition: .3s;
-    color: transparent;
-    &:hover {
-        // color: $text-color;
-        // text-shadow: -21px -21px 0px #7700BB;
-        filter: drop-shadow(-21px -21px 0px $primary-second);
-        transform: translate(3px, 3px);
-        // transform: translate(-7px -7px);
     }
 }
 
@@ -168,11 +119,14 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     a {
         transition: 0.3s;
         color: $dominant;
+        font-weight: 600;
+        text-decoration: none;
         &:hover {
             color: $text-color;
         }
     }
     p {
+        padding: 0.5rem 0;
         img {
             justify-self: center;
             width: 100%;
@@ -186,7 +140,7 @@ $primary-gradient: linear-gradient(90deg, $primary-first 0%, $primary-middle 50%
     }
     pre {
         overflow: auto;
-        &>div>code>span {
+        &>code>span {
             font-size: 1.3rem !important;
         }
     }

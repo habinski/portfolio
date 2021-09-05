@@ -1,32 +1,7 @@
 @import '../variables.scss';
 .hero {
-    font-family: "Punc";
     display: grid;
     min-height: 90vh;
-}
-
-@keyframes translateXleft {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(10vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes translateXright {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-10vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
 }
 
 .heroContent {
@@ -37,31 +12,29 @@
     // grid-template-rows: repeat(2, min-content);
     gap: 3vw;
     .introduce {
+        font-family: "Punc";
         .first {
             font-weight: 800;
             color: $dominant;
         }
         .second {
-            font-weight: normal;
+            font-weight: 400;
         }
         // font-size: 96px;
         margin: 0;
-        font-size: 5rem;
+        // max-width: 90vw;
+        font-size: 7vmax;
         color: $text-color;
         z-index: 1;
-        // width: min-content;
-        // @include primary-text-gradient;
-        // animation: translateXleft 120s linear infinite;
     }
     p {
         font-family: "Montserrat";
         font-style: normal;
-        font-weight: 300;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: $text-size;
         justify-self: end;
-        width: 40vw;
-        color: $text-color; // text-align: start;
-        // font-family: 'Monument Extended';
+        width: 50vw;
+        color: $text-color;
     }
 }
 
@@ -69,7 +42,7 @@
     .heroContent {
         // writing-mode: vertical-rl;
         .introduce {
-            font-size: 2.5rem;
+            font-size: 7vmin;
         }
         p {
             width: 100%;

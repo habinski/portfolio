@@ -13,8 +13,8 @@
         display: grid;
         font-family: Montserrat;
         color: $text-color;
-        font-weight: 800;
-        font-size: 1.7rem;
+        font-weight: 600;
+        font-size: $text-size;
         align-self: center;
         justify-self: center;
         width: max-content;
@@ -22,10 +22,11 @@
     h4 {
         padding-top: 15%;
         font-size: 2.5rem;
-        color: $text-color;
+        color: $dominant;
         text-align: center;
-        font-family: Punc;
-        font-weight: bold;
+        font-family: Montserrat;
+        text-transform: uppercase;
+        font-weight: 800;
     }
 }
 

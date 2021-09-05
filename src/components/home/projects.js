@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import ReactMarkdown from "react-markdown"
+import Markdown from "markdown-to-jsx"
 import {
-	projectsSection,
-	projectsItems,
-	projectLink,
-	desriptionBlock, showDescriptionBlock, desriptionText
+  projectsSection,
+  projectsItems,
+  projectLink,
+  desriptionBlock, showDescriptionBlock, desriptionText
 } from '../../css/home/projectsSection.module.scss'
 const query = graphql`
 {
@@ -21,34 +21,35 @@ const query = graphql`
 `
 
 const Projects = () => {
-	const [description, setDescription] = useState(null)
-	function showDescription(desc) {
-		setDescription(desc)
-	}
+  const [description, setDescription] = useState('**Hover** over a name to find a short **description**!\n\n Or **click** to **open** this project if they are already available.')
+  function showDescription(desc) {
+    setDescription(desc)
+  }
 
-	const data = useStaticQuery(query)
-	// target='_blank'
-	const projects = data.allStrapiProject.nodes.map((project) => {
-		if (project.link) return <a href={project.link} className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </a>
+  const data = useStaticQuery(query)
+  // target='_blank'
+  const projects = data.allStrapiProject.nodes.map((project) => {
+    if (project.link) return <a href={project.link} className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </a>
 
-		else return <p className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </p>
+    else return <p className={projectLink} onMouseEnter={() => showDescription(project.description)} data-text={project.name} key={project.id} >{project.name} </p>
 
-	})
+  })
 
-	return (
-		<section id='projects'>
-			<h2 className='title'>Projects</h2>
-			<div className={`${projectsSection} ${description ? showDescriptionBlock : ''}`}>
-				<div className={desriptionBlock}>
-					<div className={desriptionText}>
-						<ReactMarkdown>{description}</ReactMarkdown>
-					</div></div>
-				<div className={projectsItems} >
-					{projects}
+  return (
+    <section id='projects'>
+      <h2 className='title'>Projects</h2>
+      <div className={`${projectsSection} ${description ? showDescriptionBlock : ''}`}>
 
-				</div>
-			</div>
-		</section>
-	)
+        <div className={projectsItems} >
+          {projects}
+        </div>
+        <div className={desriptionBlock}>
+          <div className={desriptionText}>
+            <Markdown>{description}</Markdown>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 export default Projects

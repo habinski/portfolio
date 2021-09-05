@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { graphql, useStaticQuery } from "gatsby"
 
 import {
@@ -26,14 +25,16 @@ const HeroSection = () => {
 	const { first_specialty, second_specialty, description } = data.strapiHero
 	return (
 		<section className={hero}>
-			<div className={heroContent}>
+
+			<div animate={{ opacity: 1 }} className={heroContent}>
 				<div className={introduce}>
 					<h1 className={first}>{first_specialty}</h1>
 					<h1 className={second}>{second_specialty}</h1>
 				</div>
 				<p>{description}</p>
 			</div>
-		</section>
+
+		</section >
 	)
 }
 export default HeroSection

@@ -8,11 +8,10 @@ footer {
     padding: 3rem 0 1rem;
     gap: 1rem;
     font-weight: 400;
-    text-transform: uppercase;
     color: $bg-color;
     span {
         // font-family: Monument Extended;
-        font-weight: bold;
+        font-weight: 800;
     }
     grid-template-areas: 'logo navigation' 'copyright copyright';
     .footerLogo {
@@ -29,6 +28,7 @@ footer {
         display: grid;
         grid-auto-rows: auto;
         a {
+            text-transform: uppercase;
             font-family: Montserrat;
             font-weight: 800;
             color: $bg-color;
