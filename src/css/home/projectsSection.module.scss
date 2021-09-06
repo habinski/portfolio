@@ -21,6 +21,7 @@
 
 .projectsItems {
     display: grid;
+    gap: 1rem;
     .projectLink {
         @include stroke-hover;
         justify-self: center;
