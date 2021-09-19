@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Markdown from "markdown-to-jsx"
+import { motion } from 'framer-motion'
 import {
   projectsSection,
   projectsItems,
@@ -36,7 +37,7 @@ const Projects = () => {
   })
 
   return (
-    <section id='projects'>
+    <motion.section id='projects'>
       <h2 className='title'>Projects</h2>
       <div className={`${projectsSection} ${description ? showDescriptionBlock : ''}`}>
 
@@ -44,12 +45,12 @@ const Projects = () => {
           {projects}
         </div>
         <div className={desriptionBlock}>
-          <div className={desriptionText}>
+          <motion.div init={{ opacity: 0 }} animate={{ opacity: 1 }} className={desriptionText}>
             <Markdown>{description}</Markdown>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 export default Projects

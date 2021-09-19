@@ -1,7 +1,7 @@
 @import './variables.scss';
 @font-face {
     font-family: "Punc";
-    font-weight: 700;
+    font-weight: 800;
     src: url("./fonts/Punc-Bold.otf");
 }
 
@@ -87,7 +87,7 @@ main {
     justify-items: center;
     .main-grid {
         display: grid;
-        gap: 7rem;
+        gap: 5rem;
     }
 }
 
@@ -105,7 +105,7 @@ section {
     color: $text-color;
     text-align: left;
     margin-bottom: 6vh;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .btnMore {

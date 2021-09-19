@@ -18,6 +18,7 @@ const query = graphql`
 		  title
 		  url
 		  updated_at(formatString: "DD MMM YY")
+		  published_at(formatString: "DD MMM YY")
 		  id
 		}
 	  }
@@ -29,7 +30,7 @@ const ArticlesBlock = () => {
 	const data = useStaticQuery(query)
 	const articles = data.allStrapiArticle.edges.map((article, index) => {
 		return (
-			<ArticleCard article={article.node} id={article.node.id} key={article.node.id}></ArticleCard>
+			<ArticleCard article={article.node} key={article.node.id}></ArticleCard>
 		)
 
 	})

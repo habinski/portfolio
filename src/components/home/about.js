@@ -17,7 +17,7 @@ const About = () => {
 
 
   return (<section className={about} >
-    <h2 className="title">about</h2>
+    <h2 className="title">aboUt</h2>
     <div className={content}>
       <div className={aboutText}>
         <Markdown children={data.strapiAbout.text} />
